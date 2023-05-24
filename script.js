@@ -105,7 +105,7 @@ for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
     ++counter;
 }
 let randomWidth = Math.floor(Math.random() * counter), score = 0;
-const width1 = {val: randomWidth * 100 + currentWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
+const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
 const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
 const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
 
@@ -130,10 +130,10 @@ idInterval = window.setInterval(function() {
     } else if (height2.val == 575) {
         changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
         changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-        newRandomAsteroid(currentValue1, height1, width1)
+        newRandomAsteroid(currentValue1, height1, width1);
     } else if (height1.val == 300) {
         changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-        newRandomAsteroid(currentValue1, height1, width1)
+        newRandomAsteroid(currentValue1, height1, width1);
     }
     height1.val = height1.val + 5;
 }, 25);
