@@ -1,4 +1,3 @@
-//create the canvas
 const canvas = document.querySelector("canvas");
 const canvasWidth = canvas.width = window.innerWidth;
 const canvasHeight = canvas.height = window.innerHeight;
