@@ -176,6 +176,8 @@ function GameOver() {
     ctx.fillStyle = "red";
     ctx.font = "48px Arial";
     ctx.fillText("Your score is " + score + "!", canvasWidth / 2, canvasHeight / 2);
+    let container = document.createElement('div');
+    container.className = "text-center";
     let button = document.createElement('button');
     button.id = "refreshButton";
     button.className = "btn btn-success";
