@@ -185,7 +185,8 @@ function GameOver() {
     button.addEventListener('click', ()=> {
         Restart();
     });
-    document.body.appendChild(button);  
+    container.appendChild(button);  
+    document.body.appendChild(container);  
 }
 
 function Restart() {
