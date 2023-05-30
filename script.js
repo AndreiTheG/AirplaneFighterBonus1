@@ -6,44 +6,43 @@ ctx.fillStyle = "rgb(0, 0, 0)";
 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
 class Airplane {
-    constructor(squareWidth, squareHeight, dx, dy) {
+    constructor(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         ctx.fillStyle = "rgb(255, 0, 0)";
-        ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
+        ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
     }
 
-    moveToRight(isDestroyed, squareWidth, squareHeight, dx, dy) {
+    movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
-            dx.val = dx.val + 5;
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            squareXCoordinate.val = squareXCoordinate.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
-            console.log("Dreapta: " + dx.val);
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 
-    moveToLeft(isDestroyed, squareWidth, squareHeight, dx, dy) {
+    movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
-            dx.val = dx.val - 5;
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             console.log("Stanga: " + dx.val);
         } else {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 }
@@ -95,9 +94,9 @@ function startTheGame() {
 
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && dx.val <= canvasWidth - 55) {
-            airplane.moveToRight(isDestroyed, squareWidth, squareHeight, dx, dy);
+            airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, dx, dy);
         } else if (event.code == 'ArrowLeft' && dx.val >= 0) {
-            airplane.moveToLeft(isDestroyed, squareWidth, squareHeight, dx, dy);
+            airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, dx, dy);
         }
     })
 
