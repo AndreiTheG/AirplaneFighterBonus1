@@ -166,8 +166,8 @@ function asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj) {
     for (let i = 1; i < 4; ++i) {
         if (listXAxesObj.val[i] > 0) {
             listYAxesObj.val[i] = listYAxesObj.val[i] + 5;
-            asteroid[listCoordObj.val[i]].previousHeight(listXCoordinates.val[i], listYCoordinates.val[i] - 5);
-            asteroid[listCoordObj.val[i]].fall(listXCoordinates.val[i], listYCoordinates.val[i] - 5);
+            asteroid[listCoordObj.val[i]].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i] - 5);
+            asteroid[listCoordObj.val[i]].fall(listXAxesObj.val[i], listYAxesObj.val[i] - 5);
         }
     }
     /*if (width2.val > 0) {
@@ -192,12 +192,15 @@ function asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj) {
 //     CurrVal.val = PrevVal.val;
 // }
 
-function GameOver(isDestroyed, airplane, asteroid, score, width1, height1, currentValue1, width2, height2, currentValue2, width3, height3, currentValue3) {
+function GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listXAxesObj, listYAxesObj) {
     airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
-    asteroid[currentValue2.val].previousHeight(width2.val, height2.val);
-    asteroid[currentValue3.val].previousHeight(width3.val, height3.val);
+    for (let i = 0; i < 3; ++i) {
+        asteroid[listCoordObj.val].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i]);
+    }
+    // asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
+    // asteroid[currentValue2.val].previousHeight(width2.val, height2.val);
+    // asteroid[currentValue3.val].previousHeight(width3.val, height3.val);
     ctx.fillStyle = "red";
     ctx.font = "48px Arial";
     ctx.fillText("Your score is " + score + "!", canvasWidth / 2, canvasHeight / 2);
