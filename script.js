@@ -118,7 +118,7 @@ function startTheGame() {
         if (listYAxesObj.val[0] > 25) {
             asteroid[listCoordObj.val[0]].previousHeight(listXAxesObj.val[0], listYAxesObj.val[0] - 5);
         }
-        asteroid[listCoordObj.val[0]].fall(listXAxesObj.val[0], listYAxesObj.val[0]);
+        //asteroid[listCoordObj.val[0]].fall(listXAxesObj.val[0], listYAxesObj.val[0]);
         asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj);
         if ((squareXCoordinate.val - listXAxesObj.val[2] >= 0 && squareXCoordinate.val - listXAxesObj.val[2] < 20 || 
             listXAxesObj.val[2] - squareXCoordinate.val >= 0 && listXAxesObj.val[2] - squareXCoordinate.val < 70) 
