@@ -135,7 +135,7 @@ function startTheGame() {
             asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
         }
         asteroid[currentValue1.val].fall(width1.val, height1.val);
-        asteroidGravity(width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
+        asteroidGravity(asteroid, width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
         if ((dx - width3.val >= 0 && dx - width3.val < 20 || width3.val - dx >= 0 && width3.val - dx < 70) 
             && (dy - height3.val >= 0 && dy - height3.val < 20 || height3.val - dy >= 0 && height3.val - dy < 70)) {
             isDestroyed = true;
