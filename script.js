@@ -99,6 +99,10 @@ function startTheGame() {
     let initWidth = 25, initHeight = 25;
     let counter = 0;
     let asteroid = [];
+    const asteroids = {val: [0, 0, 0, 0]};
+    for (let i = 0; i < 4; ++i) {
+        console.log(asteroids.val[i]);
+    }
     for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
         asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
         ++counter;
