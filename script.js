@@ -204,9 +204,11 @@ function asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj) {
 function GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listXAxesObj, listYAxesObj) {
     airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    for (let i = 0; i < 3; ++i) {
-        asteroid[listCoordObj.val[i]].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i]);
-    }
+    //for (let i = 0; i < 3; ++i) {
+        asteroid[listCoordObj.val[0]].previousHeight(listXAxesObj.val[0], listYAxesObj.val[0]);
+        asteroid[listCoordObj.val[1]].previousHeight(listXAxesObj.val[1], listYAxesObj.val[1]);
+        asteroid[listCoordObj.val[2]].previousHeight(listXAxesObj.val[2], listYAxesObj.val[2]);
+    //}
     // asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
     // asteroid[currentValue2.val].previousHeight(width2.val, height2.val);
     // asteroid[currentValue3.val].previousHeight(width3.val, height3.val);
