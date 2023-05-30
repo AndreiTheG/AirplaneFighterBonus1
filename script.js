@@ -39,18 +39,18 @@ class Airplane {
     moveToLeft(isDestroyed, squareWidth, squareHeight, dx, dy) {
         if (isDestroyed == false) {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx, dy, squareWidth, squareHeight);
+            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx, dy, squareWidth, squareHeight);
-            dx = dx - 5;
+            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
+            dx.val = dx.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.fillRect(dx, dy, squareWidth, squareHeight);
+            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
             console.log("Stanga: " + dx.val);
         } else {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx, dy, squareWidth, squareHeight);
+            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx, dy, squareWidth, squareHeight);
+            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
         }
     }
 }
