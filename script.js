@@ -15,24 +15,24 @@ ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 class Airplane {
     constructor(squareWidth, squareHeight, dx, dy) {
         ctx.fillStyle = "rgb(255, 0, 0)";
-        ctx.fillRect(dx, dy, squareWidth, squareHeight);
+        ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
     }
 
     moveToRight(isDestroyed, squareWidth, squareHeight, dx, dy) {
         if (isDestroyed == false) {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx, dy, squareWidth, squareHeight);
+            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx, dy, squareWidth, squareHeight);
+            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
             dx = dx + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.fillRect(dx, dy, squareWidth, squareHeight);
+            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
             console.log("Dreapta: " + dx);
         } else {
             ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(dx, dy, squareWidth, squareHeight);
+            ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(dx, dy, squareWidth, squareHeight);
+            ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
         }
     }
 
@@ -103,8 +103,8 @@ class Asteroid {
 startTheGame();
 
 function startTheGame() {
-    let dx = (canvasWidth / 2) - 2;
-    let dy = 600;
+    const dx = {val: (canvasWidth / 2) - 2};
+    const dy = {val: 600};
     //let x = 5;
     let squareWidth = 50;
     let squareHeight = 50;
