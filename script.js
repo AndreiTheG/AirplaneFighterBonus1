@@ -107,7 +107,7 @@ function startTheGame() {
     let squareWidth = 50;
     let squareHeight = 50;
 
-    const airplane = new Airplane(squareWidth, squareHeight);
+    const airplane = new Airplane(squareWidth, squareHeight, dx, dy);
     let isDestroyed = false;
 
     addEventListener("keydown", (event) => {
