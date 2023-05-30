@@ -165,11 +165,11 @@ function startTheGame() {
 }
 
 function changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, startIndex) {
-    for (let i = startIndex; i >= 1; --i) {
+   // for (let i = startIndex; i >= 1; --i) {
         listCoordObj.val[startIndex] = listCoordObj.val[startIndex - 1];
         listXAxesObj.val[startIndex] = listXAxesObj.val[startIndex - 1];
         listYAxesObj.val[startIndex] = listYAxesObj.val[startIndex - 1];
-    }
+    //}
 }
 
 function newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter) {
