@@ -13,7 +13,7 @@ ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 // let squareHeight = 50;
 
 class Airplane {
-    constructor(squareWidth, squareHeight) {
+    constructor(squareWidth, squareHeight, dx, dy) {
         ctx.fillStyle = "rgb(255, 0, 0)";
         ctx.fillRect(dx, dy, squareWidth, squareHeight);
     }
