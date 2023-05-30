@@ -164,14 +164,35 @@ function newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, 
 }
 
 function asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj) {
-    for (let i = 1; i < 4; ++i) {
-        if (listXAxesObj.val[i] > 0) {
-            if (i < 3) {
-                listYAxesObj.val[i] = listYAxesObj.val[i] + 5;
-            }
-            asteroid[listCoordObj.val[i]].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i] - 5);
-            asteroid[listCoordObj.val[i]].fall(listXAxesObj.val[i], listYAxesObj.val[i]);
-        }
+    // for (let i = 1; i < 4; ++i) {
+    //     if (listXAxesObj.val[i] > 0) {
+    //         if (i < 3) {
+    //             listYAxesObj.val[i] = listYAxesObj.val[i] + 5;
+    //         }
+    //         asteroid[listCoordObj.val[i]].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i] - 5);
+    //         asteroid[listCoordObj.val[i]].fall(listXAxesObj.val[i], listYAxesObj.val[i]);
+    //     }
+    // }
+    if (listXAxesObj.val[1] > 0) {
+        //if (i < 3) {
+            listYAxesObj.val[1] = listYAxesObj.val[1] + 5;
+        //}
+        asteroid[listCoordObj.val[1]].previousHeight(listXAxesObj.val[1], listYAxesObj.val[1] - 5);
+        asteroid[listCoordObj.val[1]].fall(listXAxesObj.val[1], listYAxesObj.val[1]);
+    }
+    if (listXAxesObj.val[2] > 0) {
+        //if (i < 3) {
+            listYAxesObj.val[2] = listYAxesObj.val[2] + 5;
+        //}
+        asteroid[listCoordObj.val[2]].previousHeight(listXAxesObj.val[2], listYAxesObj.val[2] - 5);
+        asteroid[listCoordObj.val[2]].fall(listXAxesObj.val[2], listYAxesObj.val[2]);
+    }
+    if (listXAxesObj.val[3] > 0) {
+        //if (i < 3) {
+            //listYAxesObj.val[i] = listYAxesObj.val[i] + 5;
+        //}
+        asteroid[listCoordObj.val[3]].previousHeight(listXAxesObj.val[3], listYAxesObj.val[3] - 5);
+        asteroid[listCoordObj.val[3]].fall(listXAxesObj.val[3], listYAxesObj.val[3]);
     }
     /*if (width2.val > 0) {
         height2.val = height2.val + 5;
