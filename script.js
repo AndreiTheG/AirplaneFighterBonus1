@@ -131,6 +131,8 @@ function startTheGame() {
         if (listYAxesObj.val[2] == 700) {
             ++score;
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 3);
+            changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
+            changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
             // changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
             // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
