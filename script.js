@@ -4,6 +4,10 @@ const canvasHeight = canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = "rgb(0, 0, 0)";
 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+const squareXCoordinate = {val: (canvasWidth / 2) - 2};
+const squareYCoordinate = {val: 600};
+let squareWidth = 50;
+let squareHeight = 50;
 
 class Airplane {
     constructor(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
@@ -54,7 +58,7 @@ class Asteroid {
         }
         ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.beginPath();
-        ctx.arc(width,  height, 20, degToRad(0), degToRad(360), false);
+        ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
         ctx.fill();
     }
 
@@ -81,25 +85,18 @@ class Asteroid {
     }
 }
 
-const dx = {val: (canvasWidth / 2) - 2};
-const dy = {val: 600};
-let squareWidth = 50;
-let squareHeight = 50;
-
 startTheGame();
 
 function startTheGame() {
-    const airplane = new Airplane(squareWidth, squareHeight, dx, dy);
+    const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     let isDestroyed = false;
-
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && dx.val <= canvasWidth - 55) {
-            airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, dx, dy);
+            airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         } else if (event.code == 'ArrowLeft' && dx.val >= 0) {
-            airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, dx, dy);
+            airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
     })
-
     let initWidth = 25, initHeight = 25;
     let counter = 0;
     let asteroid = [];
@@ -111,7 +108,6 @@ function startTheGame() {
     const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
     const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
     const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
-
     idInterval = window.setInterval(function() {
         if (height1.val > 25) {
             asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
