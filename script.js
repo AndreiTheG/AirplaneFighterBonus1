@@ -134,16 +134,16 @@ function startTheGame() {
             // changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
             // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            newRandomAsteroid(listCoordObj.val[0], listXAxesObj.val[0], listYAxesObj.val[0], initWidth, counter);
+            newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
         } else if (listYAxesObj.val[1] == 575) {
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
             // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            newRandomAsteroid(listCoordObj.val[0], listXAxesObj.val[0], listYAxesObj.val[0], initWidth, counter);
+            newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
         } else if (listYAxesObj.val[0] == 300) {
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            newRandomAsteroid(listCoordObj.val[0], listXAxesObj.val[0], listYAxesObj.val[0], initWidth, counter);
+            newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
         }
         listYAxesObj.val[0] = listYAxesObj.val[0] + 5;
     }, 25);
