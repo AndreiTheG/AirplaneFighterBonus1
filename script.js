@@ -179,15 +179,15 @@ function newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, 
 }
 
 function asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj) {
-    for (let i = 1; i < 4; ++i) {
-        if (listXAxesObj.val[i] > 0) {
-            if (i < 3) {
-                listYAxesObj.val[i] = listYAxesObj.val[i] + 5;
-            }
-            asteroid[listCoordObj.val[i]].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i] - 5);
-            asteroid[listCoordObj.val[i]].fall(listXAxesObj.val[i], listYAxesObj.val[i]);
+    //for (let i = 1; i < 4; ++i) {
+        if (listXAxesObj.val[1] > 0) {
+            //if (i < 3) {
+                listYAxesObj.val[1] = listYAxesObj.val[1] + 5;
+            //}
+            asteroid[listCoordObj.val[1]].previousHeight(listXAxesObj.val[1], listYAxesObj.val[1] - 5);
+            asteroid[listCoordObj.val[1]].fall(listXAxesObj.val[1], listYAxesObj.val[1]);
         }
-    }
+    //}
     // if (listXAxesObj.val[1] > 0) {
     //     listYAxesObj.val[1] = listYAxesObj.val[1] + 5;
     //     asteroid[listCoordObj.val[1]].previousHeight(listXAxesObj.val[1], listYAxesObj.val[1] - 5);
