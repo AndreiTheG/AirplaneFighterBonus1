@@ -197,7 +197,7 @@ function GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listXAxe
     airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     for (let i = 0; i < 3; ++i) {
-        asteroid[listCoordObj.val].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i]);
+        asteroid[listCoordObj.val[i]].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i]);
     }
     // asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
     // asteroid[currentValue2.val].previousHeight(width2.val, height2.val);
