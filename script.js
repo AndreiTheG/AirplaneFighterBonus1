@@ -114,8 +114,8 @@ function startTheGame() {
         }
         asteroid[currentValue1.val].fall(width1.val, height1.val);
         asteroidGravity(asteroid, width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
-        if ((dx.val - width3.val >= 0 && dx.val - width3.val < 20 || width3.val - dx.val >= 0 && width3.val - dx.val < 70) 
-            && (dy.val - height3.val >= 0 && dy.val - height3.val < 20 || height3.val - dy.val >= 0 && height3.val - dy.val < 70)) {
+        if ((squareXCoordinate.val - width3.val >= 0 && squareXCoordinate.val - width3.val < 20 || width3.val - squareXCoordinate.val >= 0 && width3.val - squareXCoordinate.val < 70) 
+            && (squareYCoordinate.val - height3.val >= 0 && squareYCoordinate.val - height3.val < 20 || height3.val - squareYCoordinate.val >= 0 && height3.val - squareYCoordinate.val < 70)) {
             isDestroyed = true;
             GameOver(isDestroyed, airplane, asteroid, score, width1, height1, currentValue1, width2, height2, currentValue2, width3, height3, currentValue3);
             window.clearInterval(idInterval);
