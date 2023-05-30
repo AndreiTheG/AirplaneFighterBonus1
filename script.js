@@ -13,7 +13,7 @@ ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 // let squareHeight = 50;
 
 class Airplane {
-    constructor() {
+    constructor(squareWidth, squareHeight) {
         ctx.fillStyle = "rgb(255, 0, 0)";
         ctx.fillRect(dx, dy, squareWidth, squareHeight);
     }
@@ -112,9 +112,9 @@ function startTheGame() {
 
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && dx <= canvasWidth - 55) {
-            airplane.moveToRight(isDestroyed);
+            airplane.moveToRight(isDestroyed, squareWidth, squareHeight, dx);
         } else if (event.code == 'ArrowLeft' && dx >= 0) {
-            airplane.moveToLeft(isDestroyed);
+            airplane.moveToLeft(isDestroyed, squareWidth, squareHeight, dx);
         }
     })
 
