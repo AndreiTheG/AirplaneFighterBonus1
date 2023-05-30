@@ -139,7 +139,7 @@ function startTheGame() {
             changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
             newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
         }
-        height1.val = height1.val + 5;
+        listXAxesObj.val[0] = listXAxesObj.val[0] + 5;
     }, 25);
 }
 
