@@ -24,10 +24,10 @@ class Airplane {
             ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
             ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
-            dx = dx + 5;
+            dx.val = dx.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(dx.val, dy.val, squareWidth, squareHeight);
-            console.log("Dreapta: " + dx);
+            console.log("Dreapta: " + dx.val);
         } else {
             ctx.strokeStyle = "rgb(0, 0, 0)";
             ctx.strokeRect(dx.val, dy.val, squareWidth, squareHeight);
@@ -45,7 +45,7 @@ class Airplane {
             dx = dx - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(dx, dy, squareWidth, squareHeight);
-            console.log("Stanga: " + dx);
+            console.log("Stanga: " + dx.val);
         } else {
             ctx.strokeStyle = "rgb(0, 0, 0)";
             ctx.strokeRect(dx, dy, squareWidth, squareHeight);
