@@ -114,9 +114,9 @@ function startTheGame() {
 
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && dx.val <= canvasWidth - 55) {
-            airplane.moveToRight(isDestroyed, squareWidth, squareHeight, dx, dy);
+            airplane.moveToRight(isDestroyed, squareWidth, squareHeight, dx.val, dy.val);
         } else if (event.code == 'ArrowLeft' && dx.val >= 0) {
-            airplane.moveToLeft(isDestroyed, squareWidth, squareHeight, dx, dy);
+            airplane.moveToLeft(isDestroyed, squareWidth, squareHeight, dx.val, dy.val);
         }
     })
 
