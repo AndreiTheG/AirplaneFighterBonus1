@@ -154,12 +154,12 @@ function startTheGame() {
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
         //     newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
         // } else 
-        //if (listYAxesObj.val[0] == 300) {
+        if (listYAxesObj.val[0] == 300) {
             console.log("True 1");
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
             newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
-        //}
+        }
         listYAxesObj.val[0] = listYAxesObj.val[0] + 5;
     }, 25);
 }
