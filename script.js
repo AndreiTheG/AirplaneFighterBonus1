@@ -230,7 +230,7 @@ function changeCoordonates(CurrWidth, CurrHeight, PrevWidth, PrevHeight, CurrVal
     CurrVal.val = PrevVal.val;
 }
 
-function GameOver(isDestroyed, airplane, asteroid) {
+function GameOver(isDestroyed, airplane, asteroid, score, width1, height1, currentValue1, width2, height2, currentValue2, width3, height3, currentValue3) {
     airplane.moveToLeft(isDestroyed);
     airplane.moveToRight(isDestroyed);
     asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
