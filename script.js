@@ -157,10 +157,10 @@ function changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, startIndex)
     }
 }
 
-function newRandomAsteroid(initialValue, initialHeight, initialWidth, initWidth, counter) {
-    initialValue.val = Math.floor(Math.random() * counter);
-    initialHeight.val = 25;
-    initialWidth.val = initialValue.val * 100 + initWidth;
+function newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter) {
+    listCoordObj.val[0] = Math.floor(Math.random() * counter);
+    listXAxesObj.val[0] = 25;
+    listYAxesObj.val[0] = listCoordObj.val[0] * 100 + initWidth;
 }
 
 function asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj) {
