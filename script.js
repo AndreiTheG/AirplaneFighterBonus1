@@ -132,8 +132,8 @@ function startTheGame() {
             ++score;
             console.log("True 3");
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 3);
-            changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
-            changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
+            //changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
+            //changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
             // changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
             // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
@@ -141,7 +141,7 @@ function startTheGame() {
         } else if (listYAxesObj.val[1] == 575) {
             console.log("True 2");
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
-            changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
+            //changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
             // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
             newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
@@ -156,11 +156,11 @@ function startTheGame() {
 }
 
 function changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, startIndex) {
-    //for (let i = startIndex; i >= 0; --i) {
+    for (let i = startIndex; i >= 1; --i) {
         listCoordObj.val[startIndex] = listCoordObj.val[startIndex - 1];
         listXAxesObj.val[startIndex] = listXAxesObj.val[startIndex - 1];
         listYAxesObj.val[startIndex] = listYAxesObj.val[startIndex - 1];
-    //}
+    }
 }
 
 function newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter) {
