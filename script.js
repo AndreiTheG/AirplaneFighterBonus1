@@ -136,7 +136,7 @@ function startTheGame() {
             changeCoordonates(listXAxesObj.val[1], listYAxesObj.val[1], listXAxesObj.val[0], listYAxesObj.val[0], listCoordObj.val[1], listCoordObj.val[0]);
             newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
         } else if (listYAxesObj.val[1] == 575) {
-            changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
+            //changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
             changeCoordonates(listXAxesObj.val[2], listYAxesObj.val[2], listXAxesObj.val[1], listYAxesObj.val[1], listCoordObj.val[2], listCoordObj.val[1]);
             changeCoordonates(listXAxesObj.val[1], listYAxesObj.val[1], listXAxesObj.val[0], listYAxesObj.val[0], listCoordObj.val[1], listCoordObj.val[0]);
             newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
