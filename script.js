@@ -5,7 +5,7 @@ const ctx = canvas.getContext('2d');
 ctx.fillStyle = "rgb(0, 0, 0)";
 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-startTheGame();
+
 // let dx = (canvasWidth / 2) - 2;
 // let dy = 600;
 // let x = 5;
@@ -97,6 +97,8 @@ class Asteroid {
         ctx.fill();
     }
 }
+
+startTheGame();
 
 function startTheGame() {
     let dx = (canvasWidth / 2) - 2;
