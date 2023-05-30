@@ -147,14 +147,14 @@ function startTheGame() {
             changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
             changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            newRandomAsteroid(currentValue1, height1, width1);
+            newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
         } else if (height2.val == 575) {
             changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            newRandomAsteroid(currentValue1, height1, width1);
+            newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
         } else if (height1.val == 300) {
             changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            newRandomAsteroid(currentValue1, height1, width1, initWidth);
+            newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
         }
         height1.val = height1.val + 5;
     }, 25);
@@ -201,7 +201,7 @@ function startTheGame() {
 //     height1.val = height1.val + 5;
 // }, 25);
 
-function newRandomAsteroid(initialValue, initialHeight, initialWidth, initWidth) {
+function newRandomAsteroid(initialValue, initialHeight, initialWidth, initWidth, counter) {
     initialValue.val = Math.floor(Math.random() * counter);
     initialHeight.val = 25;
     initialWidth.val = initialValue.val * 100 + initWidth;
