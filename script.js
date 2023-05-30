@@ -41,7 +41,7 @@ class Airplane {
             ctx.strokeRect(dx, dy, squareWidth, squareHeight);
             ctx.fillStyle = "rgb(0, 0, 0)";
             ctx.fillRect(dx, dy, squareWidth, squareHeight);
-            dx = dx - x;
+            dx = dx - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(dx, dy, squareWidth, squareHeight);
         } else {
