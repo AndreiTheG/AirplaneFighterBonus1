@@ -100,14 +100,16 @@ class Asteroid {
     }
 }
 
+let squareWidth = 50;
+let squareHeight = 50;
+
 startTheGame();
 
 function startTheGame() {
     const dx = {val: (canvasWidth / 2) - 2};
     const dy = {val: 600};
     //let x = 5;
-    let squareWidth = 50;
-    let squareHeight = 50;
+   
 
     const airplane = new Airplane(squareWidth, squareHeight, dx, dy);
     let isDestroyed = false;
