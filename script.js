@@ -143,6 +143,7 @@ function startTheGame() {
             newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
         } else if (listYAxesObj.val[1] == 575) {
             console.log("True 2");
+            console.log(listXAxesObj.val[3] + " " + listYAxesObj.val[3]);
             console.log(listXAxesObj.val[2] + " " + listYAxesObj.val[2]);
             console.log(listXAxesObj.val[1] + " " + listYAxesObj.val[1]);
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 2);
@@ -152,6 +153,8 @@ function startTheGame() {
             newRandomAsteroid(listCoordObj, listXAxesObj, listYAxesObj, initWidth, counter);
         } else if (listYAxesObj.val[0] == 300) {
             console.log("True 1");
+            console.log(listXAxesObj.val[3] + " " + listYAxesObj.val[3]);
+            console.log(listXAxesObj.val[2] + " " + listYAxesObj.val[2]);
             console.log(listXAxesObj.val[1] + " " + listYAxesObj.val[1]);
             changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, 1);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
