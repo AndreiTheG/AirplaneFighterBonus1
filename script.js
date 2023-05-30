@@ -115,9 +115,9 @@ function startTheGame() {
     //const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
     //const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
     idInterval = window.setInterval(function() {
-        if (listYAxesObj.val[0] > 25) {
-            asteroid[listCoordObj.val[0]].previousHeight(listXAxesObj.val[0], listYAxesObj.val[0] - 5);
-        }
+        // if (listYAxesObj.val[0] > 25) {
+        //     asteroid[listCoordObj.val[0]].previousHeight(listXAxesObj.val[0], listYAxesObj.val[0] - 5);
+        // }
         asteroid[listCoordObj.val[0]].fall(listXAxesObj.val[0], listYAxesObj.val[0]);
         asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj);
         if ((squareXCoordinate.val - listXAxesObj.val[2] >= 0 && squareXCoordinate.val - listXAxesObj.val[2] < 20 || 
