@@ -4,11 +4,13 @@ const canvasHeight = canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = "rgb(0, 0, 0)";
 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-let dx = (canvasWidth / 2) - 2;
-let dy = 600;
-let x = 5;
-let squareWidth = 50;
-let squareHeight = 50;
+
+startTheGame();
+// let dx = (canvasWidth / 2) - 2;
+// let dy = 600;
+// let x = 5;
+// let squareWidth = 50;
+// let squareHeight = 50;
 
 class Airplane {
     constructor() {
@@ -51,16 +53,16 @@ class Airplane {
     }
 }
 
-const airplane = new Airplane();
-let isDestroyed = false;
+// const airplane = new Airplane();
+// let isDestroyed = false;
 
-addEventListener("keydown", (event) => {
-    if (event.code == 'ArrowRight' && dx <= canvasWidth - 55) {
-        airplane.moveToRight(isDestroyed);
-    } else if (event.code == 'ArrowLeft' && dx >= 0) {
-        airplane.moveToLeft(isDestroyed);
-    }
-})
+// addEventListener("keydown", (event) => {
+//     if (event.code == 'ArrowRight' && dx <= canvasWidth - 55) {
+//         airplane.moveToRight(isDestroyed);
+//     } else if (event.code == 'ArrowLeft' && dx >= 0) {
+//         airplane.moveToLeft(isDestroyed);
+//     }
+// })
 
 class Asteroid {
     constructor(width, height) {
@@ -96,46 +98,106 @@ class Asteroid {
     }
 }
 
-let initWidth = 25, initHeight = 25;
-let counter = 0;
-let asteroid = [];
-for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
-    asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
-    ++counter;
-}
-let randomWidth = Math.floor(Math.random() * counter), score = 0;
-const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
-const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
-const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
+function startTheGame() {
+    let dx = (canvasWidth / 2) - 2;
+    let dy = 600;
+    let x = 5;
+    let squareWidth = 50;
+    let squareHeight = 50;
 
-idInterval = window.setInterval(function() {
-    if (height1.val > 25) {
-        asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
+    const airplane = new Airplane();
+    let isDestroyed = false;
+
+    addEventListener("keydown", (event) => {
+        if (event.code == 'ArrowRight' && dx <= canvasWidth - 55) {
+            airplane.moveToRight(isDestroyed);
+        } else if (event.code == 'ArrowLeft' && dx >= 0) {
+            airplane.moveToLeft(isDestroyed);
+        }
+    })
+
+    let initWidth = 25, initHeight = 25;
+    let counter = 0;
+    let asteroid = [];
+    for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
+        asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
+        ++counter;
     }
-    asteroid[currentValue1.val].fall(width1.val, height1.val);
-    asteroidGravity(width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
-    if ((dx - width3.val >= 0 && dx - width3.val < 20 || width3.val - dx >= 0 && width3.val - dx < 70) 
-        && (dy - height3.val >= 0 && dy - height3.val < 20 || height3.val - dy >= 0 && height3.val - dy < 70)) {
-        isDestroyed = true;
-        GameOver(isDestroyed);
-        window.clearInterval(idInterval);
-    }
-    if (height3.val == 700) {
-        ++score;
-        changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
-        changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
-        changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-        newRandomAsteroid(currentValue1, height1, width1);
-    } else if (height2.val == 575) {
-        changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
-        changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-        newRandomAsteroid(currentValue1, height1, width1);
-    } else if (height1.val == 300) {
-        changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-        newRandomAsteroid(currentValue1, height1, width1);
-    }
-    height1.val = height1.val + 5;
-}, 25);
+    let randomWidth = Math.floor(Math.random() * counter), score = 0;
+    const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
+    const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
+    const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
+
+    idInterval = window.setInterval(function() {
+        if (height1.val > 25) {
+            asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
+        }
+        asteroid[currentValue1.val].fall(width1.val, height1.val);
+        asteroidGravity(width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
+        if ((dx - width3.val >= 0 && dx - width3.val < 20 || width3.val - dx >= 0 && width3.val - dx < 70) 
+            && (dy - height3.val >= 0 && dy - height3.val < 20 || height3.val - dy >= 0 && height3.val - dy < 70)) {
+            isDestroyed = true;
+            GameOver(isDestroyed);
+            window.clearInterval(idInterval);
+        }
+        if (height3.val == 700) {
+            ++score;
+            changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
+            changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
+            changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
+            newRandomAsteroid(currentValue1, height1, width1);
+        } else if (height2.val == 575) {
+            changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
+            changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
+            newRandomAsteroid(currentValue1, height1, width1);
+        } else if (height1.val == 300) {
+            changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
+            newRandomAsteroid(currentValue1, height1, width1);
+        }
+        height1.val = height1.val + 5;
+    }, 25);
+}
+
+// let initWidth = 25, initHeight = 25;
+// let counter = 0;
+// let asteroid = [];
+// for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
+//     asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
+//     ++counter;
+// }
+// let randomWidth = Math.floor(Math.random() * counter), score = 0;
+// const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
+// const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
+// const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
+
+// idInterval = window.setInterval(function() {
+//     if (height1.val > 25) {
+//         asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
+//     }
+//     asteroid[currentValue1.val].fall(width1.val, height1.val);
+//     asteroidGravity(width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
+//     if ((dx - width3.val >= 0 && dx - width3.val < 20 || width3.val - dx >= 0 && width3.val - dx < 70) 
+//         && (dy - height3.val >= 0 && dy - height3.val < 20 || height3.val - dy >= 0 && height3.val - dy < 70)) {
+//         isDestroyed = true;
+//         GameOver(isDestroyed);
+//         window.clearInterval(idInterval);
+//     }
+//     if (height3.val == 700) {
+//         ++score;
+//         changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
+//         changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
+//         changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
+//         newRandomAsteroid(currentValue1, height1, width1);
+//     } else if (height2.val == 575) {
+//         changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
+//         changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
+//         newRandomAsteroid(currentValue1, height1, width1);
+//     } else if (height1.val == 300) {
+//         changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
+//         newRandomAsteroid(currentValue1, height1, width1);
+//     }
+//     height1.val = height1.val + 5;
+// }, 25);
 
 function newRandomAsteroid(initialValue, initialHeight, initialWidth) {
     initialValue.val = Math.floor(Math.random() * counter);
