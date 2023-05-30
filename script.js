@@ -91,9 +91,9 @@ function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     let isDestroyed = false;
     addEventListener("keydown", (event) => {
-        if (event.code == 'ArrowRight' && dx.val <= canvasWidth - 55) {
+        if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
             airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        } else if (event.code == 'ArrowLeft' && dx.val >= 0) {
+        } else if (event.code == 'ArrowLeft' && squareXCoordinate.val >= 0) {
             airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
     })
