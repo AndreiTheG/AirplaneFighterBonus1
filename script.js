@@ -168,7 +168,7 @@ function asteroidGravity(asteroid, listCoordObj, listXAxesObj, listYAxesObj) {
         if (listXAxesObj.val[i] > 0) {
             listYAxesObj.val[i] = listYAxesObj.val[i] + 5;
             asteroid[listCoordObj.val[i]].previousHeight(listXAxesObj.val[i], listYAxesObj.val[i] - 5);
-            asteroid[listCoordObj.val[i]].fall(listXAxesObj.val[i], listYAxesObj.val[i] - 5);
+            asteroid[listCoordObj.val[i]].fall(listXAxesObj.val[i], listYAxesObj.val[i]);
         }
     }
     /*if (width2.val > 0) {
