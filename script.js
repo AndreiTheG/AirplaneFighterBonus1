@@ -139,7 +139,7 @@ function startTheGame() {
         if ((dx - width3.val >= 0 && dx - width3.val < 20 || width3.val - dx >= 0 && width3.val - dx < 70) 
             && (dy - height3.val >= 0 && dy - height3.val < 20 || height3.val - dy >= 0 && height3.val - dy < 70)) {
             isDestroyed = true;
-            GameOver(isDestroyed);
+            GameOver(isDestroyed, airplane, asteroid);
             window.clearInterval(idInterval);
         }
         if (height3.val == 700) {
@@ -154,7 +154,7 @@ function startTheGame() {
             newRandomAsteroid(currentValue1, height1, width1);
         } else if (height1.val == 300) {
             changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            newRandomAsteroid(currentValue1, height1, width1);
+            newRandomAsteroid(currentValue1, height1, width1, initWidth);
         }
         height1.val = height1.val + 5;
     }, 25);
@@ -201,13 +201,13 @@ function startTheGame() {
 //     height1.val = height1.val + 5;
 // }, 25);
 
-function newRandomAsteroid(initialValue, initialHeight, initialWidth) {
+function newRandomAsteroid(initialValue, initialHeight, initialWidth, initWidth) {
     initialValue.val = Math.floor(Math.random() * counter);
     initialHeight.val = 25;
     initialWidth.val = initialValue.val * 100 + initWidth;
 }
 
-function asteroidGravity(width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4) {
+function asteroidGravity(asteroid, width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4) {
     if (width2.val > 0) {
         height2.val = height2.val + 5;
         asteroid[currentValue2.val].previousHeight(width2.val, height2.val - 5);
@@ -230,7 +230,7 @@ function changeCoordonates(CurrWidth, CurrHeight, PrevWidth, PrevHeight, CurrVal
     CurrVal.val = PrevVal.val;
 }
 
-function GameOver() {
+function GameOver(isDestroyed, airplane, asteroid) {
     airplane.moveToLeft(isDestroyed);
     airplane.moveToRight(isDestroyed);
     asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
