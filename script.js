@@ -111,6 +111,7 @@ function startTheGame() {
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
     const listXAxesObj = {val: [randomWidth * 100 + initWidth, 0, 0, 0]};
     const listYAxesObj = {val: [25, 25, 25, 25]};
+    console.log(listXAxesObj.val[0]);
     //const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
     //const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
     idInterval = window.setInterval(function() {
