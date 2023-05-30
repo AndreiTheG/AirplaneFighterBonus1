@@ -18,7 +18,7 @@ class Airplane {
         ctx.fillRect(dx, dy, squareWidth, squareHeight);
     }
 
-    moveToRight(isDestroyed) {
+    moveToRight(isDestroyed, squareWidth, squareHeight, dx, dy) {
         if (isDestroyed == false) {
             ctx.strokeStyle = "rgb(0, 0, 0)";
             ctx.strokeRect(dx, dy, squareWidth, squareHeight);
@@ -35,7 +35,7 @@ class Airplane {
         }
     }
 
-    moveToLeft(isDestroyed) {
+    moveToLeft(isDestroyed, squareWidth, squareHeight, dx, dy) {
         if (isDestroyed == false) {
             ctx.strokeStyle = "rgb(0, 0, 0)";
             ctx.strokeRect(dx, dy, squareWidth, squareHeight);
@@ -112,9 +112,9 @@ function startTheGame() {
 
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && dx <= canvasWidth - 55) {
-            airplane.moveToRight(isDestroyed, squareWidth, squareHeight, dx);
+            airplane.moveToRight(isDestroyed, squareWidth, squareHeight, dx, dy);
         } else if (event.code == 'ArrowLeft' && dx >= 0) {
-            airplane.moveToLeft(isDestroyed, squareWidth, squareHeight, dx);
+            airplane.moveToLeft(isDestroyed, squareWidth, squareHeight, dx, dy);
         }
     })
 
