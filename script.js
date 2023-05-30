@@ -141,7 +141,7 @@ function startTheGame() {
         if ((dx.val - width3.val >= 0 && dx.val - width3.val < 20 || width3.val - dx.val >= 0 && width3.val - dx.val < 70) 
             && (dy.val - height3.val >= 0 && dy.val - height3.val < 20 || height3.val - dy.val >= 0 && height3.val - dy.val < 70)) {
             isDestroyed = true;
-            GameOver(isDestroyed, airplane, asteroid);
+            GameOver(isDestroyed, airplane, asteroid, score, width1, height1, currentValue1, width2, height2, currentValue2, width3, height3, currentValue3);
             window.clearInterval(idInterval);
         }
         if (height3.val == 700) {
