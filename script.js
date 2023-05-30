@@ -108,7 +108,6 @@ let squareHeight = 50;
 startTheGame();
 
 function startTheGame() {
-    //let x = 5;
     const airplane = new Airplane(squareWidth, squareHeight, dx, dy);
     let isDestroyed = false;
 
