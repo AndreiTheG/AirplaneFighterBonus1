@@ -167,8 +167,8 @@ function changeCoordonates(CurrWidth, CurrHeight, PrevWidth, PrevHeight, CurrVal
 }
 
 function GameOver(isDestroyed, airplane, asteroid, score, width1, height1, currentValue1, width2, height2, currentValue2, width3, height3, currentValue3) {
-    airplane.moveToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    airplane.moveToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+    airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+    airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
     asteroid[currentValue2.val].previousHeight(width2.val, height2.val);
     asteroid[currentValue3.val].previousHeight(width3.val, height3.val);
