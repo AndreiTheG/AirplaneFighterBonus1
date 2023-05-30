@@ -152,9 +152,9 @@ function startTheGame() {
 
 function changeCoordinates(listCoordObj, listXAxesObj, listYAxesObj, startIndex) {
     //for (let i = startIndex; i >= 0; --i) {
-        listCoordObj.val[i] = listCoordObj.val[i - 1];
-        listXAxesObj.val[i] = listXAxesObj.val[i - 1];
-        listYAxesObj.val[i] = listYAxesObj.val[i - 1];
+        listCoordObj.val[startIndex] = listCoordObj.val[startIndex - 1];
+        listXAxesObj.val[startIndex] = listXAxesObj.val[startIndex - 1];
+        listYAxesObj.val[startIndex] = listYAxesObj.val[startIndex - 1];
     //}
 }
 
