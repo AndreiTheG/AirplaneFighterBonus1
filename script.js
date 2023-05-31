@@ -62,9 +62,9 @@ class Asteroid {
         }
         ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.stroke();
         ctx.beginPath();
         ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
-        ctx.stroke();
         ctx.fill();
     }
     
