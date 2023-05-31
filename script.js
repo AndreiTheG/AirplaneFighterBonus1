@@ -114,7 +114,15 @@ function startTheGame() {
         }
         asteroid[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj);
-        collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
+        //collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
+        if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
+            listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
+            && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
+                listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
+            isDestroyed = true;
+            GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
+            window.clearInterval(idInterval);
+        }
         objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
@@ -134,16 +142,16 @@ function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, 
     }
 }
 
-function collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj) {
-    if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
-        listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
-        && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
-            listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
-        isDestroyed = true;
-        GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
-        window.clearInterval(idInterval);
-    }
-}
+// function collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj) {
+//     if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
+//         listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
+//         && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
+//             listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
+//         isDestroyed = true;
+//         GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
+//         window.clearInterval(idInterval);
+//     }
+// }
 
 function changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIterations) {
     for (let i = nrIterations; i >= 1; --i) {
