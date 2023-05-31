@@ -122,7 +122,7 @@ function startTheGame() {
         asteroid[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         //asteroidGravity(asteroid, width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
         asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj);
-        console.log(asteroid[listCoordObj.val[0]] + ' ' + asteroid[listCoordObj.val[1]] + ' ' + asteroid[listCoordObj.val[2]] + ' ' + asteroid[listCoordObj.val[3]]);
+        //console.log(asteroid[listCoordObj.val[0]] + ' ' + asteroid[listCoordObj.val[1]] + ' ' + asteroid[listCoordObj.val[2]] + ' ' + asteroid[listCoordObj.val[3]]);
         if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
             listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
@@ -196,7 +196,7 @@ function asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
-                asteroid[listAxesYObj.val[i]] = listAxesYObj.val[i] + 5;
+                listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                 asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 asteroid[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
             } else {
