@@ -193,13 +193,15 @@ function newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, 
 
 function asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj) {
     for (let i = 1; i < 4; ++i) {
-        if (i < 3) {
-            asteroid[listAxesYObj.val[i]] = listAxesYObj.val[i] + 5;
-            asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-            asteroid[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-        } else {
-            asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-            asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+        if (listAxesXObj.val[i] > 0) {
+            if (i < 3) {
+                asteroid[listAxesYObj.val[i]] = listAxesYObj.val[i] + 5;
+                asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                asteroid[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
+            } else {
+                asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+            }
         }
     }
     // if (width2.val > 0) {
