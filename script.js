@@ -93,17 +93,17 @@ function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
     gameController(airplane, isDestroyed);
-    let initWidth = 25, initHeight = 25;
+    let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     let object = [];
-    for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
-        object[i] = new Object(i * 100 + initWidth, initHeight);
+    for (let i = 0; i * 100 + initialWidth < canvasWidth; ++i) {
+        object[i] = new Object(i * 100 + initialWidth, initialHeight);
         ++counter;
     }
     let randomWidth = Math.floor(Math.random() * counter);
     const score = {val: 0};
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
-    const listAxesXObj = {val: [randomWidth * 100 + initWidth, 0, 0, 0]}; 
+    const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
@@ -112,22 +112,22 @@ function startTheGame() {
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
-        objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter, score);
+        objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
 
-function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter, score) {
+function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
-        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
+        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     } else if (listAxesYObj.val[1] == 575) {
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
-        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
+        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     } else if (listAxesYObj.val[0] == 300) {
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
-        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
+        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     }
 }
 
@@ -150,9 +150,9 @@ function changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIteration
     }
 }
 
-function newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter) {
+function newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter) {
     listCoordObj.val[0] = Math.floor(Math.random() * counter);
-    listAxesXObj.val[0] = listCoordObj.val[0] * 100 + initWidth;
+    listAxesXObj.val[0] = listCoordObj.val[0] * 100 + initialWidth;
     listAxesYObj.val[0] = 25;
 }
 
