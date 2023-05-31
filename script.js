@@ -99,7 +99,6 @@ function startTheGame() {
     let initWidth = 25, initHeight = 25;
     let counter = 0;
     let asteroid = [];
-    //const asteroids = {val: [0, 0, 0, 0]};
     for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
         asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
         ++counter;
@@ -108,21 +107,12 @@ function startTheGame() {
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
     const listAxesXObj = {val: [randomWidth * 100 + initWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
-    // const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
-    // const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
-    // const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
     idInterval = window.setInterval(function() {
-        // if (height1.val > 25) {
-        //     asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
-        // }
         if (listAxesYObj.val[0] > 25) {
             asteroid[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
-        // asteroid[currentValue1.val].fall(width1.val, height1.val);
         asteroid[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
-        //asteroidGravity(asteroid, width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
         asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj);
-        //console.log(asteroid[listCoordObj.val[0]] + ' ' + asteroid[listCoordObj.val[1]] + ' ' + asteroid[listCoordObj.val[2]] + ' ' + asteroid[listCoordObj.val[3]]);
         if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
             listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
@@ -134,21 +124,12 @@ function startTheGame() {
         if (listAxesYObj.val[2] == 700) {
             ++score;
             changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
-            // changeCoordonates(width4, height4, width3, height3, currentValue4, currentValue3);
-            // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
-            // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            //newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
             newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
         } else if (listAxesYObj.val[1] == 575) {
             changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
-            // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
-            // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            //newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
             newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
         } else if (listAxesYObj.val[0] == 300) {
             changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
-            // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
-            //newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
             newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
         }
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
@@ -169,29 +150,6 @@ function newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, 
     listAxesYObj.val[0] = 25;
 }
 
-// function newRandomAsteroid(initialValue, initialHeight, initialWidth, initWidth, counter) {
-//     initialValue.val = Math.floor(Math.random() * counter);
-//     initialHeight.val = 25;
-//     initialWidth.val = initialValue.val * 100 + initWidth;
-// }
-
-// function asteroidGravity(asteroid, width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4) {
-//     if (width2.val > 0) {
-//         height2.val = height2.val + 5;
-//         asteroid[currentValue2.val].previousHeight(width2.val, height2.val - 5);
-//         asteroid[currentValue2.val].fall(width2.val, height2.val);
-//     }
-//     if (width3.val > 0) {
-//         height3.val = height3.val + 5;
-//         asteroid[currentValue3.val].previousHeight(width3.val, height3.val - 5);
-//         asteroid[currentValue3.val].fall(width3.val, height3.val);
-//     }
-//     if (width4.val > 0) {
-//         asteroid[currentValue4.val].previousHeight(width4.val, height4.val - 5);
-//         asteroid[currentValue4.val].previousHeight(width4.val, height4.val);
-//     }
-// }
-
 function asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
@@ -205,34 +163,11 @@ function asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj) {
             }
         }
     }
-    // if (width2.val > 0) {
-    //     height2.val = height2.val + 5;
-    //     asteroid[currentValue2.val].previousHeight(width2.val, height2.val - 5);
-    //     asteroid[currentValue2.val].fall(width2.val, height2.val);
-    // }
-    // if (width3.val > 0) {
-    //     height3.val = height3.val + 5;
-    //     asteroid[currentValue3.val].previousHeight(width3.val, height3.val - 5);
-    //     asteroid[currentValue3.val].fall(width3.val, height3.val);
-    // }
-    // if (width4.val > 0) {
-    //     asteroid[currentValue4.val].previousHeight(width4.val, height4.val - 5);
-    //     asteroid[currentValue4.val].previousHeight(width4.val, height4.val);
-    // }
 }
-
-// function changeCoordonates(CurrWidth, CurrHeight, PrevWidth, PrevHeight, CurrVal, PrevVal) {
-//     CurrWidth.val = PrevWidth.val;
-//     CurrHeight.val = PrevHeight.val;
-//     CurrVal.val = PrevVal.val;
-// }
 
 function GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj) {
     airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    // asteroid[currentValue1.val].previousHeight(width1.val, height1.val);
-    // asteroid[currentValue2.val].previousHeight(width2.val, height2.val);
-    // asteroid[currentValue3.val].previousHeight(width3.val, height3.val);
     for (let i = 0; i < 3; ++i) {
         asteroid[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
     }
