@@ -119,15 +119,14 @@ function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, 
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
-        //newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
+        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
     } else if (listAxesYObj.val[1] == 575) {
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
-        //newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
+        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
     } else if (listAxesYObj.val[0] == 300) {
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
-        //newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
+        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
     }
-    newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
 }
 
 function collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj) {
