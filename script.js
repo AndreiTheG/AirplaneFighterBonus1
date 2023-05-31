@@ -171,7 +171,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
     }
 }
 
-function GameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj) {
+function gameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj) {
     airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     for (let i = 0; i < 3; ++i) {
@@ -187,12 +187,12 @@ function GameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXO
     button.className = "btn btn-success";
     button.innerHTML = "Restart";
     button.addEventListener('click', ()=> {
-        Restart();
+        restart();
     });
     container.appendChild(button);  
     document.body.appendChild(container);  
 }
 
-function Restart() {
+function restart() {
     window.location.reload();
 }
