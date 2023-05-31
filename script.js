@@ -15,37 +15,48 @@ class Airplane {
         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
     }
 
+    prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight) {
+        ctx.strokeStyle = "rgb(0, 0, 0)";
+        ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+    }
+
     movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight)
             squareXCoordinate.val = squareXCoordinate.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
         }
     }
 
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight)
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight)
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 }
@@ -116,17 +127,6 @@ function startTheGame() {
         asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
         objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter, score);
-        // if (listAxesYObj.val[2] == 700) {
-        //     ++score;
-        //     changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
-        //     newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
-        // } else if (listAxesYObj.val[1] == 575) {
-        //     changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
-        //     newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
-        // } else if (listAxesYObj.val[0] == 300) {
-        //     changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
-        //     newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
-        // }
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
