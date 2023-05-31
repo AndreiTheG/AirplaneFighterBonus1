@@ -133,7 +133,7 @@ function startTheGame() {
 
 function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
-        ++score;
+        ++score.val;
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
         newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
     } else if (listAxesYObj.val[1] == 575) {
