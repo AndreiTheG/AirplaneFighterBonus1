@@ -79,7 +79,9 @@ class Asteroid {
 
 startTheGame();
 
-function gameControl(airplane, isDestroyed) {
+function startTheGame() {
+    const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+    let isDestroyed = false;
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
             airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
@@ -87,19 +89,6 @@ function gameControl(airplane, isDestroyed) {
             airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
     })
-}
-
-function startTheGame() {
-    const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    let isDestroyed = false;
-    gameControl(airplane, isDestroyed); 
-    // addEventListener("keydown", (event) => {
-    //     if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
-    //         airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    //     } else if (event.code == 'ArrowLeft' && squareXCoordinate.val >= 0) {
-    //         airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    //     }
-    // })
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     let asteroid = [];
