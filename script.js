@@ -76,7 +76,7 @@ class Asteroid {
     }
 
     previousHeight(width, height) {
-        createObjects(width, height, 1);
+        createObjects(width, height, 2);
         // function degToRad(degrees) {
         //     return (degrees * Math.PI) / 180;
         // }
@@ -89,13 +89,14 @@ class Asteroid {
     }
     
     fall(width, height) {
-        function degToRad(degrees) {
-            return (degrees * Math.PI) / 180;
-        }
-        ctx.fillStyle = "rgb(0, 0, 255)";
-        ctx.beginPath();
-        ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
-        ctx.fill();
+        createObjects(width, height, 3);
+        // function degToRad(degrees) {
+        //     return (degrees * Math.PI) / 180;
+        // }
+        // ctx.fillStyle = "rgb(0, 0, 255)";
+        // ctx.beginPath();
+        // ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+        // ctx.fill();
     }
 }
 
