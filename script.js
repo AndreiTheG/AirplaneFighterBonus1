@@ -9,16 +9,16 @@ const squareYCoordinate = {val: 600};
 let squareWidth = 50;
 let squareHeight = 50;
 
+function prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight) {
+    ctx.strokeStyle = "rgb(0, 0, 0)";
+    ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+}
+
 class Airplane {
     constructor(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         ctx.fillStyle = "rgb(255, 0, 0)";
-        ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-    }
-
-    prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight) {
-        ctx.strokeStyle = "rgb(0, 0, 0)";
-        ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-        ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
     }
 
@@ -43,7 +43,7 @@ class Airplane {
 
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight)
+            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
             // ctx.strokeStyle = "rgb(0, 0, 0)";
             // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             // ctx.fillStyle = "rgb(0, 0, 0)";
@@ -52,7 +52,7 @@ class Airplane {
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight)
+            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
             // ctx.strokeStyle = "rgb(0, 0, 0)";
             // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             // ctx.fillStyle = "rgb(0, 0, 0)";
