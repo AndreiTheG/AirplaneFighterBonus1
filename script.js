@@ -34,7 +34,7 @@ class Airplane {
     }
 
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
-        if (isDestroyed == false) {
+        if (isDestroyed.val == false) {
             prevPlaneTrajectory();
             squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
