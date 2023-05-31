@@ -45,37 +45,58 @@ class Airplane {
     }
 }
 
-class Asteroid {
-    constructor(width, height) {
-        function degToRad(degrees) {
-            return (degrees * Math.PI) / 180;
-        }
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.beginPath();
-        ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
-        ctx.fill();
+function createObjects(width, height, valueCondition) {
+    function degToRad(degrees) {
+        return (degrees * Math.PI) / 180;
     }
-
-    previousHeight(width, height) {
-        function degToRad(degrees) {
-            return (degrees * Math.PI) / 180;
-        }
+    if (valueCondition == 1) {
+        ctx.fillStyle = "rgb(0, 0, 0)";
+    } else if (valueCondition == 2) {
         ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
-        ctx.fill();
+    } else {
+        ctx.fillStyle = "rgb(0, 0, 255)";
+    }
+    ctx.beginPath();
+    ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+    ctx.fill();
+}
+
+class Asteroid {
+    constructor(width, height) {
+        createObjects(width, height, 1);
+        // function degToRad(degrees) {
+        //     return (degrees * Math.PI) / 180;
+        // }
+        // ctx.fillStyle = "rgb(0, 0, 0)";
+        // ctx.beginPath();
+        // ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+        // ctx.fill();
+    }
+
+    previousHeight(width, height) {
+        createObjects(width, height, 2);
+        // function degToRad(degrees) {
+        //     return (degrees * Math.PI) / 180;
+        // }
+        // ctx.strokeStyle = "rgb(0, 0, 0)";
+        // ctx.fillStyle = "rgb(0, 0, 0)";
+        // ctx.stroke();
+        // ctx.beginPath();
+        // ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+        // ctx.fill();
     }
     
     fall(width, height) {
-        function degToRad(degrees) {
-            return (degrees * Math.PI) / 180;
-        }
-        ctx.fillStyle = "rgb(0, 0, 255)";
-        ctx.beginPath();
-        ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
-        ctx.fill();
+        createObjects(width, height, 3);
+        // function degToRad(degrees) {
+        //     return (degrees * Math.PI) / 180;
+        // }
+        // ctx.fillStyle = "rgb(0, 0, 255)";
+        // ctx.beginPath();
+        // ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+        // ctx.fill();
     }
 }
 
