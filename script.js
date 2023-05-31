@@ -24,19 +24,11 @@ class Airplane {
 
     movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight)
             squareXCoordinate.val = squareXCoordinate.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
         }
     }
@@ -44,19 +36,11 @@ class Airplane {
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
             prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
             prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 }
