@@ -9,38 +9,43 @@ const squareYCoordinate = {val: 600};
 let squareWidth = 50;
 let squareHeight = 50;
 
-function prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight) {
-    ctx.strokeStyle = "rgb(0, 0, 0)";
-    ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-    ctx.fillStyle = "rgb(0, 0, 0)";
-    ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-}
-
 class Airplane {
     constructor(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         ctx.fillStyle = "rgb(255, 0, 0)";
         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
     }
-
+    
     movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight)
+            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
+            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
+            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            prevPlaneTrajectory(squareXCoordinate, squareYCoordinate, squareWidth, squareHeight);
+            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 }
@@ -77,6 +82,40 @@ class Asteroid {
     }
 }
 
+// class Asteroid {
+//     constructor(width, height) {
+//         function degToRad(degrees) {
+//             return (degrees * Math.PI) / 180;
+//         }
+//         ctx.fillStyle = "rgb(0, 0, 0)";
+//         ctx.beginPath();
+//         ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+//         ctx.fill();
+//     }
+
+//     previousHeight(width, height) {
+//         function degToRad(degrees) {
+//             return (degrees * Math.PI) / 180;
+//         }
+//         ctx.strokeStyle = "rgb(0, 0, 0)";
+//         ctx.fillStyle = "rgb(0, 0, 0)";
+//         ctx.beginPath();
+//         ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+//         ctx.stroke();
+//         ctx.fill();
+//     }
+    
+//     fall(width, height) {
+//         function degToRad(degrees) {
+//             return (degrees * Math.PI) / 180;
+//         }
+//         ctx.fillStyle = "rgb(0, 0, 255)";
+//         ctx.beginPath();
+//         ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+//         ctx.fill();
+//     }
+//}
+
 startTheGame();
 
 function startTheGame() {
@@ -89,17 +128,17 @@ function startTheGame() {
             airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
     })
-    let initialWidth = 25, initialHeight = 25;
+    let initWidth = 25, initHeight = 25;
     let counter = 0;
     let asteroid = [];
-    for (let i = 0; i * 100 + initialWidth < canvasWidth; ++i) {
-        asteroid[i] = new Asteroid(i * 100 + initialWidth, initialHeight);
+    for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
+        asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
         ++counter;
     }
     let randomWidth = Math.floor(Math.random() * counter);
     const score = {val: 0};
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
-    const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
+    const listAxesXObj = {val: [randomWidth * 100 + initWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
@@ -108,29 +147,29 @@ function startTheGame() {
         asteroid[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         asteroidGravity(asteroid, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
-        objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
+        objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
 
-function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score) {
+function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
-        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
+        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
     } else if (listAxesYObj.val[1] == 575) {
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
-        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
+        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
     } else if (listAxesYObj.val[0] == 300) {
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
-        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
+        newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
     }
 }
 
 function collision(idInterval, isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj) {
     if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
-            listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
-            && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
+        listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
+        && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
             listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
         isDestroyed = true;
         GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
@@ -146,9 +185,9 @@ function changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIteration
     }
 }
 
-function newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter) {
+function newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter) {
     listCoordObj.val[0] = Math.floor(Math.random() * counter);
-    listAxesXObj.val[0] = listCoordObj.val[0] * 100 + initialWidth;
+    listAxesXObj.val[0] = listCoordObj.val[0] * 100 + initWidth;
     listAxesYObj.val[0] = 25;
 }
 
