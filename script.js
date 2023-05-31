@@ -23,7 +23,7 @@ class Airplane {
     }
     
     movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
-        if (isDestroyed == false) {
+        if (isDestroyed.val == false) {
             prevPlaneTrajectory() ;
             squareXCoordinate.val = squareXCoordinate.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
@@ -34,7 +34,7 @@ class Airplane {
     }
 
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
-        if (isDestroyed == false) {
+        if (isDestroyed.val == false) {
             prevPlaneTrajectory();
             squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
@@ -91,7 +91,7 @@ function gameController(airplane, isDestroyed) {
 
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    let isDestroyed = false;
+    const isDestroyed = {val: false};
     gameController(airplane, isDestroyed);
     // addEventListener("keydown", (event) => {
     //     if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
@@ -123,7 +123,7 @@ function startTheGame() {
             listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
                 listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
-            isDestroyed = true;
+            isDestroyed.val = true;
             GameOver(isDestroyed, airplane, asteroid, score, listCoordObj, listAxesXObj, listAxesYObj);
             window.clearInterval(idInterval);
         }
