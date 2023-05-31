@@ -99,18 +99,24 @@ function startTheGame() {
     let initWidth = 25, initHeight = 25;
     let counter = 0;
     let asteroid = [];
-    const asteroids = {val: [0, 0, 0, 0]};
+    //const asteroids = {val: [0, 0, 0, 0]};
     for (let i = 0; i * 100 + initWidth < canvasWidth; ++i) {
         asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
         ++counter;
     }
     let randomWidth = Math.floor(Math.random() * counter), score = 0;
-    const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
-    const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
-    const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
+    const listCoordObj = {val: [randomWidth, 0, 0, 0]};
+    const listAxesXObj = {val: [randomWidth * 100 + initWidth, 0, 0, 0]}; 
+    const listAxesYObj = {val: [25, 25, 25, 25]};
+    // const width1 = {val: randomWidth * 100 + initWidth}, width2 = {val: 0}, width3 = {val: 0}, width4 = {val: 0};
+    // const height1 = {val: 25}, height2 = {val: 25}, height3 = {val: 25}, height4 = {val: 25};
+    // const currentValue1 = {val: randomWidth}, currentValue2 = {val: 0}, currentValue3 = {val: 0}, currentValue4 = {val: 0};
     idInterval = window.setInterval(function() {
-        if (height1.val > 25) {
-            asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
+        // if (height1.val > 25) {
+        //     asteroid[currentValue1.val].previousHeight(width1.val, height1.val - 5);
+        // }
+        if (listAxesYObj.val[0] > 25) {
+            asteroid[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
         asteroid[currentValue1.val].fall(width1.val, height1.val);
         asteroidGravity(asteroid, width2, height2, currentValue2, width3, height3, currentValue3, width4, height4, currentValue4);
