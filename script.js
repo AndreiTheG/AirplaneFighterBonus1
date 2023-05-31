@@ -137,7 +137,7 @@ function startTheGame() {
             // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
             //newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
-            newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter)
+            newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
         } else if (listAxesYObj.val[1] == 575) {
             changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
             // changeCoordonates(width3, height3, width2, height2, currentValue3, currentValue2);
@@ -150,7 +150,7 @@ function startTheGame() {
             //newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
             newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
         }
-        listAxesYObj.val[0] = listAxesXObj.val[0] + 5;
+        listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
 
