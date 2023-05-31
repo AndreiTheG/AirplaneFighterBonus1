@@ -103,7 +103,8 @@ function startTheGame() {
         asteroid[i] = new Asteroid(i * 100 + initWidth, initHeight);
         ++counter;
     }
-    let randomWidth = Math.floor(Math.random() * counter), score = 0;
+    let randomWidth = Math.floor(Math.random() * counter)
+    const score = {val: 0};
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
     const listAxesXObj = {val: [randomWidth * 100 + initWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
