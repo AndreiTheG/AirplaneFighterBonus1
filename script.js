@@ -144,7 +144,7 @@ function startTheGame() {
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
             //newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
             newRandomAsteroid(listCoordObj, listAxesXObj, listAxesYObj, initWidth, counter);
-        } else if (listAxesYObj[0].val[0] == 300) {
+        } else if (listAxesYObj.val[0] == 300) {
             changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
             // changeCoordonates(width2, height2, width1, height1, currentValue2, currentValue1);
             //newRandomAsteroid(currentValue1, height1, width1, initWidth, counter);
