@@ -25,63 +25,67 @@ class Airplane {
     movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
             prevPlaneTrajectory() ;
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
             prevPlaneTrajectory();
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
             prevPlaneTrajectory();
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
             prevPlaneTrajectory();
-            // ctx.strokeStyle = "rgb(0, 0, 0)";
-            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            // ctx.fillStyle = "rgb(0, 0, 0)";
-            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 }
 
+function createObjects(width, height, valueCondition) {
+    function degToRad(degrees) {
+        return (degrees * Math.PI) / 180;
+    }
+    if (valueCondition == 1) {
+        ctx.fillStyle = "rgb(0, 0, 0)";
+    } else if (valueCondition == 2) {
+        ctx.strokeStyle = "rgb(0, 0, 0)";
+        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.stroke();
+    } else {
+        ctx.fillStyle = "rgb(0, 0, 255)";
+    }
+    ctx.beginPath();
+    ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+    ctx.fill();
+}
+
 class Asteroid {
     constructor(width, height) {
-        function degToRad(degrees) {
-            return (degrees * Math.PI) / 180;
-        }
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.beginPath();
-        ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
-        ctx.fill();
+        createObjects(width, height, 1);
+        // function degToRad(degrees) {
+        //     return (degrees * Math.PI) / 180;
+        // }
+        // ctx.fillStyle = "rgb(0, 0, 0)";
+        // ctx.beginPath();
+        // ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+        // ctx.fill();
     }
 
     previousHeight(width, height) {
-        function degToRad(degrees) {
-            return (degrees * Math.PI) / 180;
-        }
-        ctx.strokeStyle = "rgb(0, 0, 0)";
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.beginPath();
-        ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
-        ctx.stroke();
-        ctx.fill();
+        createObjects(width, height, 1);
+        // function degToRad(degrees) {
+        //     return (degrees * Math.PI) / 180;
+        // }
+        // ctx.strokeStyle = "rgb(0, 0, 0)";
+        // ctx.fillStyle = "rgb(0, 0, 0)";
+        // ctx.beginPath();
+        // ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+        // ctx.stroke();
+        // ctx.fill();
     }
     
     fall(width, height) {
