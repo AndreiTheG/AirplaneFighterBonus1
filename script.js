@@ -72,11 +72,10 @@ class Asteroid {
         function degToRad(degrees) {
             return (degrees * Math.PI) / 180;
         }
-        // ctx.fillStyle = "rgb(0, 0, 255)";
+        ctx.fillStyle = "rgb(0, 0, 255)";
         ctx.beginPath();
         ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
         ctx.fill();
-        ctx.fillStyle = "rgb(0, 0, 255)";
     }
 }
 
