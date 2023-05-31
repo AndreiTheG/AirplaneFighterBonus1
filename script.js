@@ -9,6 +9,13 @@ const squareYCoordinate = {val: 600};
 let squareWidth = 50;
 let squareHeight = 50;
 
+function prevPlaneTrajectory() {
+    ctx.strokeStyle = "rgb(0, 0, 0)";
+    ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+}
+
 class Airplane {
     constructor(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         ctx.fillStyle = "rgb(255, 0, 0)";
@@ -17,35 +24,39 @@ class Airplane {
     
     movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory() ;
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val + 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory();
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 
     movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed == false) {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory();
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
             squareXCoordinate.val = squareXCoordinate.val - 5;
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
-            ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            prevPlaneTrajectory();
+            // ctx.strokeStyle = "rgb(0, 0, 0)";
+            // ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            // ctx.fillStyle = "rgb(0, 0, 0)";
+            // ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         }
     }
 }
