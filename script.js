@@ -156,7 +156,7 @@ function startTheGame() {
 }
 
 function changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIterations) {
-    for (let i = nrIterations; i > 1; --i) {
+    for (let i = nrIterations; i >= 1; --i) {
         listAxesXObj.val[i] = listAxesXObj.val[i - 1];
         listAxesYObj.val[i] = listAxesYObj.val[i - 1];
         listCoordObj.val[i] = listCoordObj.val[i - 1];
