@@ -83,13 +83,6 @@ function gameController(airplane, isDestroyed) {
             }
             airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
-        // if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
-        //     direction = 1;
-        //     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        // } else if (event.code == 'ArrowLeft' && squareXCoordinate.val >= 0) {
-        //     direction = -1;
-        //     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        // }
     })
 }
 
