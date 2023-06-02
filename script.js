@@ -114,17 +114,19 @@ function startTheGame() {
     }, 25);
 }
 
+// Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
+// new object on top of the screen.  
 function objectHeight(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
-        changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
-        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
+        createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     } else if (listAxesYObj.val[1] == 575) {
-        changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
-        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
+        createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     } else if (listAxesYObj.val[0] == 300) {
-        changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
-        newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
+        createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     }
 }
 
@@ -139,7 +141,7 @@ function collision(idInterval, isDestroyed, airplane, Object, score, listCoordOb
     }
 }
 
-function changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIterations) {
+function changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIterations) {
     for (let i = nrIterations; i >= 1; --i) {
         listAxesXObj.val[i] = listAxesXObj.val[i - 1];
         listAxesYObj.val[i] = listAxesYObj.val[i - 1];
@@ -147,7 +149,7 @@ function changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIteration
     }
 }
 
-function newRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter) {
+function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter) {
     listCoordObj.val[0] = Math.floor(Math.random() * counter);
     listAxesXObj.val[0] = listCoordObj.val[0] * 100 + initialWidth;
     listAxesYObj.val[0] = 25;
