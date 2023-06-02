@@ -75,13 +75,13 @@ startTheGame();
 
 function gameController(airplane, isDestroyed) {
     addEventListener("keydown", (event) => {
-        if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
-            direction = 1;
-            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        } else if (event.code == 'ArrowLeft' && squareXCoordinate.val >= 0) {
-            direction = -1;
-            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        }
+        // if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
+        //     direction = 1;
+        //     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+        // } else if (event.code == 'ArrowLeft' && squareXCoordinate.val >= 0) {
+        //     direction = -1;
+        //     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+        // }
     })
 }
 
@@ -169,7 +169,6 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
 
 function gameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj) {
     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-   // airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, -1);
     for (let i = 0; i < 3; ++i) {
         object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
     }
