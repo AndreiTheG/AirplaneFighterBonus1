@@ -109,12 +109,12 @@ function startTheGame() {
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
-        objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
+        objectHeight(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
 
-function objectsTrajectory(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score) {
+function objectHeight(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         changeCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
