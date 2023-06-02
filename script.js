@@ -21,28 +21,43 @@ class Airplane {
         ctx.fillStyle = "rgb(255, 0, 0)";
         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
     }
-    
-    movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
+
+    movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, direction) {
         if (isDestroyed.val == false) {
             prevPlaneTrajectory() ;
-            squareXCoordinate.val = squareXCoordinate.val + 5;
+            if (direction == 1) {
+                squareXCoordinate.val = squareXCoordinate.val + 5;
+            } else {
+                squareXCoordinate.val = squareXCoordinate.val - 5;
+            }
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
             prevPlaneTrajectory();
         }
     }
+    
+    // movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
+    //     if (isDestroyed.val == false) {
+    //         prevPlaneTrajectory() ;
+    //         squareXCoordinate.val = squareXCoordinate.val + 5;
+    //         ctx.fillStyle = "rgb(255, 0, 0)";
+    //         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+    //     } else {
+    //         prevPlaneTrajectory();
+    //     }
+    // }
 
-    movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
-        if (isDestroyed.val == false) {
-            prevPlaneTrajectory();
-            squareXCoordinate.val = squareXCoordinate.val - 5;
-            ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-        } else {
-            prevPlaneTrajectory();
-        }
-    }
+    // movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
+    //     if (isDestroyed.val == false) {
+    //         prevPlaneTrajectory();
+    //         squareXCoordinate.val = squareXCoordinate.val - 5;
+    //         ctx.fillStyle = "rgb(255, 0, 0)";
+    //         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+    //     } else {
+    //         prevPlaneTrajectory();
+    //     }
+    // }
 }
 
 function createObjects(width, height, valueCondition) {
@@ -82,9 +97,9 @@ startTheGame();
 function gameController(airplane, isDestroyed) {
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
-            airplane.movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, 1);
         } else if (event.code == 'ArrowLeft' && squareXCoordinate.val >= 0) {
-            airplane.movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, -1);
         }
     })
 }
@@ -137,7 +152,7 @@ function collision(idInterval, isDestroyed, airplane, Object, score, listCoordOb
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
             listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
         isDestroyed.val = true;
-        GameOver(isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj);
+        gameOver(isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj);
         window.clearInterval(idInterval);
     }
 }
