@@ -115,7 +115,7 @@ function startTheGame() {
 }
 
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
-// new object on top of the screen.  
+// new object on top of the screen and the value of score increases if the palne avoids an object.  
 function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
