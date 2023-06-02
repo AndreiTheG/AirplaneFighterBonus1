@@ -8,6 +8,7 @@ const squareXCoordinate = {val: (canvasWidth / 2) - 2};
 const squareYCoordinate = {val: 600};
 let squareWidth = 50;
 let squareHeight = 50;
+let direction = 0;
 
 function prevPlaneTrajectory() {
     ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -22,7 +23,7 @@ class Airplane {
         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
     }
 
-    movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, direction) {
+    movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed.val == false) {
             prevPlaneTrajectory() ;
             if (direction == 1) {
@@ -75,9 +76,11 @@ startTheGame();
 function gameController(airplane, isDestroyed) {
     addEventListener("keydown", (event) => {
         if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
-            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, 1);
+            direction = 1;
+            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         } else if (event.code == 'ArrowLeft' && squareXCoordinate.val >= 0) {
-            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, -1);
+            direction = -1;
+            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
     })
 }
@@ -165,7 +168,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
 }
 
 function gameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj) {
-    airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, 1);
+    airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
    // airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, -1);
     for (let i = 0; i < 3; ++i) {
         object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
