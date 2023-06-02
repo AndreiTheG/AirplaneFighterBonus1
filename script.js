@@ -75,6 +75,14 @@ startTheGame();
 
 function gameController(airplane, isDestroyed) {
     addEventListener("keydown", (event) => {
+        if ((event.code == 'ArrowRight' && squareWidth <= canvasWidth - 55) || (event.code == 'ArrowLeft' && squareWidth >= 0)) {
+            if (event.code == 'ArrowRight' && squareWidth <= canvasWidth - 55) {
+                direction = 1;
+            } else {
+                direction = -1;
+            }
+            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+        }
         // if (event.code == 'ArrowRight' && squareXCoordinate.val <= canvasWidth - 55) {
         //     direction = 1;
         //     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
