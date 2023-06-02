@@ -36,28 +36,6 @@ class Airplane {
             prevPlaneTrajectory();
         }
     }
-    
-    // movePlaneToRight(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
-    //     if (isDestroyed.val == false) {
-    //         prevPlaneTrajectory() ;
-    //         squareXCoordinate.val = squareXCoordinate.val + 5;
-    //         ctx.fillStyle = "rgb(255, 0, 0)";
-    //         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-    //     } else {
-    //         prevPlaneTrajectory();
-    //     }
-    // }
-
-    // movePlaneToLeft(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
-    //     if (isDestroyed.val == false) {
-    //         prevPlaneTrajectory();
-    //         squareXCoordinate.val = squareXCoordinate.val - 5;
-    //         ctx.fillStyle = "rgb(255, 0, 0)";
-    //         ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-    //     } else {
-    //         prevPlaneTrajectory();
-    //     }
-    // }
 }
 
 function createObjects(width, height, valueCondition) {
