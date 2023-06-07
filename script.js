@@ -45,7 +45,7 @@ class Airplane {
             }
             ctx.fillStyle = "rgb(0, 255, 0)";
             ctx.beginPath();
-            ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
+            ctx.arc(squareXCoordinate, squareYCoordinate - 40, 20, degToRad(0), degToRad(360), false);
             ctx.fill();
         }
     }
