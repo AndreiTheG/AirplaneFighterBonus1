@@ -88,9 +88,10 @@ function gameController(airplane, isDestroyed) {
                 direction = -1;
             }
             airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        } else if (event.code == 'Enter') {
-            airplane.shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
+        // } else if (event.code == 'Enter') {
+        //     airplane.shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+        // }
     })
 }
 
