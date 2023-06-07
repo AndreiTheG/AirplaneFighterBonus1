@@ -43,7 +43,7 @@ class Airplane {
             function degToRad(degrees) {
                 return (degrees * Math.PI) / 180;
             }
-            ctx.fillstyle = "rgb(0, 255, 255)";
+            ctx.fillstyle = "rgb(0, 255, 0)";
             ctx.beginPath();
             ctx.arc(squareWidth, squareHeight - 20, 20, degToRad(0), degToRad(360), false);
             ctx.fill();
