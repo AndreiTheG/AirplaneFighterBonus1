@@ -38,8 +38,9 @@ class Airplane {
         }
     }
 
-    shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
+    shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted) {
         if (isDestroyed.val == false) {
+            shouted = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, squareWidth, squareHeight);
             console.log("Shooting......");
@@ -97,10 +98,10 @@ function gameController(airplane, isDestroyed) {
     })
 }
 
-function shooting(airplane, isDestroyed) {
+function shooting(airplane, isDestroyed, shouted) {
     addEventListener("keydown", (event) => {
         if (event.code == 'Enter') {
-            airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+            airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
         }
     })
 }
