@@ -40,13 +40,8 @@ class Airplane {
 
     shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed.val == false) {
-            function score(degrees) {
-                return (degrees * Math.PI) / 180;
-            }
-            ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.beginPath();
-            ctx.arc(squareXCoordinate.val, squareYCoordinate.val - 40, 20, score(0), score(360), false);
-            ctx.fill();
+            ctx.fillStyle = "rgb(255, 255, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, squareWidth, squareHeight);
             console.log("Shooting......");
         }
     }
@@ -57,10 +52,7 @@ function createObjects(width, height, valueCondition) {
         return (degrees * Math.PI) / 180;
     }
     if (valueCondition == 1) {
-        ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.stroke();
-
     } else if (valueCondition == 2) {
         ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.fillStyle = "rgb(0, 0, 0)";
