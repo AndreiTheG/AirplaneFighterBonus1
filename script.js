@@ -57,7 +57,7 @@ function createObjects(width, height, valueCondition) {
         return (degrees * Math.PI) / 180;
     }
     if (valueCondition == 1) {
-        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.stroke();
 
