@@ -127,6 +127,7 @@ function startTheGame() {
     idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
+            console.log(shouted);
         }
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
