@@ -44,6 +44,7 @@ class Airplane {
                 return (degrees * Math.PI) / 180;
             }
             ctx.fillStyle = "rgb(0, 255, 255)";
+            ctx.strokeStyle = "rgb(0, 0, 0)";
             ctx.beginPath();
             ctx.arc(squareXCoordinate, squareYCoordinate - 20, 10, shoot(0), shoot(360), false);
             ctx.fill();
