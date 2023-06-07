@@ -40,7 +40,7 @@ class Airplane {
 
     shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed.val == false) {
-            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.strokeStyle = "rgb(0, 255, 0)";
             ctx.strokeRect(squareXCoordinate.val, squareYCoordinate.val - 40, squareWidth, squareHeight);
             console.log("Shooting......");
         }
