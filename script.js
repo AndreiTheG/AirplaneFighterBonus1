@@ -40,7 +40,7 @@ class Airplane {
 
     shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted) {
         if (isDestroyed.val == false) {
-            shouted = true;
+            shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, squareWidth, squareHeight);
             console.log("Shooting......");
@@ -127,7 +127,7 @@ function startTheGame() {
     idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
-            console.log(shouted);
+            console.log(shouted.val);
         }
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
