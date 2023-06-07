@@ -37,6 +37,12 @@ class Airplane {
             prevPlaneTrajectory();
         }
     }
+
+    shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
+        if (isDestroyed.val == false) {
+            console.log("Shooting......");
+        }
+    }
 }
 
 function createObjects(width, height, valueCondition) {
@@ -82,6 +88,8 @@ function gameController(airplane, isDestroyed) {
                 direction = -1;
             }
             airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+        } else if (event.code == 'Enter') {
+            airplane.shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
     })
 }
