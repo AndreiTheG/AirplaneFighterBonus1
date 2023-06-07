@@ -40,6 +40,12 @@ class Airplane {
 
     shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed.val == false) {
+            function degToRad(degrees) {
+                return (degrees * Math.PI) / 180;
+            }
+            ctx.fillstyle = "rgb(0, 255, 255)";
+            ctx.beginPath();
+            ctx.arc(squareXCoordinate, squareYCoordinate - 20, 10, degToRad(0), degToRad(360), false)
             console.log("Shooting......");
         }
     }
