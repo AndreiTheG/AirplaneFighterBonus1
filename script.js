@@ -38,7 +38,7 @@ class Airplane {
         }
     }
 
-    shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
+    shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed.val == false) {
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, squareWidth, squareHeight);
@@ -100,7 +100,7 @@ function gameController(airplane, isDestroyed) {
 function shooting(airplane, isDestroyed) {
     addEventListener("keydown", (event) => {
         if (event.code == 'Enter') {
-            airplane.shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+            airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
     })
 }
@@ -109,7 +109,8 @@ function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
     gameController(airplane, isDestroyed);
-    shooting(airplane, isDestroyed);
+    const shouted = {val: false};
+    shooting(airplane, isDestroyed, shouted);
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     let object = [];
