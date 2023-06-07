@@ -32,7 +32,7 @@ class Airplane {
                 squareXCoordinate.val = squareXCoordinate.val - 5;
             }
             ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, squareWidth, squareHeight);
         } else {
             prevPlaneTrajectory();
         }
