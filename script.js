@@ -32,7 +32,7 @@ class Airplane {
                 squareXCoordinate.val = squareXCoordinate.val - 5;
             }
             ctx.fillStyle = "rgb(255, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, squareWidth, squareHeight);
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
         } else {
             prevPlaneTrajectory();
         }
@@ -42,7 +42,7 @@ class Airplane {
         if (isDestroyed.val == false) {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, 10, 20);
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
             console.log("Shooting......");
         }
     }
