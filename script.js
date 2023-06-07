@@ -107,6 +107,7 @@ function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
     gameController(airplane, isDestroyed);
+    shooting(airplane, isDestroyed);
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     let object = [];
