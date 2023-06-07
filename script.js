@@ -45,7 +45,7 @@ class Airplane {
             }
             ctx.fillStyle = "rgb(0, 255, 255)";
             ctx.beginPath();
-            ctx.arc(squareXCoordinate, squareYCoordinate - 20, 10, degToRad(0), degToRad(360), false);
+            ctx.arc(squareXCoordinate, squareYCoordinate - 20, 10, degToRad(0), shoot(360), false);
             ctx.fill();
             console.log("Shooting......");
         }
