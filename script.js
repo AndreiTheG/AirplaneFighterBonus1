@@ -112,7 +112,8 @@ function startTheGame() {
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
-    if (shouted == true) {
+    if (shouted.val == true) {
+        console.log("Adevarat");
         const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
         shooter = window.setInterval(function() {
             ctx.fillStyle = "rgb(0, 0, 0)";
