@@ -38,11 +38,23 @@ class Airplane {
         }
     }
 
-    shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted) {
+    shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
         if (isDestroyed.val == false) {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
+            console.log("Shooting......");
+        }
+    }
+
+    movingFire(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
+        if (isDestroyed.val == false) {
+            shouted.val = true;
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, 10, 20);
+            squareYCoordinate.val = squareYCoordinate - 5;
+            ctx.fillStyle = "rgb(255, 255, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, 10, 20);
             console.log("Shooting......");
         }
     }
@@ -112,6 +124,9 @@ function startTheGame() {
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
+    shooter = window.setInterval( function() {
+        airplane.movingFire(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
+    }, 40);
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     let object = [];
