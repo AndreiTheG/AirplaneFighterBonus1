@@ -47,8 +47,10 @@ class Airplane {
         }
     }
 
-    movingFire(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
+    movingFire(isDestroyed, fireXCoordinate, fireYCoordinate, shouted) {
         if (isDestroyed.val == false) {
+            ctx.fillStyle = "rgb(255, 255, 0)";
+            ctx.fillRect(fireXCoordinate.val, fireYCoordinate.val, 10, 20);
             console.log("Shooting......");
         }
     }
