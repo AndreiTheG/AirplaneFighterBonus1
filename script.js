@@ -49,12 +49,6 @@ class Airplane {
 
     movingFire(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
         if (isDestroyed.val == false) {
-            shouted.val = true;
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, 10, 20);
-            squareYCoordinate.val = squareYCoordinate - 5;
-            ctx.fillStyle = "rgb(255, 255, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, 10, 20);
             console.log("Shooting......");
         }
     }
