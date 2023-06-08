@@ -113,9 +113,9 @@ function startTheGame() {
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
     console.log(shouted.val);
-    if (shouted.val == true) {
-        console.log("Adevarat");
-        const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
+    //if (shouted.val == true) {
+    //    console.log("Adevarat");
+    //    const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
         shooter = window.setInterval(function() {
             ctx.fillStyle = "rgb(0, 0, 0)";
             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -123,7 +123,7 @@ function startTheGame() {
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
         }, 40);
-    }
+    //}
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     let object = [];
