@@ -112,7 +112,6 @@ function startTheGame() {
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
-    console.log(shouted.val);
     //if (shouted.val == true) {
     //    console.log("Adevarat");
     //}
@@ -131,7 +130,6 @@ function startTheGame() {
     idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
-            console.log(shouted.val);
         }
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
@@ -143,6 +141,9 @@ function startTheGame() {
                 fireYCoord.val = fireYCoord.val - 5;
                 ctx.fillStyle = "rgb(255, 255, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                if (fireXCoord.val == listAxesXObj.val[0]) {
+                    console.log("true");
+                }
             }, 40);
             shouted.val = false;
         }
