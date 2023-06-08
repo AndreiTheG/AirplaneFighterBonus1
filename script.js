@@ -115,7 +115,7 @@ function startTheGame() {
     console.log(shouted.val);
     //if (shouted.val == true) {
     //    console.log("Adevarat");
-    //    const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
+    const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
         shooter = window.setInterval(function() {
             ctx.fillStyle = "rgb(0, 0, 0)";
             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
