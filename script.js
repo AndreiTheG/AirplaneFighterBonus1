@@ -112,6 +112,16 @@ function startTheGame() {
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
+    if (shouted == true) {
+        const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
+        shooter = window.setInterval(function() {
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+            fireYCoord.val = fireYCoord - 5;
+            ctx.fillStyle = "rgb(255, 255, 0)";
+            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+        }, 40);
+    }
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     let object = [];
