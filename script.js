@@ -118,8 +118,9 @@ function startTheGame() {
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
+    const fireShootX = {val: squareXCoordinate.val}, fireShootY = {val: squareYCoordinate.val - 40};
     shooter = window.setInterval( function() {
-        airplane.movingFire(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
+        airplane.movingFire(isDestroyed, fireShootX, fireShootY, shouted);
     }, 40);
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
