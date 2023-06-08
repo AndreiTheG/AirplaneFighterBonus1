@@ -38,7 +38,7 @@ class Airplane {
         }
     }
 
-    shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
+    shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted) {
         if (isDestroyed.val == false) {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
