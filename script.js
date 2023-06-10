@@ -148,8 +148,8 @@ function startTheGame() {
                     console.log("true");
                 }
                 if (isDestroyed.val == true) {
-                    window.clearInterval(shooter);
                     airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
+                    window.clearInterval(shooter);
                 }
             }, 40);
             shouted.val = false;
