@@ -38,7 +38,7 @@ class Airplane {
         }
     }
 
-    shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
+    shoot(isDestroyed, squareXCoordinate, squareYCoordinate, fireXCoord, fireYCoord, shouted) {
         if (isDestroyed.val == false) {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
@@ -46,7 +46,7 @@ class Airplane {
             console.log("Shooting......");
         } else {
             ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
+            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
             console.log("False");
         }
     }
@@ -105,7 +105,7 @@ function gameController(airplane, isDestroyed) {
 function shooting(airplane, isDestroyed, shouted) {
     addEventListener("keydown", (event) => {
         if (event.code == 'Enter') {
-            airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
+            airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, fireXCoord, fireYCoord, shouted);
         }
     })
 }
@@ -149,7 +149,7 @@ function startTheGame() {
                     console.log("true");
                 }
                 if (isDestroyed.val == true) {
-                    airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
+                    airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, fireXCoord, fireYCoord, shouted);
                     window.clearInterval(shooter);
                 }
             }, 40);
