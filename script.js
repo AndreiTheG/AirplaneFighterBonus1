@@ -145,11 +145,12 @@ function startTheGame() {
                 fireYCoord.val = fireYCoord.val - 5;
                 ctx.fillStyle = "rgb(255, 255, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                console.log(fireXCoord.val + ' ' + fireYCoord.val);
                 if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
                     console.log("true");
                 }
                 if (isDestroyed.val == true) {
-                    console.log(fireXCoord.val + ' ' + fireYCoord.val);
+                    
                     airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
                     window.clearInterval(shooter);
                 }
