@@ -147,6 +147,9 @@ function startTheGame() {
                 if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
                     console.log("true");
                 }
+                if (isDestroyed.val == true) {
+                    window.clearInterval(shooter);
+                }
             }, 40);
             shouted.val = false;
         }
