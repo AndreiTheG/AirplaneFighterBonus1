@@ -138,6 +138,7 @@ function startTheGame() {
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
             shooter = window.setInterval(function() {
+                console.log(fireXCoord.val + ' ' + fireYCoord.val);
                 ctx.fillStyle = "rgb(0, 0, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -145,7 +146,6 @@ function startTheGame() {
                 fireYCoord.val = fireYCoord.val - 5;
                 ctx.fillStyle = "rgb(255, 255, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                console.log(fireXCoord.val + ' ' + fireYCoord.val);
                 if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
                     console.log("true");
                 }
