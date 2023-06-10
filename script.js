@@ -38,7 +38,7 @@ class Airplane {
         }
     }
 
-    shoot(isDestroyed, squareXCoordinate, squareYCoordinate, fireXCoord, fireYCoord, shouted) {
+    shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
         if (isDestroyed.val == false) {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
@@ -149,7 +149,7 @@ function startTheGame() {
                     console.log("true");
                 }
                 if (isDestroyed.val == true) {
-                    airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, fireXCoord, fireYCoord, shouted);
+                    airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
                     window.clearInterval(shooter);
                 }
             }, 40);
