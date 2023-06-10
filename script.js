@@ -149,6 +149,7 @@ function startTheGame() {
                     console.log("true");
                 }
                 if (isDestroyed.val == true) {
+                    console.log(fireXCoord.val + ' ' + fireYCoord.val);
                     airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
                     window.clearInterval(shooter);
                 }
