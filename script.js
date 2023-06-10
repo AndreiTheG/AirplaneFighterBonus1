@@ -146,11 +146,10 @@ function startTheGame() {
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
                     console.log("true");
-                    airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
                 }
                 if (isDestroyed.val == true) {
                     window.clearInterval(shooter);
-                    airplane.shoot()
+                    airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
                 }
             }, 40);
             shouted.val = false;
