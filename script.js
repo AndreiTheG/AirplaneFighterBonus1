@@ -150,7 +150,6 @@ function startTheGame() {
                     console.log("true");
                 }
                 if (isDestroyed.val == true) {
-                    
                     airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
                     window.clearInterval(shooter);
                 }
