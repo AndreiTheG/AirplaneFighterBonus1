@@ -102,7 +102,7 @@ function gameController(airplane, isDestroyed) {
     })
 }
 
-function shooting(airplane, isDestroyed, shouted) {
+function shooting(airplane, isDestroyed, fireXCoord, fireYCoord, shouted) {
     addEventListener("keydown", (event) => {
         if (event.code == 'Enter') {
             airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, fireXCoord, fireYCoord, shouted);
