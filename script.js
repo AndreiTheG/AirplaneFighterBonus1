@@ -150,7 +150,9 @@ function startTheGame() {
                     console.log("true");
                 }
                 if (isDestroyed.val == true) {
-                    airplane.shoot(isDestroyed, fireXCoord, fireYCoord, shouted);
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.strokeStyle = "rgb(0, 0, 0)";
+                    //airplane.shoot(isDestroyed, fireXCoord, fireYCoord, shouted);
                     window.clearInterval(shooter);
                 }
             }, 40);
