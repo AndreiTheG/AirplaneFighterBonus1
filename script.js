@@ -44,6 +44,9 @@ class Airplane {
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
             console.log("Shooting......");
+        } else {
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
         }
     }
 }
@@ -213,6 +216,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
 
 function gameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj) {
     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+    airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
     for (let i = 0; i < 3; ++i) {
         object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
     }
