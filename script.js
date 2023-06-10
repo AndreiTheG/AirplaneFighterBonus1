@@ -152,7 +152,7 @@ function startTheGame() {
         }
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
-        collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
+        collision(idInterval, shooter, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
@@ -174,13 +174,14 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, 
     }
 }
 
-function collision(idInterval, isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj) {
+function collision(idInterval, shooter, isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj) {
     if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
             listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
             listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
         isDestroyed.val = true;
         gameOver(isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj);
+        window.clearInterval(shooter);
         window.clearInterval(idInterval);
     }
 }
@@ -216,7 +217,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
 
 function gameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj) {
     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    shooting(airplane, isDestroyed, shouted);
+    //shooting(airplane, isDestroyed, shouted);
     //airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
     for (let i = 0; i < 3; ++i) {
         object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
