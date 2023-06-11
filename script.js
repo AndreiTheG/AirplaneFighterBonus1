@@ -44,11 +44,11 @@ class Airplane {
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
             console.log("Shooting......");
-        } else {
+        } /*else {
             ctx.fillStyle = "rgb(0, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
             console.log("False");
-        }
+        }*/
     }
 }
 
