@@ -147,11 +147,11 @@ function startTheGame() {
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20) {
-                        console.log("Se incadreaza");
+                        console.log("Se incadreaza 0");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20) {
-                        console.log("Se incadreaza");
+                        console.log("Se incadreaza 1");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
-                        console.log("Se incadreaza");
+                        console.log("Se incadreaza 2");
                     }
                 } else {
                     clearInterval(shooter);
