@@ -260,6 +260,8 @@ function gameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXO
     for (let i = 0; i < 3; ++i) {
         object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
     }
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     ctx.fillStyle = "red";
     ctx.font = "48px Arial";
     ctx.fillText("Your score is " + score.val + "!", canvasWidth / 2, canvasHeight / 2);
