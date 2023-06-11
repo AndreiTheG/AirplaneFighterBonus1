@@ -157,7 +157,7 @@ function startTheGame() {
                 }*/
                 else if (isDestroyed.val == true) {
                     console.log("A disparut");
-                    isDestroyed.val = false;
+                    //isDestroyed.val = false;
                     // ctx.fillStyle = "rgb(0, 0, 0)";
                     // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     // ctx.strokeStyle = "rgb(0, 0, 0)";
