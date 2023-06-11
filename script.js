@@ -152,9 +152,9 @@ function startTheGame() {
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 }
-                else if (isDestroyed.val == true) {
+                /*else if (isDestroyed.val == true) {
                     clearInterval(shooter);
-                }
+                }*/
             }, 40);
             shouted.val = false;
         }
