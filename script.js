@@ -133,13 +133,13 @@ function startTheGame() {
     const listAxesYObj = {val: [25, 25, 25, 25]};
     //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
     idInterval = window.setInterval(function() {
-        const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
+        //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
-        console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);
+        //console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);
         if (shouted.val == true) {
-            //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};            
+            const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};            
             const shooter = setInterval(function() {
                 console.log("Nr. 2 " + fireXCoord.val + ' ' + fireYCoord.val);
                 /*ctx.fillStyle = "rgb(0, 0, 0)";
@@ -175,7 +175,7 @@ function startTheGame() {
         }
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
-        collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj, fireXCoord, fireYCoord);
+        collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
@@ -197,16 +197,12 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, 
     }
 }
 
-function collision(idInterval, isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj, fireXCoord, fireYCoord) {
+function collision(idInterval, isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj) {
     if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
             listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
             listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
         isDestroyed.val = true;
-        console.log(fireXCoord.val + " " + fireYCoord.val);
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-        ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
         gameOver(isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj);
         window.clearInterval(idInterval);
