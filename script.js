@@ -165,7 +165,7 @@ function startTheGame() {
                     // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     //airplane.shoot(isDestroyed, fireXCoord, fireYCoord, shouted);
                     // window.clearInterval(shooter);
-                    window.clearInterval(idInterval);
+                    //window.clearInterval(idInterval);
                 }
             }, 40);
             shouted.val = false;
