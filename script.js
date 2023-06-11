@@ -143,9 +143,11 @@ function startTheGame() {
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 ctx.strokeStyle = "rgb(0, 0, 0)";
                 ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                fireYCoord.val = fireYCoord.val - 5;
-                ctx.fillStyle = "rgb(255, 255, 0)";
-                ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                if (isDestroyed.va == false) {
+                    fireYCoord.val = fireYCoord.val - 5;
+                    ctx.fillStyle = "rgb(255, 255, 0)";
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                }
                 /*if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
                     console.log("true");
                 }*/
