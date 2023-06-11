@@ -137,7 +137,7 @@ function startTheGame() {
         }
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
-            shooter = window.setInterval(function() {
+            const shooter = setInterval(function() {
                 console.log(fireXCoord.val + ' ' + fireYCoord.val);
                 /*ctx.fillStyle = "rgb(0, 0, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -156,7 +156,7 @@ function startTheGame() {
                     console.log("true");
                 }*/
                 else if (isDestroyed.val == true) {
-                    window.clearInterval(shooter);
+                    clearInterval(shooter);
                     console.log("A disparut");
                     //isDestroyed.val = false;
                     // ctx.fillStyle = "rgb(0, 0, 0)";
