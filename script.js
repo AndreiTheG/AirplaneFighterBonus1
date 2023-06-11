@@ -146,6 +146,9 @@ function startTheGame() {
                     fireYCoord.val = fireYCoord.val - 5;
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    if (fireXCoord.val >= listAxesXObj.val && fireXCoord.val <= listAxesXObj.val + 20) {
+                        console.log("Se incadreaza");
+                    }
                 } else {
                     clearInterval(shooter);
                 }
