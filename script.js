@@ -137,9 +137,7 @@ function startTheGame() {
         }
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
-            console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);   
             const shooter = setInterval(function() {
-                console.log("Nr. 2 " + fireXCoord.val + ' ' + fireYCoord.val);   
                 if (isDestroyed.val == false) {
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
