@@ -133,7 +133,7 @@ function startTheGame() {
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const value = {val: 0};
     //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
-    const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
+    //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
     idInterval = window.setInterval(function() {
         //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
         if (listAxesYObj.val[0] > 25) {
@@ -141,7 +141,7 @@ function startTheGame() {
         }
         //console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);
         if (shouted.val == true) {
-            // const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
+            const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
             console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);   
             const shooter = setInterval(function() {
                 ++value.val;
