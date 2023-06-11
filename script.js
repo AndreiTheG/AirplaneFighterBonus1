@@ -158,7 +158,6 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
-        console.log(value.val);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
