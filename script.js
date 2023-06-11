@@ -146,7 +146,8 @@ function startTheGame() {
                     fireYCoord.val = fireYCoord.val - 5;
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20) {
+                    if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
+                        && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20) {
                         console.log("Se incadreaza 0");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20) {
                         console.log("Se incadreaza 1");
