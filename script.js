@@ -139,10 +139,10 @@ function startTheGame() {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
             shooter = window.setInterval(function() {
                 console.log(fireXCoord.val + ' ' + fireYCoord.val);
-                ctx.fillStyle = "rgb(0, 0, 0)";
+                /*ctx.fillStyle = "rgb(0, 0, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 ctx.strokeStyle = "rgb(0, 0, 0)";
-                ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);*/
                 if (isDestroyed.val == false) {
                     fireYCoord.val = fireYCoord.val - 5;
                     ctx.fillStyle = "rgb(255, 255, 0)";
