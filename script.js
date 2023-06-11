@@ -188,7 +188,7 @@ function collision(idInterval, isDestroyed, airplane, Object, score, listCoordOb
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
             listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
         isDestroyed.val = true;
-        gameOver(isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj);
+        gameOver(isDestroyed, airplane, score);
         window.clearInterval(idInterval);
     }
 }
@@ -222,7 +222,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
     }
 }
 
-function gameOver(isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj) {
+function gameOver(isDestroyed, airplane, score) {
     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     //shooting(airplane, isDestroyed, shouted);
     //airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
