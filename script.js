@@ -137,11 +137,13 @@ function startTheGame() {
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
+        let value = 0;
         //console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
             console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);   
             const shooter = setInterval(function() {
+                ++value;
                 console.log("Nr. 2 " + fireXCoord.val + ' ' + fireYCoord.val);
                 /*ctx.fillStyle = "rgb(0, 0, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -185,6 +187,7 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
+        console.log(value);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
