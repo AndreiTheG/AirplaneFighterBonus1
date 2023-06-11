@@ -25,7 +25,7 @@ class Airplane {
 
     movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate) {
         if (isDestroyed.val == false) {
-            prevPlaneTrajectory() ;
+            //prevPlaneTrajectory() ;
             if (direction == 1) {
                 squareXCoordinate.val = squareXCoordinate.val + 5;
             } else {
