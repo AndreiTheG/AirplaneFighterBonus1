@@ -131,18 +131,14 @@ function startTheGame() {
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
-    //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
-    //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
     idInterval = window.setInterval(function() {
-        //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
-        //console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
             console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);   
-            const shooter = setInterval(function() {
+            shooter = window.setInterval(function() {
                 if (isDestroyed.val == false) {
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
