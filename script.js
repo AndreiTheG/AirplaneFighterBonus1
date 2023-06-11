@@ -159,10 +159,10 @@ function startTheGame() {
                     clearInterval(shooter);
                     console.log("A disparut");
                     //isDestroyed.val = false;
-                    // ctx.fillStyle = "rgb(0, 0, 0)";
-                    // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    // ctx.strokeStyle = "rgb(0, 0, 0)";
-                    // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.fillStyle = "rgb(0, 0, 0)";
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.strokeStyle = "rgb(0, 0, 0)";
+                    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     //airplane.shoot(isDestroyed, fireXCoord, fireYCoord, shouted);
                     // window.clearInterval(shooter);
                     //window.clearInterval(idInterval);
