@@ -131,7 +131,6 @@ function startTheGame() {
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
-    const value = {val: 0};
     //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
     //const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};
     idInterval = window.setInterval(function() {
@@ -144,23 +143,6 @@ function startTheGame() {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
             console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);   
             const shooter = setInterval(function() {
-                ++value.val;
-                console.log("Nr. 2 " + fireXCoord.val + ' ' + fireYCoord.val);
-                /*ctx.fillStyle = "rgb(0, 0, 0)";
-                ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                ctx.strokeStyle = "rgb(0, 0, 0)";
-                ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);*/
-                /*if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
-                    listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
-                    && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
-                    listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
-                    ctx.fillStyle = "rgb(0, 0, 0)";
-                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    ctx.strokeStyle = "rgb(0, 0, 0)";
-                    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    console.log("Este adevarat");
-                    collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
-                }*/
                 if (isDestroyed.val == false) {
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -170,20 +152,8 @@ function startTheGame() {
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 }
-                /*if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
-                    console.log("true");
-                }*/
                 else if (isDestroyed.val == true) {
                     clearInterval(shooter);
-                    //console.log("A disparut");
-                    //isDestroyed.val = false;
-                    // ctx.fillStyle = "rgb(0, 0, 0)";
-                    // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    // ctx.strokeStyle = "rgb(0, 0, 0)";
-                    // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //airplane.shoot(isDestroyed, fireXCoord, fireYCoord, shouted);
-                    // window.clearInterval(shooter);
-                    //window.clearInterval(idInterval);
                 }
             }, 40);
             shouted.val = false;
