@@ -151,7 +151,7 @@ function startTheGame() {
                 /*if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20) {
                     console.log("true");
                 }*/
-                if (isDestroyed.val == true) {
+                else if (isDestroyed.val == true) {
                     console.log("A disparut");
                     //ctx.fillStyle = "rgb(0, 0, 0)";
                     //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
