@@ -151,7 +151,12 @@ function startTheGame() {
                     listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
                     && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
                     listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
+                    ctx.fillStyle = "rgb(0, 0, 0)";
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.strokeStyle = "rgb(0, 0, 0)";
+                    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     console.log("Este adevarat");
+                    collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
                 }
                 if (isDestroyed.val == false) {
                     ctx.fillStyle = "rgb(0, 0, 0)";
