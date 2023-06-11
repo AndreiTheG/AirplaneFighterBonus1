@@ -141,12 +141,18 @@ function startTheGame() {
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
             console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);   
-            const shooter = setInterval(function(fireXCoord, fireYCoord) {
+            const shooter = setInterval(function() {
                 console.log("Nr. 2 " + fireXCoord.val + ' ' + fireYCoord.val);
                 /*ctx.fillStyle = "rgb(0, 0, 0)";
                 ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 ctx.strokeStyle = "rgb(0, 0, 0)";
                 ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);*/
+                if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
+                    listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
+                    && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
+                    listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
+                    console.log("Este adevarat");
+                }
                 if (isDestroyed.val == false) {
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
