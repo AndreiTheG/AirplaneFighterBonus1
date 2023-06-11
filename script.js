@@ -155,9 +155,9 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]) {
                         console.log("Se incadreaza 3");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]) {
-                        console.log("Se incadreaza 3");
+                        console.log("Se incadreaza 4");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]) {
-                        console.log("Se incadreaza 3");
+                        console.log("Se incadreaza 5");
                     }
                 } else {
                     clearInterval(shooter);
