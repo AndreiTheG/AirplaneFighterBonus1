@@ -153,7 +153,7 @@ function startTheGame() {
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                 }
             }, 40);
-            //shouted.val = false;
+            shouted.val = false;
         }
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
