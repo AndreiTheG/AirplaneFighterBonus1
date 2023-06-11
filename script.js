@@ -160,7 +160,7 @@ function startTheGame() {
         }
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
-        collision(idInterval, isDestroyed, airplane, object, score, listCoordObj, listAxesXObj, listAxesYObj);
+        collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
@@ -182,7 +182,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, 
     }
 }
 
-function collision(idInterval, isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj) {
+function collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj) {
     if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
             listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
