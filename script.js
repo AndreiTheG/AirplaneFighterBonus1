@@ -203,7 +203,6 @@ function collision(idInterval, isDestroyed, airplane, Object, score, listCoordOb
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
             listAxesYObj.val[2] - squareYCoordinate.val >= 0 && listAxesYObj.val[2] - squareYCoordinate.val < 70)) {
         isDestroyed.val = true;
-        ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
         gameOver(isDestroyed, airplane, Object, score, listCoordObj, listAxesXObj, listAxesYObj);
         window.clearInterval(idInterval);
     }
