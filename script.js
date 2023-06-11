@@ -33,9 +33,9 @@ class Airplane {
             }
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-        } /*else {
+        } else {
             prevPlaneTrajectory();
-        }*/
+        }
     }
 
     shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
