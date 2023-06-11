@@ -143,7 +143,7 @@ function startTheGame() {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
             console.log("Nr. 1 " + fireXCoord.val + ' ' + fireYCoord.val);   
             const shooter = setInterval(function() {
-                if (isDestroyed.val == false) {
+                //if (isDestroyed.val == false) {
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -151,10 +151,7 @@ function startTheGame() {
                     fireYCoord.val = fireYCoord.val - 5;
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                }
-                /*else if (isDestroyed.val == true) {
-                    clearInterval(shooter);
-                }*/
+                //}
             }, 40);
             shouted.val = false;
         }
