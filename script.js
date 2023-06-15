@@ -134,6 +134,7 @@ function startTheGame() {
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
     idInterval = window.setInterval(function() {
+        console.log(listAxesXObj.val[2] && listAxesYObj.val[2]);
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
@@ -246,7 +247,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
             if (i < 3) {
                 listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                console.log(listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
+                //console.log(listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
                 if (collided.val[i] == false) {
                     object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                 } /*else {
