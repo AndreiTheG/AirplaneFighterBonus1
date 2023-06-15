@@ -79,8 +79,8 @@ class Object {
         createObjects(width, height, 2);
     }
     
-    fall(width, height) {
-        createObjects(width, height, 3);
+    fall(width, height, collided) {
+        createObjects(width, height, collided, 3);
     }
 }
 
@@ -135,6 +135,7 @@ function startTheGame() {
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
+        const collided = {val: false};
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
             const shooter = setInterval(function() {
@@ -149,27 +150,33 @@ function startTheGame() {
                     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20) {
                             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
+                            collided.val = true;
                         console.log("Se incadreaza 0");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20) {
                             //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
                             object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+                            collided.val = true;
                         console.log("Se incadreaza 1");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20) {
                             object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+                            collided.val = true;
                         console.log("Se incadreaza 2");
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20) {
                             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
+                            collided.val = true;
                         console.log("Se incadreaza 3");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20) {
                             object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+                            collided.val = true;
                         console.log("Se incadreaza 4");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20) {
                             object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+                            collided.val = true;
                         console.log("Se incadreaza 5");
                     }
                 } else {
@@ -179,7 +186,7 @@ function startTheGame() {
             shouted.val = false;
         }
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
-        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
+        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
@@ -227,13 +234,13 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
     listAxesYObj.val[0] = 25;
 }
 
-function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
+function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
                 listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
+                object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i], collided.val);
             } else {
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
