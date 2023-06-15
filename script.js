@@ -201,9 +201,9 @@ function startTheGame() {
 function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
-        if (collided.val ==true) {
+        //if (collided.val ==true) {
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
-        }
+        //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[1] == 575) {
         //if (collided.val ==true) {
