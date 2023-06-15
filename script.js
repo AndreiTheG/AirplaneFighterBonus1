@@ -248,7 +248,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
 
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     let notShot = true;
-    for (let i = 1; i < 4 && notShot == true; ++i) {
+    for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
                 //listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
@@ -258,9 +258,9 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                     object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-                } /*else {
-                    notShot = false;
-                }*/
+                } else {
+                    collided.val[i] = false;
+                }
             } else {
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
