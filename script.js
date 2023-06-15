@@ -202,19 +202,19 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         //if (collided.val ==true) {
-            console.log(collided.val[2]);
+            console.log(collided.val[2] + ' 2');
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[1] == 575) {
         //if (collided.val ==true) {
-            console.log(collided.val[1]);
+            console.log(collided.val[1] + ' 1');
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[0] == 300) {
         //if (collided.val ==true) {
-            console.log(collided.val[0]);
+            console.log(collided.val[0]+ ' 2');
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
