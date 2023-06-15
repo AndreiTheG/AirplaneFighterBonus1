@@ -113,6 +113,7 @@ function shooting(airplane, isDestroyed, shouted) {
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
+    console.log(squareYCoordinate.val);
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
@@ -185,7 +186,7 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
-        console.log(collided.val[0] + ' ' + collided.val[1] + ' ' + collided.val[2]);
+        //console.log(collided.val[0] + ' ' + collided.val[1] + ' ' + collided.val[2]);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj, collided);
@@ -245,7 +246,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
             if (i < 3) {
                 listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                console.log(listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
+                //console.log(listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
                 if (collided.val[i] == false) {
                     object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                 } else {
