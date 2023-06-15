@@ -185,6 +185,9 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
+        if (collided.val == true) {
+            object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+        }
         console.log(collided.val);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
