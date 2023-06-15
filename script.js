@@ -185,12 +185,9 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
-        if (collided.val == true) {
-            object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
-        }
         console.log(collided.val);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
-        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
+        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
@@ -238,13 +235,17 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
     listAxesYObj.val[0] = 25;
 }
 
-function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
+function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
                 listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
+                if (collided.val == false) {
+                    object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
+                } else {
+                    object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                }
             } else {
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
