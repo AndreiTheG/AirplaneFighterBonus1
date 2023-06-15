@@ -113,7 +113,7 @@ function shooting(airplane, isDestroyed, shouted) {
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
-    console.log(squareYCoordinate.val);
+    //console.log(squareYCoordinate.val);
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
@@ -134,7 +134,7 @@ function startTheGame() {
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
     idInterval = window.setInterval(function() {
-        console.log(listAxesXObj.val[2] + ' ' + listAxesYObj.val[2]);
+        //console.log(listAxesXObj.val[2] + ' ' + listAxesYObj.val[2]);
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
@@ -202,16 +202,19 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         //if (collided.val ==true) {
+            console.log(collided.val[2]);
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[1] == 575) {
         //if (collided.val ==true) {
+            console.log(collided.val[1]);
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[0] == 300) {
         //if (collided.val ==true) {
+            console.log(collided.val[0]);
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
