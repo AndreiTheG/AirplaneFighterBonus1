@@ -251,9 +251,9 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
-                if (collided.val[i] == false) {
+                //if (collided.val[i] == false) {
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
-                }
+                //}
                 //listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 //console.log(listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
