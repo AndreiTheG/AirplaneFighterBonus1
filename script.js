@@ -62,7 +62,7 @@ function createObjects(width, height, collided, valueCondition) {
         ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.stroke();
-    } else if (valueCondition == 3 && collided.val == true){
+    } else if (valueCondition == 3 && collided == true){
         ctx.fillStyle = "rgb(0, 0, 255)";
     }
     ctx.beginPath();
