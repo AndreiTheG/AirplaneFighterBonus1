@@ -152,6 +152,7 @@ function startTheGame() {
                         console.log("Se incadreaza 0");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20) {
+                            object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
                             object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                         console.log("Se incadreaza 1");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
