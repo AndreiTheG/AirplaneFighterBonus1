@@ -187,7 +187,7 @@ function startTheGame() {
         }
         console.log(collided.val[0] + ' ' + collided.val[1] + ' ' + collided.val[2]);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
-        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
+        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
@@ -236,7 +236,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
     listAxesYObj.val[0] = 25;
 }
 
-function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj) {
+function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
