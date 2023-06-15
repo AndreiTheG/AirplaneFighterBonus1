@@ -131,7 +131,7 @@ function startTheGame() {
     const listCoordObj = {val: [randomWidth, 0, 0, 0]};
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
-    const collided = {val: [false, false, false]};
+    const collided = {val: [false, false, false, false]};
     idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
@@ -189,23 +189,23 @@ function startTheGame() {
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
-        objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score);
+        objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
 
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
 // new object on top of the screen and the value of score increases if the palne avoids an object.  
-function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter, score) {
+function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
-        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 3);
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     } else if (listAxesYObj.val[1] == 575) {
-        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 2);
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     } else if (listAxesYObj.val[0] == 300) {
-        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, 1);
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     }
 }
@@ -221,11 +221,12 @@ function collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listA
     }
 }
 
-function changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, nrIterations) {
+function changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, nrIterations) {
     for (let i = nrIterations; i >= 1; --i) {
         listAxesXObj.val[i] = listAxesXObj.val[i - 1];
         listAxesYObj.val[i] = listAxesYObj.val[i - 1];
         listCoordObj.val[i] = listCoordObj.val[i - 1];
+        collided.val[i] = collided.val[i - 1];
     }
 }
 
