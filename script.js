@@ -245,11 +245,11 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                 } else {
                     object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    collided.val = false;
                 }
             } else {
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                collided.val = false;
             }
         }
     }
