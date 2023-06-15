@@ -52,7 +52,7 @@ class Airplane {
     }
 }
 
-function createObjects(width, height, valueCondition) {
+function createObjects(width, height, collided, valueCondition) {
     function degToRad(degrees) {
         return (degrees * Math.PI) / 180;
     }
@@ -62,7 +62,7 @@ function createObjects(width, height, valueCondition) {
         ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.stroke();
-    } else {
+    } else if (valueCondition == 3 && collided.val == true){
         ctx.fillStyle = "rgb(0, 0, 255)";
     }
     ctx.beginPath();
