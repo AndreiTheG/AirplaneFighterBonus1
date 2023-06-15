@@ -206,7 +206,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
     } else if (listAxesYObj.val[0] == 300) {
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
-        createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter);
+        createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     }
 }
 
@@ -230,10 +230,11 @@ function changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, colli
     }
 }
 
-function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, counter) {
+function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter) {
     listCoordObj.val[0] = Math.floor(Math.random() * counter);
     listAxesXObj.val[0] = listCoordObj.val[0] * 100 + initialWidth;
     listAxesYObj.val[0] = 25;
+    collided.val = false;
 }
 
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
