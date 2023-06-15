@@ -234,7 +234,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
     listCoordObj.val[0] = Math.floor(Math.random() * counter);
     listAxesXObj.val[0] = listCoordObj.val[0] * 100 + initialWidth;
     listAxesYObj.val[0] = 25;
-    collided.val = false;
+    collided.val[0] = false;
 }
 
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
