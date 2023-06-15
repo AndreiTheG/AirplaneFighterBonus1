@@ -211,9 +211,9 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
         }
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[0] == 300) {
-        if (collided.val ==true) {
+        //if (collided.val ==true) {
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
-        }
+        //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     }
 }
