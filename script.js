@@ -206,9 +206,9 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
         }
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[1] == 575) {
-        if (collided.val ==true) {
+        //if (collided.val ==true) {
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
-        }
+        //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[0] == 300) {
         //if (collided.val ==true) {
