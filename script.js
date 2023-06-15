@@ -185,7 +185,7 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
-        console.log(collided.val);
+        console.log(collided.val[0] + ' ' + collided.val[1] + ' ' + collided.val[2]);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
