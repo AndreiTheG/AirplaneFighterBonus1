@@ -229,7 +229,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
         //if (collided.val ==true) {
             console.log(collided.val[2] + ' 2');
             //if (collided.val[2] == true) {
-                object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+                //object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
             //}
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         //}
@@ -238,9 +238,9 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
         collided.val[2] = false;
     }*/ else if (listAxesYObj.val[1] == 575) {
         //if (collided.val ==true) {
-            console.log(collided.val[1] + ' 1');
+            //console.log(collided.val[1] + ' 1');
             //if (collided.val[1] == true) {
-                object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+                //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
             //}
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
         //}
@@ -249,7 +249,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
         collided.val[1] = false;
     }*/ else if (listAxesYObj.val[0] == 300) {
         //if (collided.val ==true) {
-            console.log(collided.val[0]+ ' 0');
+            //console.log(collided.val[0]+ ' 0');
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
