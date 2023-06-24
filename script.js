@@ -205,7 +205,7 @@ function startTheGame() {
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
 // new object on top of the screen and the value of score increases if the palne avoids an object.  
 function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object) {
-    if (listAxesYObj.val[2] == 700 && collided.val[2] == true) {
+    if (listAxesYObj.val[2] == 700 && collided.val[2] == false) {
         ++score.val;
         //if (collided.val ==true) {
             console.log(collided.val[2] + ' 2');
@@ -215,7 +215,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
-    } else if (listAxesYObj.val[1] == 575 && collided.val[1] == true) {
+    } else if (listAxesYObj.val[1] == 575 && collided.val[1] == false) {
         //if (collided.val ==true) {
             console.log(collided.val[1] + ' 1');
             if (collided.val[1] == true) {
@@ -224,7 +224,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
-    } else if (listAxesYObj.val[0] == 300 && collided.val[0] == true) {
+    } else if (listAxesYObj.val[0] == 300 && collided.val[0] == false) {
         //if (collided.val ==true) {
             console.log(collided.val[0]+ ' 0');
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
