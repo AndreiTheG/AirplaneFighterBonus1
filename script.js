@@ -189,6 +189,7 @@ function startTheGame() {
         }
         for (let i = 0; i < 3; i++) {
             if (collided.val[i] == true) {
+                console.log("Distrus");
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
             }
         }
