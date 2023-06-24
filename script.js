@@ -198,7 +198,9 @@ function startTheGame() {
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         if (collided.val[2] == false) {
             objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-        } 
+        } else {
+            collided.val[2] = false;
+        }
         //else {
             //object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
         //}
