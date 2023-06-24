@@ -218,6 +218,8 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
+    } else if (collided.val[2] == false) {
+        collided.val[2] = false;
     } else if (listAxesYObj.val[1] == 575 && collided.val[1] == false) {
         //if (collided.val ==true) {
             console.log(collided.val[1] + ' 1');
