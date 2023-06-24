@@ -201,6 +201,16 @@ function startTheGame() {
         } else {
             object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
         }
+        if (collided.val[1] == false) {
+            objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
+        } else {
+            object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[1]);
+        }
+        if (collided.val[2] == false) {
+            objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
+        } else {
+            object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+        }
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj, collided);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
