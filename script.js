@@ -229,12 +229,16 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
+    } else if (collided.val[1] == true) {
+        collided.val[1] = false;
     } else if (listAxesYObj.val[0] == 300 && collided.val[0] == false) {
         //if (collided.val ==true) {
             console.log(collided.val[0]+ ' 0');
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
+    } else if (collided.val[0] == true) {
+        collided.val[0] = false;
     }
 }
 
