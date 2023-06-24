@@ -187,12 +187,13 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
-        for (let i = 0; i < 3; i++) {
+        console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
+        /*for (let i = 0; i < 3; i++) {
             if (collided.val[i] == true) {
                 console.log("Distrus");
                 object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
             }
-        }
+        }*/
         //console.log(collided.val[0] + ' ' + collided.val[1] + ' ' + collided.val[2]);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
