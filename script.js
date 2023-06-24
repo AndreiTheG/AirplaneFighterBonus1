@@ -191,24 +191,30 @@ function startTheGame() {
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj, collided);
-        objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score);
+        objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
 
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
 // new object on top of the screen and the value of score increases if the palne avoids an object.  
-function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score) {
+function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object) {
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         //if (collided.val ==true) {
             console.log(collided.val[2] + ' 2');
+            if (collided.val[2] == true) {
+                object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+            }
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     } else if (listAxesYObj.val[1] == 575) {
         //if (collided.val ==true) {
             console.log(collided.val[1] + ' 1');
+            if (collided.val[1] == true) {
+                object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+            }
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
