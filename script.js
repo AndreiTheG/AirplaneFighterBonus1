@@ -202,6 +202,9 @@ function startTheGame() {
         } else if (collided.val[2] == true) {
             collided.val[2] = false;
         }
+        if (collided.val[0] == true) {
+            collided.val[0] = false;
+        }
         //else {
             //object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
         //}
