@@ -198,10 +198,6 @@ function startTheGame() {
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         if (collided.val[0] == false || collided.val[1] == false || collided.val[2] == false) {
             objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-        } else {
-            collided.val[0] = false;
-            collided.val[1] = false;
-            collided.val[2] = false;
         }
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj, collided);
