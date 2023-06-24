@@ -227,7 +227,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
         //if (collided.val ==true) {
-            console.log(collided.val[2] + ' 2');
+            //console.log(collided.val[2] + ' 2');
             //if (collided.val[2] == true) {
                 //object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
             //}
