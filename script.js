@@ -267,7 +267,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             //if (collided.val[1] == true) {
                 //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
             //}
-            collided.val[2] = collided.val[1];
+            //collided.val[2] = collided.val[1];
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
             console.log("Partea 2 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         //}
@@ -277,8 +277,8 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
     }*/ else if (listAxesYObj.val[0] == 300) {
         //if (collided.val ==true) {
             //console.log(collided.val[0]+ ' 0');
-            collided.val[3] = collided.val[2];
-            collided.val[2] = collided.val[1];
+            //collided.val[3] = collided.val[2];
+            //collided.val[2] = collided.val[1];
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
             console.log("Partea 1 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         //}
