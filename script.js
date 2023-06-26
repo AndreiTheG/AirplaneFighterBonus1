@@ -197,6 +197,7 @@ function startTheGame() {
                     clearInterval(shooter);
                 }
             }, 40);
+            console.log(shouted.val);
             shouted.val = false;
         }
         /*if (collided.val[1] == true && collided.val[2] == true) {
