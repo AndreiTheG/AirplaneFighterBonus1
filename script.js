@@ -267,7 +267,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             //if (collided.val[1] == true) {
                 //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
             //}
-          
+            collided.val[2] = collided.val[1];
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
             console.log("Partea 2 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         //}
