@@ -224,18 +224,18 @@ function startTheGame() {
             
         //} 
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-        if (collided.val[0] == true) {
-            object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
-            collided.val[0] = false;
-        } 
-        if (collided.val[1] == true) {
-            object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
-            collided.val[1] = false;
-        }
-        if (collided.val[2] == true) {
-            object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
-            collided.val[2] = false;
-        }
+        // if (collided.val[0] == true) {
+        //     object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
+        //     collided.val[0] = false;
+        // } 
+        // if (collided.val[1] == true) {
+        //     object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+        //     collided.val[1] = false;
+        // }
+        // if (collided.val[2] == true) {
+        //     object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+        //     collided.val[2] = false;
+        // }
         //else {
             //object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
         //}
@@ -346,6 +346,10 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                     
                 } 
+                if (collided.val[i] == true) {
+                    object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                    collided.val[i] = false;
+                }
                 /*else {
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                     object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
