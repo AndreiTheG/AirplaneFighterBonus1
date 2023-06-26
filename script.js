@@ -187,7 +187,7 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
-        console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
+        //console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         /*for (let i = 0; i < 3; i++) {
             if (collided.val[i] == true) {
                 console.log("Distrus");
@@ -286,6 +286,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
 
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     let notShot = true;
+    console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
