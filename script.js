@@ -224,6 +224,12 @@ function startTheGame() {
             
         //} 
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
+        if (collided.val[0] == true) {
+            console.log("Adevarat 0");
+        } 
+        if (collided.val[1] == true) {
+            console.log("Adevarat")
+        }
         //else {
             //object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
         //}
