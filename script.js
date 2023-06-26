@@ -210,7 +210,7 @@ function startTheGame() {
         //if (collided.val[2] == false) {
             
         //} 
-        //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
+        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         //else {
             //object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
         //}
