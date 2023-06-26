@@ -279,6 +279,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             //console.log(collided.val[0]+ ' 0');
            
             changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
+            collided.val[2] = collided.val[1];
             console.log("Partea 1 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         //}
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
