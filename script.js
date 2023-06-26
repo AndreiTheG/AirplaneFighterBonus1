@@ -228,7 +228,10 @@ function startTheGame() {
             console.log("Adevarat 0");
         } 
         if (collided.val[1] == true) {
-            console.log("Adevarat")
+            console.log("Adevarat 1");
+        }
+        if (collided.val[1] == true) {
+            console.log("Adevarat 1");
         }
         //else {
             //object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
