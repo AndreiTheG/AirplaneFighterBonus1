@@ -308,7 +308,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
 }
 
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
-    //console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
+    console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
