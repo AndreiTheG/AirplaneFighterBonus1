@@ -188,9 +188,9 @@ function startTheGame() {
             }, 40);
             shouted.val = false;
         }
-        if (collided.val[1] == true && collided.val[2] == true) {
+        /*if (collided.val[1] == true && collided.val[2] == true) {
             console.log("Doua obiecte au fost distruse!");
-        }
+        }*/
         //console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         /*for (let i = 0; i < 3; i++) {
             if (collided.val[i] == true) {
@@ -199,7 +199,7 @@ function startTheGame() {
             }
         }*/
         //console.log(collided.val[0] + ' ' + collided.val[1] + ' ' + collided.val[2]);
-        console.log(collided.val[2]);
+        //console.log(collided.val[2]);
         object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         //if (collided.val[2] == false) {
             
@@ -290,7 +290,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
 
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     let notShot = true;
-    console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
+    //console.log(collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
