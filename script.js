@@ -122,9 +122,9 @@ function startTheGame() {
     //}
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
-    let object = [];
+    const object = {val: []};
     for (let i = 0; i * 100 + initialWidth < canvasWidth; ++i) {
-        object[i] = new Object(i * 100 + initialWidth, initialHeight);
+        object.val[i] = new Object(i * 100 + initialWidth, initialHeight);
         ++counter;
     }
     let randomWidth = Math.floor(Math.random() * counter);
@@ -136,7 +136,7 @@ function startTheGame() {
     idInterval = window.setInterval(function() {
         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
         if (listAxesYObj.val[0] > 25) {
-            object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
+            object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
@@ -153,7 +153,7 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
-                            object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
+                            object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
                             collided.val[0] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 0");
@@ -162,7 +162,7 @@ function startTheGame() {
                         && collided.val[1] == false) {
                             console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
                             //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
-                            object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+                            object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 1");
@@ -170,7 +170,7 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
-                            object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+                            object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 2");
@@ -178,7 +178,7 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
-                            object[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
+                            object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
                             collided.val[0] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 3");
@@ -186,7 +186,7 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
-                            object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
+                            object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 4");
@@ -194,7 +194,7 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
-                            object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
+                            object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
@@ -218,7 +218,7 @@ function startTheGame() {
         }*/
         //console.log(collided.val[0] + ' ' + collided.val[1] + ' ' + collided.val[2]);
         //console.log(collided.val[2]);
-        object[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
+        object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         //if (collided.val[2] == false) {
             
         //} 
@@ -312,12 +312,12 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                 //listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                 //if (collided.val[i] == false) {
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
-                    object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                    object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 //console.log(listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
                 //if (collided.val[i] == false) {
                     // listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                     // object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                    object[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
+                    object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                     
                 //} //else if (collided.val[i] == true) {
                     //object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
@@ -339,8 +339,8 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                 //    collided.val[i] = false;
                // }
             } else {
-                object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 //collided.val = false;
             }
         }
