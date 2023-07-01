@@ -248,7 +248,7 @@ function changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, colli
         listAxesXObj.val[i] = listAxesXObj.val[i - 1];
         listAxesYObj.val[i] = listAxesYObj.val[i - 1];
         listCoordObj.val[i] = listCoordObj.val[i - 1];
-        collided.val[i] = collided.val[i - 1];
+        //collided.val[i] = collided.val[i - 1];
     }
 }
 
