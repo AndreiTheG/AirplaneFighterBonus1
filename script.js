@@ -219,43 +219,18 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
 
     if (listAxesYObj.val[2] == 700) {
         ++score.val;
-        //if (collided.val ==true) {
-            //console.log(collided.val[2] + ' 2');
-            //if (collided.val[2] == true) {
-                //object[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
-            //}
-           
-            changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
-            console.log("Partea 3 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
-        //}
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
+        console.log("Partea 3 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
-    } /*else if (collided.val[2] == true) {
-        collided.val[2] = false;
-    }*/ else if (listAxesYObj.val[1] == 575) {
-        //if (collided.val ==true) {
-            //console.log(collided.val[1] + ' 1');
-            //if (collided.val[1] == true) {
-                //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
-            //}
-            //collided.val[2] = collided.val[1];
-            changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
-            console.log("Partea 2 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
-        //}
+    }  else if (listAxesYObj.val[1] == 575) {
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
+        console.log("Partea 2 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
-    } /*else if (collided.val[1] == true) {
-        collided.val[1] = false;
-    }*/ else if (listAxesYObj.val[0] == 300) {
-        //if (collided.val ==true) {
-            //console.log(collided.val[0]+ ' 0');
-            //collided.val[3] = collided.val[2];
-            //collided.val[2] = collided.val[1];
-            changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
-            console.log("Partea 1 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
-        //}
+    }  else if (listAxesYObj.val[0] == 300) {
+        changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
+        console.log("Partea 1 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
-    } /*else if (collided.val[0] == true) {
-        collided.val[0] = false;
-    }*/
+    }
 }
 
 function collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj, collided) {
