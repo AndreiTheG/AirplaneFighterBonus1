@@ -226,6 +226,9 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
         console.log("Partea 2 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     }  else if (listAxesYObj.val[0] == 300) {
+        for (let i = 3; i >= 2; ++i) {
+            
+        }
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
         console.log("Partea 1 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
