@@ -154,7 +154,7 @@ function startTheGame() {
                     if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        shouted.val = false;
+                        clearInterval(shooter);
                     }
                     /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                         ctx.fillStyle = "rgb(0, 0, 0)";
