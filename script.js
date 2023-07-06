@@ -162,10 +162,10 @@ function startTheGame() {
                         //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //clearInterval(shooter);
                     //}
-                    /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                    if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    }*/ //else if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
+                    } //else if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
                     
                        
                     //}
@@ -223,12 +223,12 @@ function startTheGame() {
                     clearInterval(shooter);
                 }
             }, 40);
-            if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                ctx.fillStyle = "rgb(0, 0, 0)";
-                ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                ctx.strokeStyle = "rgb(0, 0, 0)";
-                ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-            }
+            // if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+            //     ctx.fillStyle = "rgb(0, 0, 0)";
+            //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+            //     ctx.strokeStyle = "rgb(0, 0, 0)";
+            //     ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+            // }
             shouted.val = false;
         }
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
