@@ -181,7 +181,7 @@ function startTheGame() {
             // const shooter = setInterval(function() {
             //     console.log('Rand nou!');
             //     if (isDestroyed.val == false) {
-                    
+                for (let i = 0; i < 500; ++i) {    
                     //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     // console.log(fireXCoord.val + " " + fireYCoord.val);
                     // ctx.fillStyle = "rgb(0, 0, 0)";
@@ -270,6 +270,7 @@ function startTheGame() {
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
                     }
+                }
                     // } else {
                     //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
                     // }
