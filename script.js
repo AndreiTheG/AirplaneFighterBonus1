@@ -137,7 +137,8 @@ function startTheGame() {
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
-    const fireBalls = {val: [squareYCoordinate.val, 0, 0, 0]};
+    let nrBalls = 0;
+    let fireBalls = [];
     for (let i = 0; i < 4; ++i) {
         console.log(fireBalls.val[i]);
     }
@@ -153,6 +154,7 @@ function startTheGame() {
             const shooter = setInterval(function() {
                 console.log('Rand nou!');
                 if (isDestroyed.val == false) {
+                    fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     console.log(fireXCoord.val + " " + fireYCoord.val);
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
