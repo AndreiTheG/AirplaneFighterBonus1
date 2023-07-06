@@ -88,24 +88,6 @@ class Object {
     }
 }
 
-startTheGame();
-
-function gameController(airplane, isDestroyed) {
-    addEventListener("keydown", (event) => {
-        if ((event.code == 'ArrowRight' && squareWidth <= canvasWidth - 55) || (event.code == 'ArrowLeft' && squareWidth >= 0)) {
-            if (event.code == 'ArrowRight' && squareWidth <= canvasWidth - 55) {
-                direction = 1;
-            } else {
-                direction = -1;
-            }
-            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        }
-        // } else if (event.code == 'Enter') {
-        //     airplane.shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        // }
-    })
-}
-
 class FireBalls {
     constructor(fireXCoord, fireYCoord) {
         ctx.fillStyle = "rgb(0, 0, 0)";
@@ -125,6 +107,24 @@ class FireBalls {
         ctx.fillRect(fireXCoord, fireYCoord, 10, 20);
     }
 
+}
+
+startTheGame();
+
+function gameController(airplane, isDestroyed) {
+    addEventListener("keydown", (event) => {
+        if ((event.code == 'ArrowRight' && squareWidth <= canvasWidth - 55) || (event.code == 'ArrowLeft' && squareWidth >= 0)) {
+            if (event.code == 'ArrowRight' && squareWidth <= canvasWidth - 55) {
+                direction = 1;
+            } else {
+                direction = -1;
+            }
+            airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+        }
+        // } else if (event.code == 'Enter') {
+        //     airplane.shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
+        // }
+    })
 }
 
 function shooting(airplane, isDestroyed, shouted) {
