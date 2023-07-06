@@ -237,6 +237,9 @@ function startTheGame() {
                             collided.val[2] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
+                    } else {
+                        ctx.fillStyle = "rgb(255, 255, 0)";
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     }
                 } else {
                     clearInterval(shooter);
