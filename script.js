@@ -152,7 +152,8 @@ function startTheGame() {
             console.log(fireXCoord.val + " " + fireYCoord.val);       
             const shooter = setInterval(function() {
                 if (isDestroyed.val == false) {
-                    //console.log(fireXCoord.val + " " + fireYCoord.val);
+                    console.log('Rand nou!');
+                    console.log(fireXCoord.val + " " + fireYCoord.val);
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -160,11 +161,10 @@ function startTheGame() {
                     fireYCoord.val = fireYCoord.val - 5;
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    console.log('Rand nou!');
-                    for (let i = 3; i > 0; --i) {
-                        fireBalls.val[i] = fireBalls.val[i - 1];
-                        console.log(fireBalls.val[i]);
-                    }
+                    //for (let i = 3; i > 0; --i) {
+                    //    fireBalls.val[i] = fireBalls.val[i - 1];
+                    //    console.log(fireBalls.val[i]);
+                    //}
                     fireBalls.val[0] = squareYCoordinate.val;
                     //if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                       //  ctx.fillStyle = "rgb(0, 0, 0)";
