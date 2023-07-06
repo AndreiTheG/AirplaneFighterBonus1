@@ -137,7 +137,7 @@ function startTheGame() {
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
-    const fireBalls = {val: [squareXCoordinate.val, 0, 0, 0]};
+    const fireBalls = {val: [squareYCoordinate.val, 0, 0, 0]};
     for (let i = 0; i < 4; ++i) {
         console.log(fireBalls.val[i]);
     }
@@ -165,7 +165,7 @@ function startTheGame() {
                         fireBalls.val[i] = fireBalls.val[i - 1];
                         console.log(fireBalls.val[i]);
                     }
-                    fireBalls.val[0] = fireYCoord.val;
+                    fireBalls.val[0] = squareYCoordinate.val;
                     //if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                       //  ctx.fillStyle = "rgb(0, 0, 0)";
                         //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
