@@ -160,6 +160,7 @@ function startTheGame() {
                     fireYCoord.val = fireYCoord.val - 5;
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    console.log('Rand nou!');
                     for (let i = 3; i > 0; --i) {
                         fireBalls.val[i] = fireBalls.val[i - 1];
                         console.log(fireBalls.val[i]);
