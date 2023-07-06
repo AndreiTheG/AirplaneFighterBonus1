@@ -137,7 +137,10 @@ function startTheGame() {
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
-    //const fireBalls = {val: [ctx.squareWidth, 0, 0, 0]};
+    const fireBalls = {val: [ctx.squareWidth, 0, 0, 0]};
+    for (let i = 0; i < 4; ++i) {
+        console.log(fireBalls[i].val);
+    }
     idInterval = window.setInterval(function() {
         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
         if (listAxesYObj.val[0] > 25) {
