@@ -165,7 +165,6 @@ function startTheGame() {
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     ctx.strokeStyle = "rgb(0, 0, 0)";
                     ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    fireYCoord.val = fireYCoord.val - 5;
                     //ctx.fillStyle = "rgb(255, 255, 0)";
                     //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     //for (let i = 3; i > 0; --i) {
@@ -248,6 +247,7 @@ function startTheGame() {
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
                     } else {
+                        fireYCoord.val = fireYCoord.val - 5;
                         ctx.fillStyle = "rgb(255, 255, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     }
