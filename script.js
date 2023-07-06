@@ -137,7 +137,7 @@ function startTheGame() {
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
-    let nrBalls = 0;
+    //let nrBalls = 0;
     let fireBalls = [];
     for (let i = 0; i < canvasWidth; ++i) {
         fireBalls[i] = squareYCoordinate.val - 40;
@@ -152,7 +152,7 @@ function startTheGame() {
             console.log("Am tras!");
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};  
             //console.log(fireXCoord.val + " " + fireYCoord.val);    
-            console.log(nrBalls); 
+            //console.log(nrBalls); 
             /*for (let i = 0; i < nrBalls; ++i) {
                 console.log(fireBalls[i]);
             } */ 
