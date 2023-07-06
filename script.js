@@ -179,7 +179,7 @@ function startTheGame() {
             const shooter = setInterval(function() {
                 console.log('Rand nou!');
                 if (isDestroyed.val == false) {
-                    fireBalls.val[fireXCoord.val].shooter(fireXCoord.val, fireYCoord.val);
+                    fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
                     //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     // console.log(fireXCoord.val + " " + fireYCoord.val);
                     // ctx.fillStyle = "rgb(0, 0, 0)";
