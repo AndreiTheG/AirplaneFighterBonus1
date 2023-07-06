@@ -144,10 +144,11 @@ function startTheGame() {
         }
         if (shouted.val == true) {
             console.log("Am tras!");
-            const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};         
+            const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};  
+            console.log(fireXCoord.val + " " + fireYCoord.val);       
             const shooter = setInterval(function() {
                 if (isDestroyed.val == false) {
-                    console.log(fireXCoord.val + " " + fireYCoord.val);
+                    //console.log(fireXCoord.val + " " + fireYCoord.val);
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     ctx.strokeStyle = "rgb(0, 0, 0)";
