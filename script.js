@@ -140,7 +140,7 @@ function startTheGame() {
     //let nrBalls = 0;
     let fireBalls = [];
     for (let i = 0; i < canvasWidth; ++i) {
-        fireBalls[i] = squareYCoordinate.val - 40;
+        fireBalls[i] = i;
         console.log(fireBalls[i]);
     }
     idInterval = window.setInterval(function() {
@@ -178,10 +178,10 @@ function startTheGame() {
                         //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //clearInterval(shooter);
                     //}
-                    //if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                    //    ctx.fillStyle = "rgb(0, 0, 0)";
-                    //    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //} //else if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
+                    if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                       ctx.fillStyle = "rgb(0, 0, 0)";
+                       ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    } //else if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
                     
                        
                     //}
