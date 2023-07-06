@@ -107,17 +107,22 @@ function gameController(airplane, isDestroyed) {
 }
 
 class FireBalls {
-    constructor(width, height) {
+    constructor(fireXCoord, fireYCoord) {
         ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+        ctx.fillRect(fireXCoord, fireYCoord, 10, 20);
         ctx.strokeStyle = "rgb(0, 0, 0)";
-        ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+        ctx.strokeRect(fireXCoord, fireYCoord, 10, 20);
     }
 
-    shooter(width, height) {
-        fireYCoord.val = fireYCoord.val - 5;
+    shooter(fireXCoord, fireYCoord) {
+        fireYCoord = fireYCoord - 5;
         ctx.fillStyle = "rgb(255, 255, 0)";
-        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+        ctx.fillRect(fireXCoord, fireYCoord, 10, 20);
+    }
+
+    disappear(fireXCoord, fireYCoord) {
+        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.fillRect(fireXCoord, fireYCoord, 10, 20);
     }
 
 }
@@ -154,10 +159,9 @@ function startTheGame() {
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
     //let nrBalls = 0;
-    let fireBalls = [];
+    const fireBalls = {val: []};
     for (let i = 0; i < canvasWidth; ++i) {
-        fireBalls[i] = i;
-        console.log(fireBalls[i]);
+        fireBalls.val[i].FireBalls(i, squareYCoordinate - 40);
     }
     idInterval = window.setInterval(function() {
         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
