@@ -147,10 +147,11 @@ function startTheGame() {
         if (shouted.val == true) {
             console.log("Am tras!");
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};  
-            console.log(fireXCoord.val + " " + fireYCoord.val);     
-            for (let i = 0; i < nrBalls; ++i) {
+            //console.log(fireXCoord.val + " " + fireYCoord.val);    
+            console.log(nrBalls); 
+            /*for (let i = 0; i < nrBalls; ++i) {
                 console.log(fireBalls[i]);
-            }  
+            } */ 
             const shooter = setInterval(function() {
                 console.log('Rand nou!');
                 if (isDestroyed.val == false) {
