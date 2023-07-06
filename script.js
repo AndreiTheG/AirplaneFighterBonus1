@@ -139,7 +139,7 @@ function startTheGame() {
     const collided = {val: [false, false, false, false]};
     const fireBalls = {val: [ctx.squareWidth, 0, 0, 0]};
     for (let i = 0; i < 4; ++i) {
-        console.log(fireBalls[i].val);
+        console.log(fireBalls.val[i]);
     }
     idInterval = window.setInterval(function() {
         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
