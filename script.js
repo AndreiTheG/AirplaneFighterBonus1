@@ -141,6 +141,7 @@ function startTheGame() {
     let fireBalls = [];
     for (let i = 0; i < canvasWidth; ++i) {
         fireBalls[i] = squareYCoordinate.val - 40;
+        console.log(fireBalls[i]);
     }
     idInterval = window.setInterval(function() {
         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
@@ -158,7 +159,7 @@ function startTheGame() {
             const shooter = setInterval(function() {
                 console.log('Rand nou!');
                 if (isDestroyed.val == false) {
-                    fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
+                    //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     console.log(fireXCoord.val + " " + fireYCoord.val);
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
