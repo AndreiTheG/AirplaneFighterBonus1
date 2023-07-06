@@ -148,7 +148,7 @@ function startTheGame() {
             console.log("Am tras!");
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};  
             console.log(fireXCoord.val + " " + fireYCoord.val);     
-            for (let i = 0; i < nrBallsl; ++i) {
+            for (let i = 0; i < nrBalls; ++i) {
                 console.log(fireBalls[i]);
             }  
             const shooter = setInterval(function() {
