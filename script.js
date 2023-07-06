@@ -140,7 +140,7 @@ function startTheGame() {
     let nrBalls = 0;
     let fireBalls = [];
     for (let i = 0; i < canvasWidth; ++i) {
-        fireBalls[i] = i;
+        fireBalls[i] = squareYCoordinate.val - 40;
     }
     idInterval = window.setInterval(function() {
         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
