@@ -151,8 +151,8 @@ function startTheGame() {
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};  
             console.log(fireXCoord.val + " " + fireYCoord.val);       
             const shooter = setInterval(function() {
+                console.log('Rand nou!');
                 if (isDestroyed.val == false) {
-                    console.log('Rand nou!');
                     console.log(fireXCoord.val + " " + fireYCoord.val);
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
