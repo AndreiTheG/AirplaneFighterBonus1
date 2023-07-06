@@ -97,6 +97,8 @@ class FireBalls {
     }
 
     shooter(fireXCoord, fireYCoord) {
+        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
         fireYCoord.val = fireYCoord.val - 5;
         ctx.fillStyle = "rgb(255, 255, 0)";
         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
