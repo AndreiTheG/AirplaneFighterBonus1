@@ -178,9 +178,9 @@ function startTheGame() {
             /*for (let i = 0; i < nrBalls; ++i) {
                 console.log(fireBalls[i]);
             } */ 
-            const shooter = setInterval(function() {
-                console.log('Rand nou!');
-                if (isDestroyed.val == false) {
+            // const shooter = setInterval(function() {
+            //     console.log('Rand nou!');
+            //     if (isDestroyed.val == false) {
                     
                     //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     // console.log(fireXCoord.val + " " + fireYCoord.val);
@@ -273,10 +273,10 @@ function startTheGame() {
                     // } else {
                     //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
                     // }
-                } else {
-                    clearInterval(shooter);
-                }
-            }, 40);
+            //     } else {
+            //         clearInterval(shooter);
+            //     }
+            // }, 40);
             // if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
             //     ctx.fillStyle = "rgb(0, 0, 0)";
             //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
