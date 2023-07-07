@@ -196,19 +196,20 @@ function startTheGame() {
                         fireYCoord.val = fireYCoord.val - 5;
                         ctx.fillStyle = "rgb(255, 255, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    } else if (collided.val[2] == true) {
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        collided.val[2] = false;
-                    } else if (collided.val[1] == true) {
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        collided.val[1] = false;
-                    } else if (collided.val[0] == true) {
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        collided.val[0] = false;
                     }
+                    // } else if (collided.val[2] == true) {
+                    //     ctx.fillStyle = "rgb(0, 0, 0)";
+                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    //     collided.val[2] = false;
+                    // } else if (collided.val[1] == true) {
+                    //     ctx.fillStyle = "rgb(0, 0, 0)";
+                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    //     collided.val[1] = false;
+                    // } else if (collided.val[0] == true) {
+                    //     ctx.fillStyle = "rgb(0, 0, 0)";
+                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    //     collided.val[0] = false;
+                    // }
                     //for (let i = 3; i > 0; --i) {
                     //    fireBalls.val[i] = fireBalls.val[i - 1];
                     //    console.log(fireBalls.val[i]);
@@ -236,6 +237,8 @@ function startTheGame() {
                     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
+                            ctx.fillStyle = "rgb(0, 0, 0)";
+                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //ctx.fillStyle = "rgb(0, 0, 0)";
                             //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -251,6 +254,8 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
+                            ctx.fillStyle = "rgb(0, 0, 0)";
+                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
                             //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
@@ -264,6 +269,8 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
+                            ctx.fillStyle = "rgb(0, 0, 0)";
+                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
@@ -276,6 +283,8 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
+                            ctx.fillStyle = "rgb(0, 0, 0)";
+                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
                             //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
@@ -288,6 +297,8 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
+                            ctx.fillStyle = "rgb(0, 0, 0)";
+                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
@@ -300,6 +311,8 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
+                            ctx.fillStyle = "rgb(0, 0, 0)";
+                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
