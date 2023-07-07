@@ -88,7 +88,7 @@ class Object {
     }
 
     clearObject(width, height, sizeX, sizeY) {
-        clearRect(width, height, sizeX, sizeY);
+        ctx.clearRect(width, height, sizeX, sizeY);
     }
     
 }
