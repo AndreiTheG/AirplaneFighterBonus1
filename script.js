@@ -361,7 +361,7 @@ function startTheGame() {
                     //     console.log("Adevarat");
                     // }
                     if (collided.val[2] == true && isTrue == true) {
-                      //  console.log("COLIZIUNEEEEEE.....");
+                        console.log("COLIZIUNEEEEEE.....");
                         disappearance(fireXCoord, fireYCoord);
                         isTrue = false;
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
