@@ -241,6 +241,7 @@ function startTheGame() {
                     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
+                            ++score.val;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
@@ -259,6 +260,7 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
+                            ++score.val;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
@@ -275,6 +277,7 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
+                            ++score.val;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -292,6 +295,7 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
+                            ++score.val;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -309,6 +313,7 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
+                            ++score.val;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -326,6 +331,7 @@ function startTheGame() {
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
+                            ++score.val;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -384,7 +390,7 @@ function startTheGame() {
             shouted.val = false;
         }
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
-        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided, score);
+        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
@@ -443,7 +449,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
     collided.val[0] = false;
 }
 
-function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided, score) {
+function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     //console.log("False " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
@@ -454,7 +460,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
                 else {
-                    ++score.val;
+                    //++score.val;
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
