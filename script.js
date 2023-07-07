@@ -137,8 +137,10 @@ function shooting(airplane, isDestroyed, shouted) {
     })
 }
 
-function disappearance() {
-    
+function disappearance(fireXCoord, fireYCoord) {
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+    console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
 }
 
 function startTheGame() {
@@ -347,7 +349,7 @@ function startTheGame() {
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     }
                     if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                       ctx.fillStyle = "rgb(0, 0, 0)";
+                        ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
                         //clearInterval(shooter);
