@@ -360,6 +360,7 @@ function startTheGame() {
                     if (collided.val[2] == true) {
                       //  console.log("COLIZIUNEEEEEE.....");
                         disappearance(fireXCoord, fireYCoord);
+                        collided.val[2] = false;
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
                     }
