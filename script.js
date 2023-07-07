@@ -202,7 +202,7 @@ function startTheGame() {
                         //clearInterval(shooter);
                     //}
                     //for (let i = 0; i < 400; ++i) {
-                        // fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
+                        fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
                         if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                             fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         }
@@ -223,9 +223,9 @@ function startTheGame() {
                             //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
 
                             collided.val[0] = true;
-                            if (collided.val[0] == true) {
-                                fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            }
+                            // if (collided.val[0] == true) {
+                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
+                            // }
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 0");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
@@ -236,9 +236,9 @@ function startTheGame() {
                             //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
-                            if (collided.val[1] == true) {
-                                fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            }
+                            // if (collided.val[1] == true) {
+                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
+                            // }
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 1");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
@@ -248,9 +248,9 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
-                            if (collided.val[2] == true) {
-                                fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            }
+                            // if (collided.val[2] == true) {
+                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
+                            // }
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 2");
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
@@ -260,9 +260,9 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
                             //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
                             collided.val[0] = true;
-                            if (collided.val[0] == true) {
-                                fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            }
+                            // if (collided.val[0] == true) {
+                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
+                            // }
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 3");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
@@ -272,9 +272,9 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
-                            if (collided.val[1] == true) {
-                                fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            }
+                            // if (collided.val[1] == true) {
+                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
+                            // }
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 4");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
@@ -284,16 +284,16 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
-                            if (collided.val[2] == true) {
-                                fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            }
+                            // if (collided.val[2] == true) {
+                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
+                            // }
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
                     }
                 //}
-                     else {
-                        fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
-                    }
+                    //  else {
+                    //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
+                    // }
                 } else {
                  clearInterval(shooter);
                  }
