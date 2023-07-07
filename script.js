@@ -198,7 +198,7 @@ function startTheGame() {
                         //if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
                         fireYCoord.val = fireYCoord.val - 5;
                         ctx.fillStyle = "rgb(255, 255, 0)";
-                        // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //}
                     //}
                     // } else if (collided.val[2] == true) {
