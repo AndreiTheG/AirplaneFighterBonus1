@@ -137,6 +137,10 @@ function shooting(airplane, isDestroyed, shouted) {
     })
 }
 
+function disappearance() {
+    
+}
+
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
@@ -351,11 +355,12 @@ function startTheGame() {
                     // if (fireYCoord.val < listAxesYObj.val[2]) {
                     //     console.log("Adevarat");
                     // }
-                    //if (collided.val[2] == true) {
+                    if (collided.val[2] == true) {
                       //  console.log("COLIZIUNEEEEEE.....");
+                        disappearance(fireXCoord, fireYCoord);
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
-                    //}
+                    }
                     console.log("Stop");
                 //}
                     //  else {
