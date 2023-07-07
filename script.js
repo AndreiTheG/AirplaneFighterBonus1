@@ -293,7 +293,7 @@ function startTheGame() {
                     if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                         console.log("COLIZIUNEEEEEE.....");
                         fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                        collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
+                        //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
                     }
                     console.log("Stop");
                 //}
