@@ -168,6 +168,7 @@ function startTheGame() {
     const collided = {val: [false, false, false, false]};
     //let nrBalls = 0;
     const fireBalls = {val: []};
+    let isTrue = false;
     for (let i = 0; i < canvasWidth; ++i) {
         fireBalls.val[i] = new FireBalls(i, squareYCoordinate.val - 40);
     }
@@ -286,6 +287,7 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
+                            isTrue = true;
                             // if (collided.val[2] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -334,6 +336,7 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
+                            isTrue = true;
                             // if (collided.val[2] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -348,19 +351,19 @@ function startTheGame() {
                         ctx.fillStyle = "rgb(255, 255, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     }
-                    if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                    /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
                         //clearInterval(shooter);
-                    }
+                    }*/
                     // if (fireYCoord.val < listAxesYObj.val[2]) {
                     //     console.log("Adevarat");
                     // }
                     if (collided.val[2] == true) {
                       //  console.log("COLIZIUNEEEEEE.....");
                         disappearance(fireXCoord, fireYCoord);
-                        collided.val[2] = false;
+                        isTrue = false;
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
                     }
