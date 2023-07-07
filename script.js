@@ -196,16 +196,16 @@ function startTheGame() {
                     //    console.log(fireBalls.val[i]);
                     //}
                     //fireBalls.val[0] = squareYCoordinate.val;
-                    if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    //if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                      //  ctx.fillStyle = "rgb(0, 0, 0)";
+                        //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //clearInterval(shooter);
-                    }
+                    //}
                     //for (let i = 0; i < 400; ++i) {
                         // fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
-                        /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                        if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                             fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                        }*/
+                        }
                     //}
                     //    ctx.fillStyle = "rgb(0, 0, 0)";
                     //    ctx.fillRect(fireBalls[fireXCoord.val], fireYCoord.val, 10, 20);
