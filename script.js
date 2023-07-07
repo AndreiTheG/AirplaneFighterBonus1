@@ -355,6 +355,7 @@ function startTheGame() {
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
+                        isTrue = false;
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
                     } else {
