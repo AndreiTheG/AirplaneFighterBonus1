@@ -196,10 +196,10 @@ function startTheGame() {
                         fireYCoord.val = fireYCoord.val - 5;
                         ctx.fillStyle = "rgb(255, 255, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    } else {
+                    } else if (collided.val[2] == false) {
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
+                        collided.val[2] = false;
                     }
                     //for (let i = 3; i > 0; --i) {
                     //    fireBalls.val[i] = fireBalls.val[i - 1];
