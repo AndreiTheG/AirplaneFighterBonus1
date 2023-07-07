@@ -325,7 +325,9 @@ function startTheGame() {
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
                     }
-                    
+                    if (fireYCoord.val < listAxesYObj.val[2]) {
+                        console.log("Adevarat");
+                    }
                     //if (collided.val[2] == true) {
                       //  console.log("COLIZIUNEEEEEE.....");
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
