@@ -38,7 +38,7 @@ class Airplane {
         }*/
     }
 
-    shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
+    /*shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
         if (isDestroyed.val == false) {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
@@ -48,8 +48,8 @@ class Airplane {
             ctx.fillStyle = "rgb(0, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
             console.log("False");
-        }*/
-    }
+        }
+    }*/
 
     /*fireDisappears(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
         
@@ -89,11 +89,14 @@ class Object {
 }
 
 class FireBalls {
-    constructor(fireXCoord, fireYCoord) {
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.fillRect(fireXCoord, fireYCoord, 10, 20);
-        ctx.strokeStyle = "rgb(0, 0, 0)";
-        ctx.strokeRect(fireXCoord, fireYCoord, 10, 20);
+    constructor(fireXCoord, fireYCoord, isDestroyed) {
+        if (isDestroyed == false) {
+            shouted.val = true;
+            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillRect(fireXCoord, fireYCoord, 10, 20);
+            ctx.strokeStyle = "rgb(0, 0, 0)";
+            ctx.strokeRect(fireXCoord, fireYCoord, 10, 20);
+        }
     }
 
     shooter(fireXCoord, fireYCoord) {
