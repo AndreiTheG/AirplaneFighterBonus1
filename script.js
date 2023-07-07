@@ -228,7 +228,7 @@ function startTheGame() {
                         // if (collided.val[0] == true && collided.val[1] == true && collided.val[2] == true) {
                         //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
                         // }
-                        console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val)
+                        
                       
                     //}
                     //    ctx.fillStyle = "rgb(0, 0, 0)";
@@ -341,6 +341,12 @@ function startTheGame() {
                         fireYCoord.val = fireYCoord.val - 5;
                         ctx.fillStyle = "rgb(255, 255, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    }
+                    if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                       ctx.fillStyle = "rgb(0, 0, 0)";
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                        console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
+                        //clearInterval(shooter);
                     }
                     // if (fireYCoord.val < listAxesYObj.val[2]) {
                     //     console.log("Adevarat");
