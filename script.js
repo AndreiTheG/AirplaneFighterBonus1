@@ -292,6 +292,7 @@ function startTheGame() {
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
                     }
+                    console.log("Stop");
                 //}
                     //  else {
                     //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
