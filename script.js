@@ -191,13 +191,13 @@ function startTheGame() {
                     // ctx.strokeStyle = "rgb(0, 0, 0)";
                     // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     //if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
-                        // ctx.fillStyle = "rgb(0, 0, 0)";
-                        // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        // ctx.strokeStyle = "rgb(0, 0, 0)";
-                        // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        // if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
-                        // fireYCoord.val = fireYCoord.val - 5;
-                        // ctx.fillStyle = "rgb(255, 255, 0)";
+                        ctx.fillStyle = "rgb(0, 0, 0)";
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                        ctx.strokeStyle = "rgb(0, 0, 0)";
+                        ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                        //if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
+                        fireYCoord.val = fireYCoord.val - 5;
+                        ctx.fillStyle = "rgb(255, 255, 0)";
                         // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //}
                     //}
@@ -242,8 +242,6 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             ++score.val;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //ctx.fillStyle = "rgb(0, 0, 0)";
                             //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -261,8 +259,6 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             ++score.val;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
                             //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
@@ -278,10 +274,6 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             ++score.val;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
@@ -296,10 +288,6 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             ++score.val;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
                             //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
@@ -314,10 +302,6 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             ++score.val;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
@@ -332,10 +316,6 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             ++score.val;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
@@ -356,7 +336,7 @@ function startTheGame() {
                     // if (fireYCoord.val < listAxesYObj.val[2]) {
                     //     console.log("Adevarat");
                     // }
-                    if (isTrue == true) {
+                    /*if (isTrue == true) {
                         console.log("COLIZIUNEEEEEE.....");
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -372,7 +352,7 @@ function startTheGame() {
                         fireYCoord.val = fireYCoord.val - 5;
                         ctx.fillStyle = "rgb(255, 255, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    }
+                    }*/
                     console.log("Stop");
                 //}
                     //  else {
