@@ -250,6 +250,7 @@ function startTheGame() {
                             //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
 
                             collided.val[0] = true;
+                            isTrue = true;
                             // if (collided.val[0] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -265,6 +266,7 @@ function startTheGame() {
                             //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
+                            isTrue = true;
                             // if (collided.val[1] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -298,6 +300,7 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
                             //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
                             collided.val[0] = true;
+                            isTrue = true;
                             // if (collided.val[0] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -314,6 +317,7 @@ function startTheGame() {
                             //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
+                            isTrue = true;
                             // if (collided.val[1] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
