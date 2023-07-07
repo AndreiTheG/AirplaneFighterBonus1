@@ -384,8 +384,8 @@ function startTheGame() {
             shouted.val = false;
         }
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
-        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-        objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object);
+        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided, score);
+        objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
@@ -393,7 +393,7 @@ function startTheGame() {
 
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
 // new object on top of the screen and the value of score increases if the palne avoids an object.  
-function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object) {
+function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter) {
     if (listAxesYObj.val[2] == 700) {
         //++score.val;
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
@@ -443,7 +443,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
     collided.val[0] = false;
 }
 
-function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
+function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided, score) {
     //console.log("False " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
@@ -454,6 +454,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
                 else {
+                    ++score.val;
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
