@@ -72,6 +72,7 @@ function createObjects(width, height, valueCondition) {
     ctx.beginPath();
     ctx.arc(width, height, 20, degToRad(0), degToRad(360), false);
     ctx.fill();
+    ctx.closePath();
 }
 
 class Object {
