@@ -336,15 +336,7 @@ function startTheGame() {
                             // }
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
-                    } else {
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        ctx.strokeStyle = "rgb(0, 0, 0)";
-                        ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        fireYCoord.val = fireYCoord.val - 5;
-                        ctx.fillStyle = "rgb(255, 255, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    }
+                    } 
                     /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
@@ -361,6 +353,14 @@ function startTheGame() {
                         console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
+                    } else {
+                        ctx.fillStyle = "rgb(0, 0, 0)";
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                        ctx.strokeStyle = "rgb(0, 0, 0)";
+                        ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                        fireYCoord.val = fireYCoord.val - 5;
+                        ctx.fillStyle = "rgb(255, 255, 0)";
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     }
                     console.log("Stop");
                 //}
