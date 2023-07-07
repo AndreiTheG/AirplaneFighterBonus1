@@ -170,8 +170,8 @@ function startTheGame() {
         if (listAxesYObj.val[0] > 25) {
             object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
-        //if (shouted.val == true) {
-            //console.log("Am tras!");
+        if (shouted.val == true) {
+            console.log("Am tras!");
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};  
             //console.log(fireXCoord.val + " " + fireYCoord.val);    
             //console.log(nrBalls); 
@@ -271,7 +271,7 @@ function startTheGame() {
                             collided.val[2] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
-                    }
+                    //}
                 //}
                     // } else {
                     //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
@@ -285,9 +285,9 @@ function startTheGame() {
             //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
             //     ctx.strokeStyle = "rgb(0, 0, 0)";
             //     ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-            // }
-          //  shouted.val = false;
-        //}
+            }
+            shouted.val = false;
+        }
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object);
