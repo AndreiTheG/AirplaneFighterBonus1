@@ -386,7 +386,7 @@ function startTheGame() {
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object);
-        collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj, collided);
+        collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
     }, 25);
 }
@@ -395,7 +395,7 @@ function startTheGame() {
 // new object on top of the screen and the value of score increases if the palne avoids an object.  
 function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object) {
     if (listAxesYObj.val[2] == 700) {
-        ++score.val;
+        //++score.val;
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         console.log("Partea 3 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
@@ -416,7 +416,7 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
     }
 }
 
-function collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj, collided) {
+function collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj) {
     if ((squareXCoordinate.val - listAxesXObj.val[2] >= 0 && squareXCoordinate.val - listAxesXObj.val[2] < 20 || 
             listAxesXObj.val[2] - squareXCoordinate.val >= 0 && listAxesXObj.val[2] - squareXCoordinate.val < 70) 
             && (squareYCoordinate.val - listAxesYObj.val[2] >= 0 && squareYCoordinate.val - listAxesYObj.val[2] < 20 || 
