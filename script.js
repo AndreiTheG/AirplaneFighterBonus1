@@ -181,7 +181,7 @@ function startTheGame() {
             // const shooter = setInterval(function() {
             //     console.log('Rand nou!');
             //     if (isDestroyed.val == false) {
-                for (let i = squareYCoordinate.val - 40; i >= 0; ++i) {    
+                for (let i = squareYCoordinate.val - 40; i >= 0; --i) {    
                     //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     // console.log(fireXCoord.val + " " + fireYCoord.val);
                     // ctx.fillStyle = "rgb(0, 0, 0)";
