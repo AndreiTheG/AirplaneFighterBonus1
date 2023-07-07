@@ -354,7 +354,7 @@ function startTheGame() {
                     // if (fireYCoord.val < listAxesYObj.val[2]) {
                     //     console.log("Adevarat");
                     // }
-                    if (collided.val[2] == true && isTrue == true) {
+                    if (isTrue == true) {
                         console.log("COLIZIUNEEEEEE.....");
                         ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
