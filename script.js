@@ -325,6 +325,7 @@ function startTheGame() {
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
                     }
+                    
                     //if (collided.val[2] == true) {
                       //  console.log("COLIZIUNEEEEEE.....");
                         //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
