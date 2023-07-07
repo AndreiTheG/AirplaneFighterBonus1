@@ -201,7 +201,7 @@ function startTheGame() {
                         //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //clearInterval(shooter);
                     //}
-                    fireBalls.val[fireXCoord.val].shooter(fireXCoord, i);
+                    fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
                     if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                         fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                     }
