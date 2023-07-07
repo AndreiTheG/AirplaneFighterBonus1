@@ -180,7 +180,7 @@ function startTheGame() {
             } */ 
             // const shooter = setInterval(function() {
             //     console.log('Rand nou!');
-            //     if (isDestroyed.val == false) {
+                 if (isDestroyed.val == false) {
                 //for (let i = squareYCoordinate.val - 40; i >= 0; --i) {    
                     //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     // console.log(fireXCoord.val + " " + fireYCoord.val);
@@ -203,9 +203,9 @@ function startTheGame() {
                     //}
                     //for (let i = 0; i < 400; ++i) {
                         fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
-                        /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                        if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                             fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                        }*/
+                        }
                     //}
                     //    ctx.fillStyle = "rgb(0, 0, 0)";
                     //    ctx.fillRect(fireBalls[fireXCoord.val], fireYCoord.val, 10, 20);
@@ -271,7 +271,7 @@ function startTheGame() {
                             collided.val[2] = true;
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
-                    //}
+                    }
                 //}
                     // } else {
                     //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
