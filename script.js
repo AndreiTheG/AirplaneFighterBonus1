@@ -188,19 +188,21 @@ function startTheGame() {
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     ctx.strokeStyle = "rgb(0, 0, 0)";
                     ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    fireYCoord.val = fireYCoord.val - 5;
-                    ctx.fillStyle = "rgb(255, 255, 0)";
-                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    if (collided.val[0] == true && collided.val[1] == true && collided.val[2] == true) {
+                        fireYCoord.val = fireYCoord.val - 5;
+                        ctx.fillStyle = "rgb(255, 255, 0)";
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    }
                     //for (let i = 3; i > 0; --i) {
                     //    fireBalls.val[i] = fireBalls.val[i - 1];
                     //    console.log(fireBalls.val[i]);
                     //}
                     //fireBalls.val[0] = squareYCoordinate.val;
-                    if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                       ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        //clearInterval(shooter);
-                    }
+                    // if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                    //    ctx.fillStyle = "rgb(0, 0, 0)";
+                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    //     //clearInterval(shooter);
+                    // }
                     //for (let i = 0; i < 400; ++i) {
                         console.log("Start");
                         // if (collided.val[0] == true && collided.val[1] == true && collided.val[2] == true) {
