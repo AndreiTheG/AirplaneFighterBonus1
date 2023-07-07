@@ -132,13 +132,13 @@ function gameController(airplane, isDestroyed) {
     })
 }
 
-function shooting(airplane, isDestroyed, shouted) {
+/*function shooting(airplane, isDestroyed, shouted) {
     addEventListener("keydown", (event) => {
         if (event.code == 'Enter') {
             airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
         }
     })
-}
+}*/
 
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
@@ -146,7 +146,7 @@ function startTheGame() {
     //console.log(squareYCoordinate.val);
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
-    shooting(airplane, isDestroyed, shouted);
+    //shooting(airplane, isDestroyed, shouted);
     //if (shouted.val == true) {
     //    console.log("Adevarat");
     //}
@@ -170,6 +170,7 @@ function startTheGame() {
         fireBalls.val[i] = new FireBalls(i, squareYCoordinate.val - 40);
     }
     idInterval = window.setInterval(function() {
+        shooting(fireBalls, isDestroyed, shouted);
         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
         if (listAxesYObj.val[0] > 25) {
             object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
