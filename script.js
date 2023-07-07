@@ -202,7 +202,9 @@ function startTheGame() {
                         //clearInterval(shooter);
                     //}
                     //for (let i = 0; i < 400; ++i) {
+                        console.log("Start");
                         fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
+                        console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val)
                         if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                             fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         }
