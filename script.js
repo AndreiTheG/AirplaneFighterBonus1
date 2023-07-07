@@ -184,28 +184,28 @@ function startTheGame() {
                 //for (let i = squareYCoordinate.val - 40; i >= 0; --i) {    
                     //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     // console.log(fireXCoord.val + " " + fireYCoord.val);
-                    // ctx.fillStyle = "rgb(0, 0, 0)";
-                    // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    // ctx.strokeStyle = "rgb(0, 0, 0)";
-                    // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    // fireYCoord.val = fireYCoord.val - 5;
-                    // ctx.fillStyle = "rgb(255, 255, 0)";
-                    // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.fillStyle = "rgb(0, 0, 0)";
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.strokeStyle = "rgb(0, 0, 0)";
+                    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    fireYCoord.val = fireYCoord.val - 5;
+                    ctx.fillStyle = "rgb(255, 255, 0)";
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     //for (let i = 3; i > 0; --i) {
                     //    fireBalls.val[i] = fireBalls.val[i - 1];
                     //    console.log(fireBalls.val[i]);
                     //}
                     //fireBalls.val[0] = squareYCoordinate.val;
-                    //if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                      //  ctx.fillStyle = "rgb(0, 0, 0)";
-                        //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
+                       ctx.fillStyle = "rgb(0, 0, 0)";
+                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //clearInterval(shooter);
-                    //}
+                    }
                     //for (let i = 0; i < 400; ++i) {
                         console.log("Start");
-                        if (collided.val[0] == true && collided.val[1] == true && collided.val[2] == true) {
-                            fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
-                        }
+                        // if (collided.val[0] == true && collided.val[1] == true && collided.val[2] == true) {
+                        //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
+                        // }
                         console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val)
                       
                     //}
@@ -292,11 +292,11 @@ function startTheGame() {
                             //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
                         //console.log("Se incadreaza 5");
                     }
-                    if (collided.val[2] == true) {
-                        console.log("COLIZIUNEEEEEE.....");
-                        fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
+                    //if (collided.val[2] == true) {
+                      //  console.log("COLIZIUNEEEEEE.....");
+                        //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
-                    }
+                    //}
                     console.log("Stop");
                 //}
                     //  else {
