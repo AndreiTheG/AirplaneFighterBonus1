@@ -170,8 +170,8 @@ function startTheGame() {
         if (listAxesYObj.val[0] > 25) {
             object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
-        if (shouted.val == true) {
-            console.log("Am tras!");
+        //if (shouted.val == true) {
+            //console.log("Am tras!");
             const fireXCoord = {val: squareXCoordinate.val}, fireYCoord = {val: squareYCoordinate.val - 40};  
             //console.log(fireXCoord.val + " " + fireYCoord.val);    
             //console.log(nrBalls); 
@@ -201,12 +201,12 @@ function startTheGame() {
                         //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                         //clearInterval(shooter);
                     //}
-                    for (let i = 0; i < 400; ++i) {
+                    //for (let i = 0; i < 400; ++i) {
                         fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
                         /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
                             fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                         }*/
-                    }
+                    //}
                     //    ctx.fillStyle = "rgb(0, 0, 0)";
                     //    ctx.fillRect(fireBalls[fireXCoord.val], fireYCoord.val, 10, 20);
                     //} //else if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
@@ -286,8 +286,8 @@ function startTheGame() {
             //     ctx.strokeStyle = "rgb(0, 0, 0)";
             //     ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
             // }
-            shouted.val = false;
-        }
+          //  shouted.val = false;
+        //}
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
         objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter, score, object);
