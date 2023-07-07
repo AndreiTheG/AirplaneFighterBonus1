@@ -140,6 +140,14 @@ function gameController(airplane, isDestroyed) {
     })
 }*/
 
+function shooting(fireBalls, isDestroyed, shouted) {
+    addEventListener("keydown", (event) => {
+        if (event.code == 'Enter') {
+            fireBalls.shooter(squareXCoordinate, squareYCoordinate);
+        }
+    })
+}
+
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
