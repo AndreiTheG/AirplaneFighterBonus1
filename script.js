@@ -360,7 +360,7 @@ function startTheGame() {
                     // if (fireYCoord.val < listAxesYObj.val[2]) {
                     //     console.log("Adevarat");
                     // }
-                    if (collided.val[2] == true) {
+                    if (collided.val[2] == true && isTrue == true) {
                       //  console.log("COLIZIUNEEEEEE.....");
                         disappearance(fireXCoord, fireYCoord);
                         isTrue = false;
