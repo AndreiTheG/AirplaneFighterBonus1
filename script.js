@@ -86,6 +86,11 @@ class Object {
     fall(width, height) {
         createObjects(width, height, 3);
     }
+
+    /*clearObject(width, height) {
+
+    }*/
+    
 }
 
 class FireBalls {
@@ -439,11 +444,12 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
-                /*else {
+                else {
                     //++score.val;
-                    object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                    object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                }*/
+                    object.val[listCoordObj.val[i]].clearRect(listAxesXObj.val[i], listAxesYObj.val[i], 20, 20);
+                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                }
             } else {
                 object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                 object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
