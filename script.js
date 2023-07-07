@@ -446,7 +446,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                 }
                 else {
                     //++score.val;
-                    clearRect(listAxesXObj.val[i], listAxesYObj.val[i], 20, 20);
+                    ctx.clearRect(listAxesXObj.val[i], listAxesYObj.val[i], 20, 20);
                     //object.val[listCoordObj.val[i]].clearRect(listAxesXObj.val[i], listAxesYObj.val[i], 20, 20);
                     //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
