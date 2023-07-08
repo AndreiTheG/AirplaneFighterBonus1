@@ -256,6 +256,7 @@ function startTheGame() {
 
                             collided.val[0] = true;
                             isTrue = true;
+                            clearInterval(shooter);
                             // if (collided.val[0] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -271,6 +272,7 @@ function startTheGame() {
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
                             isTrue = true;
+                            clearInterval(shooter);
                             // if (collided.val[1] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -285,6 +287,7 @@ function startTheGame() {
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
                             isTrue = true;
+                            clearInterval(shooter);
                             // if (collided.val[2] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -299,6 +302,7 @@ function startTheGame() {
                             //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
                             collided.val[0] = true;
                             isTrue = true;
+                            clearInterval(shooter);
                             // if (collided.val[0] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -313,6 +317,7 @@ function startTheGame() {
                             //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
                             isTrue = true;
+                            clearInterval(shooter);
                             // if (collided.val[1] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
@@ -327,6 +332,7 @@ function startTheGame() {
                             //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
                             isTrue = true;
+                            clearInterval(shooter);
                             // if (collided.val[2] == true) {
                             //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
                             // }
