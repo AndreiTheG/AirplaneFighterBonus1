@@ -154,68 +154,26 @@ function startTheGame() {
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             scoreIncreasing(score, 0, fireXCoord, fireYCoord, collided, shooter);
-                            // ++score.val;
-                            // collided.val[0] = true;
-                            // ctx.fillStyle = "rgb(0, 0, 0)";
-                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // ctx.strokeStyle = "rgb(0, 0, 0)";
-                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             scoreIncreasing(score, 1, fireXCoord, fireYCoord, collided, shooter);
-                            // ++score.val;
-                            // collided.val[1] = true;
-                            // ctx.fillStyle = "rgb(0, 0, 0)";
-                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // ctx.strokeStyle = "rgb(0, 0, 0)";
-                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             scoreIncreasing(score, 2, fireXCoord, fireYCoord, collided, shooter);
-                            // ++score.val;
-                            // collided.val[2] = true;
-                            // ctx.fillStyle = "rgb(0, 0, 0)";
-                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // ctx.strokeStyle = "rgb(0, 0, 0)";
-                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             scoreIncreasing(score, 0, fireXCoord, fireYCoord, collided, shooter);
-                            // ++score.val;
-                            // collided.val[0] = true;
-                            // ctx.fillStyle = "rgb(0, 0, 0)";
-                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // ctx.strokeStyle = "rgb(0, 0, 0)";
-                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             scoreIncreasing(score, 1, fireXCoord, fireYCoord, collided, shooter);
-                            // ++score.val;
-                            // collided.val[1] = true;
-                            // ctx.fillStyle = "rgb(0, 0, 0)";
-                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // ctx.strokeStyle = "rgb(0, 0, 0)";
-                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             scoreIncreasing(score, 2, fireXCoord, fireYCoord, collided, shooter);
-                            // ++score.val;
-                            // collided.val[2] = true;
-                            // ctx.fillStyle = "rgb(0, 0, 0)";
-                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // ctx.strokeStyle = "rgb(0, 0, 0)";
-                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            // clearInterval(shooter);
                     } 
                 }
             }, 40);
