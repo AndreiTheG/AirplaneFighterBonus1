@@ -33,9 +33,7 @@ class Airplane {
             }
             ctx.fillStyle = "rgb(255, 0, 0)";
             ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val, squareWidth, squareHeight);
-        } /*else {
-            prevPlaneTrajectory();
-        }*/
+        }
     }
 
     shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
@@ -44,16 +42,8 @@ class Airplane {
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val + 20, squareYCoordinate.val - 40, 10, 20);
             console.log("Shooting......");
-        } /*else {
-            ctx.fillStyle = "rgb(0, 0, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
-            console.log("False");
-        }*/
+        }
     }
-
-    /*fireDisappears(isDestroyed, squareXCoordinate, squareYCoordinate, shouted) {
-        
-    }*/
 }
 
 function createObjects(width, height, valueCondition) {
@@ -86,35 +76,7 @@ class Object {
     
     fall(width, height) {
         createObjects(width, height, 3);
-    }
-
-    clearObject(width, height, sizeX, sizeY) {
-        ctx.clearRect(width, height, sizeX, sizeY);
-    }
-    
-}
-
-class FireBalls {
-    constructor(fireXCoord, fireYCoord) {
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.fillRect(fireXCoord, fireYCoord, 10, 20);
-        ctx.strokeStyle = "rgb(0, 0, 0)";
-        ctx.strokeRect(fireXCoord, fireYCoord, 10, 20);
-    }
-
-    shooter(fireXCoord, fireYCoord) {
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-        fireYCoord.val = fireYCoord.val - 5;
-        ctx.fillStyle = "rgb(255, 255, 0)";
-        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-    }
-
-    disappear(fireXCoord, fireYCoord) {
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-    }
-
+    }    
 }
 
 startTheGame();
@@ -129,9 +91,6 @@ function gameController(airplane, isDestroyed) {
             }
             airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
         }
-        // } else if (event.code == 'Enter') {
-        //     airplane.shooting(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-        // }
     })
 }
 
@@ -146,13 +105,9 @@ function shooting(airplane, isDestroyed, shouted) {
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
-    //console.log(squareYCoordinate.val);
     gameController(airplane, isDestroyed);
     const shouted = {val: false};
     shooting(airplane, isDestroyed, shouted);
-    //if (shouted.val == true) {
-    //    console.log("Adevarat");
-    //}
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     const object = {val: []};
@@ -166,14 +121,7 @@ function startTheGame() {
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
-    //let nrBalls = 0;
-    const fireBalls = {val: []};
-    let isTrue = false;
-    for (let i = 0; i < canvasWidth; ++i) {
-        fireBalls.val[i] = new FireBalls(i, squareYCoordinate.val - 40);
-    }
     idInterval = window.setInterval(function() {
-        //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
         if (listAxesYObj.val[0] > 25) {
             object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
@@ -267,7 +215,6 @@ function startTheGame() {
 // new object on top of the screen and the value of score increases if the palne avoids an object.  
 function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter) {
     if (listAxesYObj.val[2] == 700) {
-        //++score.val;
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
         console.log("Partea 3 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
@@ -316,7 +263,6 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
 }
 
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
-    //console.log("False " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             if (i < 3) {
@@ -339,11 +285,6 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
 
 function gameOver(isDestroyed, airplane, score) {
     airplane.movePlane(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
-    //shooting(airplane, isDestroyed, shouted);
-    //airplane.shoot(isDestroyed, squareWidth, squareHeight, squareXCoordinate, squareYCoordinate, shouted);
-    /*for (let i = 0; i < 3; ++i) {
-        object[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-    }*/
     ctx.fillStyle = "rgb(0, 0, 0)";
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     ctx.fillStyle = "red";
