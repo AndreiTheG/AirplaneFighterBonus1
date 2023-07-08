@@ -102,6 +102,18 @@ function shooting(airplane, isDestroyed, shouted) {
     })
 }
 
+//Increases the number of objects destroyed and makes the projectile disappear after its
+//collision with an object
+function scoreIncreasing(score, index, collided, shooter) {
+    ++score.val;
+    collided.val[index] = true;
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+    ctx.strokeStyle = "rgb(0, 0, 0)";
+    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+    clearInterval(shooter);
+}
+
 function startTheGame() {
     const airplane = new Airplane(squareWidth, squareHeight, squareXCoordinate, squareYCoordinate);
     const isDestroyed = {val: false};
@@ -141,63 +153,69 @@ function startTheGame() {
                     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
-                            ++score.val;
-                            collided.val[0] = true;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            clearInterval(shooter);
+                            scoreIncreasing(score, 0, collided, shooter);
+                            // ++score.val;
+                            // collided.val[0] = true;
+                            // ctx.fillStyle = "rgb(0, 0, 0)";
+                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // ctx.strokeStyle = "rgb(0, 0, 0)";
+                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
-                            ++score.val;
-                            collided.val[1] = true;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            clearInterval(shooter);
+                            scoreIncreasing(score, 1, collided, shooter);
+                            // ++score.val;
+                            // collided.val[1] = true;
+                            // ctx.fillStyle = "rgb(0, 0, 0)";
+                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // ctx.strokeStyle = "rgb(0, 0, 0)";
+                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
-                            ++score.val;
-                            collided.val[2] = true;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            clearInterval(shooter);
+                            scoreIncreasing(score, 2, collided, shooter);
+                            // ++score.val;
+                            // collided.val[2] = true;
+                            // ctx.fillStyle = "rgb(0, 0, 0)";
+                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // ctx.strokeStyle = "rgb(0, 0, 0)";
+                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
-                            ++score.val;
-                            collided.val[0] = true;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            clearInterval(shooter);
+                            scoreIncreasing(score, 0, collided, shooter);
+                            // ++score.val;
+                            // collided.val[0] = true;
+                            // ctx.fillStyle = "rgb(0, 0, 0)";
+                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // ctx.strokeStyle = "rgb(0, 0, 0)";
+                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
-                            ++score.val;
-                            collided.val[1] = true;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            clearInterval(shooter);
+                            scoreIncreasing(score, 1, collided, shooter);
+                            // ++score.val;
+                            // collided.val[1] = true;
+                            // ctx.fillStyle = "rgb(0, 0, 0)";
+                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // ctx.strokeStyle = "rgb(0, 0, 0)";
+                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // clearInterval(shooter);
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
-                            ++score.val;
-                            collided.val[2] = true;
-                            ctx.fillStyle = "rgb(0, 0, 0)";
-                            ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            ctx.strokeStyle = "rgb(0, 0, 0)";
-                            ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            clearInterval(shooter);
+                            scoreIncreasing(score, 2, collided, shooter);
+                            // ++score.val;
+                            // collided.val[2] = true;
+                            // ctx.fillStyle = "rgb(0, 0, 0)";
+                            // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // ctx.strokeStyle = "rgb(0, 0, 0)";
+                            // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                            // clearInterval(shooter);
                     } 
                 }
             }, 40);
