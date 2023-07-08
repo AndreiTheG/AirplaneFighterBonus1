@@ -192,10 +192,10 @@ function startTheGame() {
                 //for (let i = squareYCoordinate.val - 40; i >= 0; --i) {    
                     //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
                     // console.log(fireXCoord.val + " " + fireYCoord.val);
-                    // ctx.fillStyle = "rgb(0, 0, 0)";
-                    // ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    // ctx.strokeStyle = "rgb(0, 0, 0)";
-                    // ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.fillStyle = "rgb(0, 0, 0)";
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    ctx.strokeStyle = "rgb(0, 0, 0)";
+                    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     //if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
                         /*ctx.fillStyle = "rgb(0, 0, 0)";
                         ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
