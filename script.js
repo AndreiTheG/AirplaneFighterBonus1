@@ -180,229 +180,79 @@ function startTheGame() {
         if (shouted.val == true) {
             console.log("Am tras!");
             const fireXCoord = {val: squareXCoordinate.val + 20}, fireYCoord = {val: squareYCoordinate.val - 40};  
-            //console.log(fireXCoord.val + " " + fireYCoord.val);    
-            //console.log(nrBalls); 
-            /*for (let i = 0; i < nrBalls; ++i) {
-                console.log(fireBalls[i]);
-            } */ 
             const shooter = setInterval(function() {
-            //     console.log('Rand nou!');
-                //for (let i = 0; i < 400; ++i) {
                  if (isDestroyed.val == false) {
-                //for (let i = squareYCoordinate.val - 40; i >= 0; --i) {    
-                    //fireBalls[++nrBalls] = fireXCoord.val + " " + fireYCoord.val;
-                    // console.log(fireXCoord.val + " " + fireYCoord.val);
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     ctx.strokeStyle = "rgb(0, 0, 0)";
                     ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
-                        /*ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        ctx.strokeStyle = "rgb(0, 0, 0)";
-                        ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);*/
-                        //if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
-                        fireYCoord.val = fireYCoord.val - 5;
-                        ctx.fillStyle = "rgb(255, 255, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        //}
-                    //}
-                    // } else if (collided.val[2] == true) {
-                    //     ctx.fillStyle = "rgb(0, 0, 0)";
-                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //     collided.val[2] = false;
-                    // } else if (collided.val[1] == true) {
-                    //     ctx.fillStyle = "rgb(0, 0, 0)";
-                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //     collided.val[1] = false;
-                    // } else if (collided.val[0] == true) {
-                    //     ctx.fillStyle = "rgb(0, 0, 0)";
-                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //     collided.val[0] = false;
-                    // }
-                    //for (let i = 3; i > 0; --i) {
-                    //    fireBalls.val[i] = fireBalls.val[i - 1];
-                    //    console.log(fireBalls.val[i]);
-                    //}
-                    //fireBalls.val[0] = squareYCoordinate.val;
-                    // if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                    //    ctx.fillStyle = "rgb(0, 0, 0)";
-                    //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //     //clearInterval(shooter);
-                    // }
-                    //for (let i = 0; i < 400; ++i) {
-                        console.log("Start");
-                        // if (collided.val[0] == true && collided.val[1] == true && collided.val[2] == true) {
-                        //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
-                        // }
-                        
-                      
-                    //}
-                    //    ctx.fillStyle = "rgb(0, 0, 0)";
-                    //    ctx.fillRect(fireBalls[fireXCoord.val], fireYCoord.val, 10, 20);
-                    //} //else if (collided.val[0] == false && collided.val[1] == false && collided.val[2] == false) {
-                    
-                       
-                    //}
+                    fireYCoord.val = fireYCoord.val - 5;
+                    ctx.fillStyle = "rgb(255, 255, 0)";
+                    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+                    console.log("Start");
                     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             ++score.val;
-                            //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            //ctx.fillStyle = "rgb(0, 0, 0)";
-                            //ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                            //console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
-                            //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
-
                             collided.val[0] = true;
-                            isTrue = true;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
                             ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             clearInterval(shooter);
-                            // if (collided.val[0] == true) {
-                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            // }
-                            //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-                        //console.log("Se incadreaza 0");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             ++score.val;
-                            //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
-                            //object[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1] - 5);
-                            //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
-                            isTrue = true;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
                             ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             clearInterval(shooter);
-                            // if (collided.val[1] == true) {
-                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            // }
-                            //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-                        //console.log("Se incadreaza 1");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             ++score.val;
-                            //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
-                            //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
-                            isTrue = true;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
                             ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             clearInterval(shooter);
-                            // if (collided.val[2] == true) {
-                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            // }
-                            //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-                        //console.log("Se incadreaza 2");
                     } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             ++score.val;
-                            //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            //console.log(listAxesXObj.val[0] + " " + listAxesYObj.val[0]);
-                            //object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0]);
                             collided.val[0] = true;
-                            isTrue = true;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
                             ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             clearInterval(shooter);
-                            // if (collided.val[0] == true) {
-                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            // }
-                            //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-                        //console.log("Se incadreaza 3");
                     } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             ++score.val;
-                            //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            //console.log(listAxesXObj.val[1] + " " + listAxesYObj.val[1]);
-                            //object.val[listCoordObj.val[1]].previousHeight(listAxesXObj.val[1], listAxesYObj.val[1]);
                             collided.val[1] = true;
-                            isTrue = true;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
                             ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             clearInterval(shooter);
-                            // if (collided.val[1] == true) {
-                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            // }
-                            //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-                        //console.log("Se incadreaza 4");
                     } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             ++score.val;
-                            //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            //console.log(listAxesXObj.val[2] + " " + listAxesYObj.val[2]);
-                            //object.val[listCoordObj.val[2]].previousHeight(listAxesXObj.val[2], listAxesYObj.val[2]);
                             collided.val[2] = true;
-                            isTrue = true;
                             ctx.fillStyle = "rgb(0, 0, 0)";
                             ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             ctx.strokeStyle = "rgb(0, 0, 0)";
                             ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
                             clearInterval(shooter);
-                            // if (collided.val[2] == true) {
-                            //     fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                            // }
-                            //objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
-                        //console.log("Se incadreaza 5");
                     } 
-                    /*if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
-                        //clearInterval(shooter);
-                    }*/
-                    // if (fireYCoord.val < listAxesYObj.val[2]) {
-                    //     console.log("Adevarat");
-                    // }
-                    /*if (isTrue == true) {
-                        console.log("COLIZIUNEEEEEE.....");
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        console.log("Coordonata X: " + fireXCoord.val + " Coordonata Y: " + fireYCoord.val);
-                        isTrue = false;
-                        //fireBalls.val[fireXCoord.val].disappear(fireXCoord, fireYCoord);
-                        //collided.val[0] = false, collided.val[1] = false, collided.val[2] = false;
-                    } else {
-                        ctx.fillStyle = "rgb(0, 0, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        ctx.strokeStyle = "rgb(0, 0, 0)";
-                        ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                        fireYCoord.val = fireYCoord.val - 5;
-                        ctx.fillStyle = "rgb(255, 255, 0)";
-                        ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    }*/
-                    console.log("Stop");
-                //}
-                    //  else {
-                    //     fireBalls.val[fireXCoord.val].shooter(fireXCoord, fireYCoord);
-                    // }
-                } //else {
-                 //clearInterval(shooter);
-                 //}
+                }
             }, 40);
-            // if (collided.val[0] == true || collided.val[1] == true || collided.val[2] == true) {
-            //     ctx.fillStyle = "rgb(0, 0, 0)";
-            //     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-            //     ctx.strokeStyle = "rgb(0, 0, 0)";
-            //     ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
             shouted.val = false;
         }
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
