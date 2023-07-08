@@ -138,7 +138,6 @@ function startTheGame() {
             object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
         if (shouted.val == true) {
-            console.log("Am tras!");
             const fireXCoord = {val: squareXCoordinate.val + 20}, fireYCoord = {val: squareYCoordinate.val - 40};  
             const shooter = setInterval(function() {
                  if (isDestroyed.val == false) {
