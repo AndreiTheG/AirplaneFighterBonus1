@@ -42,7 +42,7 @@ class Airplane {
         if (isDestroyed.val == false) {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
-            ctx.fillRect(squareXCoordinate.val, squareYCoordinate.val - 40, 10, 20);
+            ctx.fillRect(squareXCoordinate.val + 20, squareYCoordinate.val - 40, 10, 20);
             console.log("Shooting......");
         } /*else {
             ctx.fillStyle = "rgb(0, 0, 0)";
