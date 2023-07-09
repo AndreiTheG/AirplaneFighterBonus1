@@ -54,7 +54,7 @@ function createObjects(width, height, valueCondition) {
         ctx.fillStyle = "rgb(0, 0, 0)";
     } else if (valueCondition == 2) {
         ctx.strokeStyle = "rgb(0, 0, 0)";
-        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.fillStyle = "rgb(255, 255, 255)";
         ctx.stroke();
     } else {
         ctx.fillStyle = "rgb(0, 0, 255)";
