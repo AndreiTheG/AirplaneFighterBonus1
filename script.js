@@ -262,7 +262,7 @@ function gameOver(isDestroyed, airplane, score) {
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     ctx.fillStyle = "red";
     ctx.font = "48px Arial";
-    ctx.fillText("Your score is " + score.val + "!", (canvasWidth / 2) - 180, canvasHeight / 2);
+    ctx.fillText("Your score is " + score.val + "!", (canvasWidth / 2) - 150, canvasHeight / 2);
     let container = document.createElement('div');
     container.className = "text-center";
     let button = document.createElement('button');
