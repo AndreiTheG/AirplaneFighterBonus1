@@ -181,7 +181,7 @@ function startTheGame() {
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
-    }, 25);
+    }, 100);
 }
 
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
