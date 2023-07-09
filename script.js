@@ -241,6 +241,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
             if (i < 3) {
                 console.log(i + " " + listAxesXObj.val[i] + " " + listAxesYObj.val[i]);
                 if (collided.val[i] == false) {
+                    console.log("Adevarat!");
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
@@ -250,10 +251,11 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                         listAxesYObj.val[i + 1] = listAxesYObj.val[i];
                         //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                         //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i + 1] - 20);
-                        console.log("Adevarat");
+                        console.log("Conditie indeplinita");
                     }
                 }
-                else if (collided.val[i] == true && !(listAxesYObj.val[i] == listAxesYObj.val[i - 1] + 20 && listAxesXObj.val[i] == listAxesXObj.val[i - 1])) {
+                else {
+                    console.log("Fals!");
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
