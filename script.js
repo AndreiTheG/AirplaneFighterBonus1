@@ -53,7 +53,7 @@ function createObjects(width, height, valueCondition) {
     if (valueCondition == 1) {
         ctx.fillStyle = "rgb(0, 0, 0)";
     } else if (valueCondition == 2) {
-        ctx.strokeStyle = "rgb(0, 0, 0)";
+        ctx.strokeStyle = "rgb(255, 255, 255)";
         ctx.fillStyle = "rgb(255, 255, 255)";
         ctx.stroke();
     } else {
@@ -254,7 +254,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                         console.log("Conditie indeplinita");
                     }
                 }
-                else {
+                else if (collided.val[i] == true && listAxesXObj.val[i] != listAxesXObj.val[i - 1]) {
                     console.log("Fals!");
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
