@@ -96,14 +96,6 @@ function gameController(airplane, isDestroyed, shouted) {
     })
 }
 
-/*function shooting(airplane, isDestroyed, shouted) {
-    addEventListener("keydown", (event) => {
-        if (event.code == 'Enter') {
-            airplane.shoot(isDestroyed, squareXCoordinate, squareYCoordinate, shouted);
-        }
-    })
-}*/
-
 //Verifies if the projectiles hit the objects
 function destroyTheObject(fireXCoord, fireYCoord, listAxesXObj, listAxesYObj, collided, score, shooter) {
     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
@@ -150,8 +142,6 @@ function startTheGame() {
     const isDestroyed = {val: false};
     const shouted = {val: false};
     gameController(airplane, isDestroyed, shouted);
-    
-    //shooting(airplane, isDestroyed, shouted);
     let initialWidth = 25, initialHeight = 25;
     let counter = 0;
     const object = {val: []};
