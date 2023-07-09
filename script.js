@@ -253,7 +253,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                         console.log("Adevarat");
                     }
                 }
-                else {
+                else if (collided.val[i] == true && !(listAxesYObj.val[i] == listAxesYObj.val[i + 1] - 20 && listAxesXObj.val[i] == listAxesXObj.val[i + 1])) {
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
