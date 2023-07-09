@@ -102,17 +102,6 @@ function shooting(airplane, isDestroyed, shouted) {
     })
 }
 
-//Increases the number of objects destroyed and makes the projectile disappear after its
-//collision with an object
-function scoreIncreasing(score, index, fireXCoord, fireYCoord, collided, shooter) {
-    ++score.val;
-    collided.val[index] = true;
-    ctx.fillStyle = "rgb(0, 0, 0)";
-    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-    ctx.strokeStyle = "rgb(0, 0, 0)";
-    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
-    clearInterval(shooter);
-}
 
 function destroyTheObject(fireXCoord, fireYCoord, listAxesXObj, listAxesYObj, collided, score, shooter) {
     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
@@ -140,6 +129,18 @@ function destroyTheObject(fireXCoord, fireYCoord, listAxesXObj, listAxesYObj, co
         && collided.val[2] == false) {
             scoreIncreasing(score, 2, fireXCoord, fireYCoord, collided, shooter);
     } 
+}
+
+//Increases the number of objects destroyed and makes the projectile disappear after its
+//collision with an object
+function scoreIncreasing(score, index, fireXCoord, fireYCoord, collided, shooter) {
+    ++score.val;
+    collided.val[index] = true;
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
+    ctx.strokeStyle = "rgb(0, 0, 0)";
+    ctx.strokeRect(fireXCoord.val, fireYCoord.val, 10, 20);
+    clearInterval(shooter);
 }
 
 function startTheGame() {
