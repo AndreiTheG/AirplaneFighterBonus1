@@ -247,7 +247,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                     if (listAxesYObj.val[i] == listAxesYObj.val[i + 1] - 20 && listAxesXObj.val[i] == listAxesXObj.val[i + 1]) {
                         console.log("Conditie indeplinita");
-                        listAxesYObj.val[i] = 25;
+                        //listAxesYObj.val[i] = 25;
                         object.val[listCoordObj.val[i + 1]].previousHeight(listAxesXObj.val[i + 1], listAxesYObj.val[i + 1] - 5);
                         object.val[listCoordObj.val[i + 1]].previousHeight(listAxesXObj.val[i + 1], listAxesYObj.val[i + 1]);
                     }
