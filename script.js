@@ -244,6 +244,9 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
+                    if (listAxesYObj.val[i] == listAxesYObj.val[i + 1] - 20) {
+                        console.log("Adevarat");
+                    }
                 }
                 else {
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
