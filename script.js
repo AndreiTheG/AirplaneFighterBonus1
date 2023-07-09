@@ -245,14 +245,19 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    if (listAxesYObj.val[i] == listAxesYObj.val[i + 1] - 20 && listAxesXObj.val[i] == listAxesXObj.val[i + 1]) {
+                    /*if (listAxesYObj.val[i] == listAxesYObj.val[i + 1] - 20 && listAxesXObj.val[i] == listAxesXObj.val[i + 1]) {
                         console.log("Conditie indeplinita");
-                    }
-                }
-                else {
-                    console.log("Fals!");
+                    }*/
+                } else if (collided.val == true && listAxesXObj.val[i] != listAxesXObj.val[i - 1]) {
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                }
+                else {
+                    listAxesXObj.val[i] = listCoordObj.val[0] * 100 + initialWidth;
+                    listAxesYObj.val[i] = 25;
+                    //console.log("Fals!");
+                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
             } else {
                 object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
