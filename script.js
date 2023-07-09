@@ -102,7 +102,7 @@ function shooting(airplane, isDestroyed, shouted) {
     })
 }
 
-
+//Verifies if the projectiles hit the objects
 function destroyTheObject(fireXCoord, fireYCoord, listAxesXObj, listAxesYObj, collided, score, shooter) {
     if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
