@@ -149,31 +149,34 @@ function startTheGame() {
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     console.log("Start");
-                    if (fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20
+                    if (((fireXCoord.val >= listAxesXObj.val[0] && fireXCoord.val <= listAxesXObj.val[0] + 20)
+                        || (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]))
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             scoreIncreasing(score, 0, fireXCoord, fireYCoord, collided, shooter);
-                    } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
+                    } else if (((fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20)
+                        || (fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20))
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             scoreIncreasing(score, 1, fireXCoord, fireYCoord, collided, shooter);
-                    } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
+                    } else if (((fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20)
+                        || (fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20))
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             scoreIncreasing(score, 2, fireXCoord, fireYCoord, collided, shooter);
-                    } else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
+                    } /*else if (fireXCoord.val >= listAxesXObj.val[0] - 20 && fireXCoord.val <= listAxesXObj.val[0]
                         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
                         && collided.val[0] == false) {
                             scoreIncreasing(score, 0, fireXCoord, fireYCoord, collided, shooter);
-                    } else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
+                    }*/ /*else if (fireXCoord.val >= listAxesXObj.val[1] - 20 && fireXCoord.val <= listAxesXObj.val[1]
                         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
                         && collided.val[1] == false) {
                             scoreIncreasing(score, 1, fireXCoord, fireYCoord, collided, shooter);
-                    } else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
+                    }*/ /*else if (fireXCoord.val >= listAxesXObj.val[2] - 20 && fireXCoord.val <= listAxesXObj.val[2]
                         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
                         && collided.val[2] == false) {
                             scoreIncreasing(score, 2, fireXCoord, fireYCoord, collided, shooter);
-                    } 
+                    }*/
                 }
             }, 40);
             shouted.val = false;
