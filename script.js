@@ -251,18 +251,9 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                         object.val[listCoordObj.val[i + 1]].previousHeight(listAxesXObj.val[i + 1], listAxesYObj.val[i + 1] - 5);
                         object.val[listCoordObj.val[i + 1]].previousHeight(listAxesXObj.val[i + 1], listAxesYObj.val[i + 1]);
                     }
-                } else if (collided.val == true && listAxesXObj.val[i] != listAxesXObj.val[i - 1]) {
+                } else {
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                }
-                else {
-                    //listAxesXObj.val[i] = listCoordObj.val[i] * 100 + ;
-                    listAxesYObj.val[i] = 25;
-                    object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                    object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    //console.log("Fals!");
-                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
             } else {
                 object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
