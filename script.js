@@ -162,7 +162,7 @@ function startTheGame() {
         if (shouted.val == true) {
             const fireXCoord = {val: squareXCoordinate.val + 20}, fireYCoord = {val: squareYCoordinate.val - 40};  
             const shooter = setInterval(function() {
-                 if (isDestroyed.val == false) {
+                if (isDestroyed.val == false) {
                     ctx.fillStyle = "rgb(0, 0, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     ctx.strokeStyle = "rgb(0, 0, 0)";
