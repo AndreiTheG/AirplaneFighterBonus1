@@ -177,7 +177,7 @@ function startTheGame() {
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
                     //console.log("Start");
-                    console.log(fireXCoord.val[0] + ' ' + fireYCoord.val[0] + ' ' + fireXCoord.val[1] + ' ' + fireYCoord.val[1] + ' ' + fireXCoord.val[2] + ' ' + fireYCoord.val[2]);
+                    console.log(fireXCoord.val + ' ' + fireYCoord.val);
                     destroyTheObject(fireXCoord, fireYCoord, listAxesXObj, listAxesYObj, collided, score, shooter);
                 }
             }, 40);
