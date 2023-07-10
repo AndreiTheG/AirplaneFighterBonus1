@@ -243,10 +243,10 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                 if (collided.val[i] == false) {
                     console.log("Adevarat!");
                     listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
-                    if (listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
+                    //if (listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
                         object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                         object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    }
+                    //}
                     /*if (listAxesYObj.val[i] == listAxesYObj.val[i + 1] - 20 && listAxesXObj.val[i] == listAxesXObj.val[i + 1]) {
                         console.log("Conditie indeplinita");
                         //listAxesYObj.val[i] = 25;
