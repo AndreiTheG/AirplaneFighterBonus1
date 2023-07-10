@@ -255,9 +255,6 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                     }*/
                 } else if (collided.val[i] == true && listAxesXObj.val[i] == listAxesXObj.val[i - 1]) {
                     //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                    for (let j = listAxesYObj.val[i]; j <  canvasHeight; ++j) {
-                        object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], j);
-                    }
                     //listAxesYObj.val[i] = listAxesYObj.val[i - 1];
                     //listCoordObj.val[i] = listCoordObj.val[i - 1];
                     //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
