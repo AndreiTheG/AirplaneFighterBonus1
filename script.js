@@ -245,7 +245,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
-            if (listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
+            if (listAxesXObj.val[i - 1] != listAxesXObj.val[i]) {
                 if (i < 3) {
                     //console.log(i + " " + listAxesXObj.val[i] + " " + listAxesYObj.val[i]);
                     if (collided.val[i] == false) {
