@@ -161,7 +161,7 @@ function startTheGame() {
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
-    idInterval = window.setInterval(function() {
+    const idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
             object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
