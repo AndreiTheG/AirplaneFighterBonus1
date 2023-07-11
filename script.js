@@ -102,32 +102,26 @@ function destroyTheObject(fireXCoord, fireYCoord, listAxesXObj, listAxesYObj, co
         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
         && collided.val[0] == false) {
             scoreIncreasing(score, 0, fireXCoord, fireYCoord, collided, shooter);
-            console.log("Coliziune 1");
     } else if (fireXCoord.val >= listAxesXObj.val[1] && fireXCoord.val <= listAxesXObj.val[1] + 20
         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
         && collided.val[1] == false) {
             scoreIncreasing(score, 1, fireXCoord, fireYCoord, collided, shooter);
-            console.log("Coliziune 2");
     } else if (fireXCoord.val >= listAxesXObj.val[2] && fireXCoord.val <= listAxesXObj.val[2] + 20
         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
         && collided.val[2] == false) {
             scoreIncreasing(score, 2, fireXCoord, fireYCoord, collided, shooter);
-            console.log("Coliziune 3");
     } else if (fireXCoord.val >= listAxesXObj.val[0] - 30 && fireXCoord.val <= listAxesXObj.val[0]
         && fireYCoord.val >= listAxesYObj.val[0] && fireYCoord.val <= listAxesYObj.val[0] + 20
         && collided.val[0] == false) {
             scoreIncreasing(score, 0, fireXCoord, fireYCoord, collided, shooter);
-            console.log("Coliziune 4");
     } else if (fireXCoord.val >= listAxesXObj.val[1] - 30 && fireXCoord.val <= listAxesXObj.val[1]
         && fireYCoord.val >= listAxesYObj.val[1] && fireYCoord.val <= listAxesYObj.val[1] + 20
         && collided.val[1] == false) {
             scoreIncreasing(score, 1, fireXCoord, fireYCoord, collided, shooter);
-            console.log("Coliziune 5");
     } else if (fireXCoord.val >= listAxesXObj.val[2] - 30 && fireXCoord.val <= listAxesXObj.val[2]
         && fireYCoord.val >= listAxesYObj.val[2] && fireYCoord.val <= listAxesYObj.val[2] + 20
         && collided.val[2] == false) {
             scoreIncreasing(score, 2, fireXCoord, fireYCoord, collided, shooter);
-            console.log("Coliziune 6");
     } 
 }
 
