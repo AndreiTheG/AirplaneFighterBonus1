@@ -54,7 +54,7 @@ function createObjects(width, height, valueCondition) {
         ctx.fillStyle = "rgb(0, 0, 0)";
     } else if (valueCondition == 2) {
         ctx.strokeStyle = "rgb(0, 0, 0)";
-        ctx.fillStyle = "rgb(255, 255, 255)";
+        ctx.fillStyle = "rgb(0, 0, 0)";
         ctx.stroke();
     } else {
         ctx.fillStyle = "rgb(0, 0, 255)";
@@ -188,7 +188,7 @@ function startTheGame() {
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
-    }, 100);
+    }, 25);
 }
 
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
