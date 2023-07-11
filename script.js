@@ -246,6 +246,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             //if (collided.val[i] == false) {
+                console.log(i + ' ' + listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
                 if (i < 3) {
                     //console.log(i + " " + listAxesXObj.val[i] + " " + listAxesYObj.val[i]);
                     if (collided.val[i] == false) {
