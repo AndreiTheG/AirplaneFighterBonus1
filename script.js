@@ -176,7 +176,6 @@ function startTheGame() {
                     fireYCoord.val = fireYCoord.val - 5;
                     ctx.fillStyle = "rgb(255, 255, 0)";
                     ctx.fillRect(fireXCoord.val, fireYCoord.val, 10, 20);
-                    //console.log("Start");
                     console.log(fireXCoord.val + ' ' + fireYCoord.val);
                     destroyTheObject(fireXCoord, fireYCoord, listAxesXObj, listAxesYObj, collided, score, shooter);
                 }
@@ -196,11 +195,9 @@ function startTheGame() {
 function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter) {
     if (listAxesYObj.val[2] == 700) {
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 3);
-        //console.log("Partea 3 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     }  else if (listAxesYObj.val[1] == 575) {
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 2);
-        //console.log("Partea 2 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     }  else if (listAxesYObj.val[0] == 300) {
         for (let i = 3; i >= 2; --i) {
@@ -210,7 +207,6 @@ function objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, init
             collided.val[i] = collided.val[i - 1];
         }
         changeObjectCoordinates(listCoordObj, listAxesXObj, listAxesYObj, collided, 1);
-        //console.log("Partea 1 " + collided.val[0] + "0 " + collided.val[1] + "1 " + collided.val[2] + "2 ");
         createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initialWidth, collided, counter);
     }
 }
@@ -245,39 +241,17 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
 function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
-            //if (collided.val[i] == false) {
-                if (i < 3) {
-                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    //object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    //console.log(i + " " + listAxesXObj.val[i] + " " + listAxesYObj.val[i]);
-                    if (collided.val[i] == false) {
-                        //console.log("Adevarat!");
-                        //if (listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
-                        listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
-                        object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                        object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-                        //if (listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
-                            /*if (collided.val[i] == true) {
-                                object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                            }*/
-                        // object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                        // object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-                        //}
-                    } else {
-                        object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                        //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                        //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    }
+            if (i < 3) {
+                if (collided.val[i] == false) {
+                    listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
+                    object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                    object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                 } else {
-                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
-            //}
-            // } else if (listAxesXObj.val[i] == listAxesXObj.val[i - 1] && listAxesYObj.val[i] >= listAxesYObj.val[i - 1] - 30) {
-            //     //if (collided.val[i] == true) {
-            //         object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-            //     //}
-            // }
+            } else {
+                object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+            }
         }
     }
 }
