@@ -246,7 +246,7 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             //if (collided.val[i] == false) {
-                //if (i < 3) {
+                if (i < 3) {
                     //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                     //object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                     //console.log(i + " " + listAxesXObj.val[i] + " " + listAxesYObj.val[i]);
@@ -273,10 +273,10 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                         //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                         //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                     }*/
-                //} //else {
+                } else {
                     //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                //}
+                    object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                }
             //}
             // } else if (listAxesXObj.val[i] == listAxesXObj.val[i - 1] && listAxesYObj.val[i] >= listAxesYObj.val[i - 1] - 30) {
             //     //if (collided.val[i] == true) {
