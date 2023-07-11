@@ -260,9 +260,9 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                                 object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                             } else if (collided.val[i] == false) {
                                 listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
-                            } else {
+                            } /*else {
                                 ++i;
-                            }
+                            }*/
                         //}
                     //} 
                     /*else if (collided.val[i] == true && listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
