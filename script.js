@@ -161,7 +161,7 @@ function startTheGame() {
     const listAxesXObj = {val: [randomWidth * 100 + initialWidth, 0, 0, 0]}; 
     const listAxesYObj = {val: [25, 25, 25, 25]};
     const collided = {val: [false, false, false, false]};
-    const idInterval = window.setInterval(function() {
+    idInterval = window.setInterval(function() {
         if (listAxesYObj.val[0] > 25) {
             object.val[listCoordObj.val[0]].previousHeight(listAxesXObj.val[0], listAxesYObj.val[0] - 5);
         }
@@ -184,7 +184,7 @@ function startTheGame() {
             shouted.val = false;
         }
         object.val[listCoordObj.val[0]].fall(listAxesXObj.val[0], listAxesYObj.val[0]);
-        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided, idInterval);
+        objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided);
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
@@ -242,7 +242,7 @@ function createNewRandomObject(listCoordObj, listAxesXObj, listAxesYObj, initial
     collided.val[0] = false;
 }
 
-function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided, idInterval) {
+function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collided) {
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             //if (collided.val[i] == false) {
@@ -257,7 +257,6 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
                             object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                         //}
                     } else {
-                        clearInterval(idInterval);
                         //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                         //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                     }
