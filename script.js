@@ -188,7 +188,7 @@ function startTheGame() {
         objectsHeights(listCoordObj, listAxesXObj, listAxesYObj, collided, initialWidth, counter);
         collision(idInterval, isDestroyed, airplane, score, listAxesXObj, listAxesYObj);
         listAxesYObj.val[0] = listAxesYObj.val[0] + 5;
-    }, 100);
+    }, 25);
 }
 
 // Verifies the current height of each object that appear on the screen and fall, change the coordinates of each object and creates 
@@ -246,33 +246,23 @@ function objectGravity(object, listCoordObj, listAxesXObj, listAxesYObj, collide
     for (let i = 1; i < 4; ++i) {
         if (listAxesXObj.val[i] > 0) {
             //if (collided.val[i] == false) {
-                console.log(i + ' ' + listAxesXObj.val[i] + ' ' + listAxesYObj.val[i]);
                 if (i < 3) {
                     //console.log(i + " " + listAxesXObj.val[i] + " " + listAxesYObj.val[i]);
-                    //if (collided.val[i] == false) {
+                    if (collided.val[i] == false) {
                         //console.log("Adevarat!");
                         //if (listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
-                            
+                            listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
                         //if (listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
-                            object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                            if (collided.val[i] == false) {
-                                listAxesYObj.val[i] = listAxesYObj.val[i] + 5;
-                                //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                                object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
-                            } /*else {
-                                object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                            }*/
+                            object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                            object.val[listCoordObj.val[i]].fall(listAxesXObj.val[i], listAxesYObj.val[i]);
                         //}
-                    //} 
-                    /*else if (collided.val[i] == true && listAxesXObj.val[i] != listAxesXObj.val[i + 1]) {
-                        //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
-                        object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                     } else {
-                        ++i;
-                    }*/
+                        //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
+                        //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
+                    }
                 } else {
+                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i] - 5);
                     object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
-                    //object.val[listCoordObj.val[i]].previousHeight(listAxesXObj.val[i], listAxesYObj.val[i]);
                 }
             //}
             // } else if (listAxesXObj.val[i] == listAxesXObj.val[i - 1] && listAxesYObj.val[i] >= listAxesYObj.val[i - 1] - 30) {
