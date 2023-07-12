@@ -41,7 +41,6 @@ class Airplane {
             shouted.val = true;
             ctx.fillStyle = "rgb(255, 255, 0)";
             ctx.fillRect(squareXCoordinate.val + 20, squareYCoordinate.val - 40, 10, 20);
-            console.log("Shooting......");
         }
     }
 }
